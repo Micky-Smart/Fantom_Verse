@@ -1,0 +1,91 @@
+[
+  {
+    "id": "manga-1",
+    "categoryId": "manga",
+    "title": "Berserk: Kentaro Miura Memorial Exhibition Ink Art Archive",
+    "thumbnail": "/images/characters/char-32.png",
+    "description": "High-definition monochrome plates displaying Guts' Dragonslayer strikes, Eclipse horrors, and delicate crosshatching mastery.",
+    "contentType": "gallery",
+    "tags": [
+      "Seinen",
+      "Dark Action"
+    ],
+    "date": "2024-04-12",
+    "popularity": 99,
+    "featured": true,
+    "galleryImages": [
+      "/images/characters/char-32.png",
+      "/images/merch/berserk-hoodie.jpg",
+      "/images/categories/manga-cover.jpg"
+    ],
+    "franchise": "Berserk"
+  },
+  {
+    "id": "manga-2",
+    "categoryId": "manga",
+    "title": "One Piece: Egghead Island Void Century Revelation Retrospective",
+    "thumbnail": "/images/merch/one-piece-merch.jpg",
+    "description": "Eiichiro Oda delivers Dr. Vegapunk's global broadcast detailing the ancient sunken world, Joy Boy, and the Mother Flame.",
+    "contentType": "article",
+    "tags": [
+      "Dark Action",
+      "Supernatural"
+    ],
+    "date": "2024-05-19",
+    "popularity": 100,
+    "featured": true,
+    "rating": 5,
+    "franchise": "One Piece"
+  },
+  {
+    "id": "manga-3",
+    "categoryId": "manga",
+    "title": "Chainsaw Man Part 2: Asa Mitaka & War Devil Yoru Dynamic",
+    "thumbnail": "/images/characters/char-33.jpg",
+    "description": "Tatsuki Fujimoto subverts romantic comedy tropes with apocalyptic teenage angst, guilt weaponization, and sushi dates.",
+    "contentType": "article",
+    "tags": [
+      "Psychological",
+      "Dark Action"
+    ],
+    "date": "2024-03-14",
+    "popularity": 96,
+    "featured": false,
+    "rating": 4.88,
+    "franchise": "Chainsaw Man"
+  },
+  {
+    "id": "manga-4",
+    "categoryId": "manga",
+    "title": "Blue Lock: Neo Egoist League Audio Hype Track",
+    "thumbnail": "/images/characters/char-35.png",
+    "description": "Heart-pounding industrial techno motivating Yoichi Isagi's meta-vision awakenings and Kaiser impact strikes.",
+    "contentType": "audio",
+    "tags": [
+      "Sports"
+    ],
+    "date": "2024-02-17",
+    "popularity": 94,
+    "featured": false,
+    "audioUrl": "https://assets.mixkit.co/music/preview/mixkit-energetic-hip-hop-8.mp3",
+    "audioArtist": "Blue Lock Beats",
+    "franchise": "Blue Lock"
+  },
+  {
+    "id": "manga-5",
+    "categoryId": "manga",
+    "title": "Spy x Family: Cruise Adventure Arc Special Chapter Preview",
+    "thumbnail": "/images/characters/char-34.jpg",
+    "description": "Yor Forger protects the luxury cruiser Princess Lorelei while Anya and Loid tour the carnival deck in blissful ignorance.",
+    "contentType": "releases",
+    "tags": [
+      "Comedy",
+      "Seinen"
+    ],
+    "date": "2024-04-01",
+    "popularity": 95,
+    "featured": true,
+    "mediaUrl": "https://www.youtube.com/embed/ofXigq9aIpo",
+    "franchise": "Spy x Family"
+  }
+]

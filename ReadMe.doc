@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset="utf-8">
+<title>FandomVerse - ReadMe & Project Documentation</title>
+<style>
+body {
+  font-family: 'Calibri', 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #222222;
+  margin: 40px;
+}
+h1 {
+  color: #5b21b6;
+  font-size: 26pt;
+  border-bottom: 2px solid #5b21b6;
+  padding-bottom: 8px;
+}
+h2 {
+  color: #7c3aed;
+  font-size: 18pt;
+  margin-top: 24px;
+}
+h3 {
+  color: #0284c7;
+  font-size: 14pt;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+th, td {
+  border: 1px solid #cccccc;
+  padding: 8px 12px;
+  text-align: left;
+}
+th {
+  background-color: #f3e8ff;
+  color: #5b21b6;
+}
+.badge {
+  background: #ede9fe;
+  color: #6b21a8;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+pre {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 12px;
+  font-family: 'Courier New', monospace;
+  font-size: 10pt;
+}
+</style>
+</head>
+<body>
+
+<h1>FandomVerse: Portal for Fandom World</h1>
+<p><strong>Aptech Limited &bull; Techwiz 7 Championship</strong><br>
+<strong>Project Theme:</strong> Fandom Universe<br>
+<strong>Category:</strong> Web Innovation Unleashed<br>
+<strong>Document Version:</strong> 1.0 (Submission Release)</p>
+
+<hr>
+
+<h2>1. Problem Definition</h2>
+<p>Modern fandom enthusiasts passionate about Anime, Gaming, Movies, TV Shows, K-Pop, Comics, and Manga face severe information fragmentation. Crucial news, trailer announcements, character profiles, convention dates, and fan merchandise are scattered across dozens of individual portals. FandomVerse solves this by delivering a centralized, visually stunning Single Page Application (SPA) unifying all 7 categories with real-time client-side interactivity.</p>
+
+<h2>2. Design Specifications & Tech Stack</h2>
+<ul>
+  <li><strong>Architecture:</strong> 100% Frontend-Only SPA built with React 18, Vite, and Tailwind CSS.</li>
+  <li><strong>Zero Backend Compliance:</strong> Strictly satisfies SRS Constraint 1.5. No server-side databases or write endpoints are used.</li>
+  <li><strong>Data Storage:</strong> 14 pre-populated JSON files stored in <code>/public/data/</code> representing all 7 fandom universes, character rosters, trailers, merchandise, and chatbot knowledge.</li>
+  <li><strong>Browser Storage Architecture:</strong>
+    <ul>
+      <li><code>localStorage</code>: Persistent simulated visitor counter and saved bookmarks.</li>
+      <li><code>sessionStorage</code>: Personal notes attached to bookmarks (cleared when browser session ends).</li>
+    </ul>
+  </li>
+</ul>
+
+<h2>3. Summary of Implemented Features</h2>
+<table>
+  <tr>
+    <th>Feature</th>
+    <th>SRS Reference</th>
+    <th>Status</th>
+  </tr>
+  <tr>
+    <td><strong>7 Category Hubs</strong></td>
+    <td>Section 1.4 & 1.6</td>
+    <td><span class="badge">Completed (Anime, Gaming, Movies, TV, K-Pop, Comics, Manga)</span></td>
+  </tr>
+  <tr>
+    <td><strong>Simulated Visitor Counter</strong></td>
+    <td>Section 1.4 Page 14</td>
+    <td><span class="badge">Completed (7-digit retro odometer display via LocalStorage)</span></td>
+  </tr>
+  <tr>
+    <td><strong>Real-Time Digital Clock</strong></td>
+    <td>Section 1.4 Page 14</td>
+    <td><span class="badge">Completed (Live seconds & AM/PM with date display)</span></td>
+  </tr>
+  <tr>
+    <td><strong>Global Real-Time Search</strong></td>
+    <td>Section 1.4 Page 9</td>
+    <td><span class="badge">Completed (Ctrl+K shortcut, Category & Type filters)</span></td>
+  </tr>
+  <tr>
+    <td><strong>Universal Image Lightbox</strong></td>
+    <td>Section 1.4 Page 9</td>
+    <td><span class="badge">Completed (Carousel thumbnail strip & full-screen view)</span></td>
+  </tr>
+  <tr>
+    <td><strong>35+ Character Profiles</strong></td>
+    <td>Section 1.4 Page 11</td>
+    <td><span class="badge">Completed (5+ per category, bios, traits, franchise filter)</span></td>
+  </tr>
+  <tr>
+    <td><strong>21+ Event Highlights</strong></td>
+    <td>Section 1.4 Page 11</td>
+    <td><span class="badge">Completed (3+ per category, conventions, watch parties, status)</span></td>
+  </tr>
+  <tr>
+    <td><strong>Trailers Aggregator</strong></td>
+    <td>Section 1.4 Page 11</td>
+    <td><span class="badge">Completed (Embedded YouTube video modal, release filters)</span></td>
+  </tr>
+  <tr>
+    <td><strong>Merchandise & Temporary Cart</strong></td>
+    <td>Section 1.4 Page 12</td>
+    <td><span class="badge">Completed (Subtotal, 8% tax, total calculation in JavaScript)</span></td>
+  </tr>
+  <tr>
+    <td><strong>AI-Powered Chatbot</strong></td>
+    <td>Section 1.4 Page 12-13</td>
+    <td><span class="badge">Completed (Pre-scripted KB, quick replies, portal deep links)</span></td>
+  </tr>
+  <tr>
+    <td><strong>Bookmarks & Notes System</strong></td>
+    <td>Section 1.4 Page 13</td>
+    <td><span class="badge">Completed (LocalStorage + SessionStorage notes + Export JSON/TXT)</span></td>
+  </tr>
+  <tr>
+    <td><strong>Contact Us with GPS Map</strong></td>
+    <td>Section 1.4 Page 13</td>
+    <td><span class="badge">Completed (Responsive form + GPS 34.0407° N, 118.2698° W map)</span></td>
+  </tr>
+  <tr>
+    <td><strong>Breadcrumb Navigation</strong></td>
+    <td>Section 1.4 Page 14</td>
+    <td><span class="badge">Completed (Seamless UX across categories and items)</span></td>
+  </tr>
+  <tr>
+    <td><strong>Dummy Login / Signup</strong></td>
+    <td>Section 1.4 Page 14</td>
+    <td><span class="badge">Completed (Simulated authentication & user state)</span></td>
+  </tr>
+</table>
+
+<h2>4. Mandatory Project Installation Instructions</h2>
+<pre>
+1. Extract or navigate into project directory:
+   cd fandom_verse
+
+2. Install dependencies:
+   npm install
+
+3. Run in development mode:
+   npm run dev
+   (Open http://localhost:5173 in any modern web browser)
+
+4. Or build and run production preview:
+   npm run build
+   npm run preview
+   (Open http://localhost:4173 in browser)
+</pre>
+
+<h2>5. Assumptions Made</h2>
+<ol>
+  <li><strong>No Server Database:</strong> In strict compliance with SRS Section 1.5, the application runs entirely in the browser using client-side JavaScript. No backend server or write endpoints exist.</li>
+  <li><strong>Simulated Billing:</strong> In accordance with SRS Section 1.4, checkout and payment functions are simulated with dynamic client-side calculations (subtotal, 8% sales tax, grand total) without connecting to payment gateways.</li>
+  <li><strong>Session-Only Notes:</strong> Notes created for bookmarked items are stored in <code>sessionStorage</code> and intentionally expire when the browser tab/session is closed.</li>
+  <li><strong>Royalty-Free & Embed Media:</strong> Video trailers are embedded via YouTube's iframe API and audio previews utilize royalty-free sound clips to adhere to copyright constraints.</li>
+</ol>
+
+<hr>
+<p><em>Submitted for Aptech Techwiz 7 &bull; Web Innovation Unleashed</em></p>
+
+</body>
+</html>

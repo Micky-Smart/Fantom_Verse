@@ -1,0 +1,590 @@
+[
+  {
+    "id": "merch-1",
+    "name": "Demon Slayer Tanjiro Haori Pattern Oversized Hoodie",
+    "category": "anime",
+    "franchise": "Demon Slayer",
+    "price": 59.99,
+    "rating": 4.9,
+    "image": "/images/merch/tanjiro-hoodie.jpg",
+    "description": "Heavyweight 420GSM premium cotton fleece hoodie featuring Tanjiro's iconic green-and-black ichimatsu checkered pattern, drop shoulders, and back Nichirin sword embroidery.",
+    "itemType": "Apparel",
+    "subType": "Hoodie",
+    "inStock": true,
+    "badge": "🔥 Bestseller Hoodie",
+    "options": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL"
+    ]
+  },
+  {
+    "id": "merch-cloth-1",
+    "name": "Jujutsu Kaisen Sukuna Malevolent Shrine Heavyweight Black Hoodie",
+    "category": "anime",
+    "franchise": "Jujutsu Kaisen",
+    "price": 64.99,
+    "rating": 4.95,
+    "image": "/images/merch/sukuna-hoodie.jpg",
+    "description": "Boxy streetwear hoodie crafted in washed vintage black French terry with deep crimson embroidered Sukuna curse markings along sleeves and back Malevolent Shrine domain expansion seal.",
+    "itemType": "Apparel",
+    "subType": "Hoodie",
+    "inStock": true,
+    "badge": "⚡ Heavyweight 450GSM",
+    "options": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL"
+    ]
+  },
+  {
+    "id": "merch-cloth-2",
+    "name": "Attack on Titan Survey Corps Wings of Freedom Scout Cloak Jacket",
+    "category": "anime",
+    "franchise": "Attack on Titan",
+    "price": 69.99,
+    "rating": 4.9,
+    "image": "/images/merch/scout-cloak.jpg",
+    "description": "Military-spec hooded zip jacket and scout cloak hybrid in deep moss green canvas, featuring high-density silver-and-blue Wings of Freedom embroidery and brass hardware.",
+    "itemType": "Apparel",
+    "subType": "Jacket",
+    "inStock": true,
+    "badge": "⚔️ Military Spec",
+    "options": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ]
+  },
+  {
+    "id": "merch-2",
+    "name": "Jujutsu Kaisen Satoru Gojo Nendoroid Deluxe Figure",
+    "category": "anime",
+    "franchise": "Jujutsu Kaisen",
+    "price": 64.99,
+    "rating": 5,
+    "image": "/images/merch/gojo-nendoroid.jpg",
+    "description": "Articulated chibi figure with interchangeable blindfold, sunglasses, Hollow Purple effect parts, and confident smirk faceplates.",
+    "itemType": "Figure",
+    "subType": "Collectible",
+    "inStock": true,
+    "badge": "Top Rated",
+    "options": [
+      "Standard",
+      "Deluxe Edition"
+    ]
+  },
+  {
+    "id": "merch-3",
+    "name": "Solo Leveling Shadow Monarch Sung Jin-woo Graphic Tee",
+    "category": "anime",
+    "franchise": "Solo Leveling",
+    "price": 29.99,
+    "rating": 4.8,
+    "image": "/images/merch/solo-leveling-merch.jpg",
+    "description": "Vintage mineral-wash tee with glow-in-the-dark blue typography reading 'ARISE' and high-definition Igris shadow print.",
+    "itemType": "Apparel",
+    "subType": "T-Shirt",
+    "inStock": true,
+    "badge": "Glow in the Dark",
+    "options": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL"
+    ]
+  },
+  {
+    "id": "merch-cloth-3",
+    "name": "BTS 'Love Yourself' Seoul Streetwear Oversized Lavender Hoodie",
+    "category": "kpop",
+    "franchise": "BTS",
+    "price": 62,
+    "rating": 5,
+    "image": "/images/merch/bts-hoodie.jpg",
+    "description": "Ultra-soft pastel lavender brushed fleece hoodie featuring holographic Korean Hangul calligraphy '사랑' (Love), iridescent metallic aglets, and relaxed Seoul idol silhouette.",
+    "itemType": "Apparel",
+    "subType": "Hoodie",
+    "inStock": true,
+    "badge": "💜 Idol Favorite",
+    "options": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ]
+  },
+  {
+    "id": "merch-cloth-4",
+    "name": "Stray Kids 'MANIAC' Acid-Wash Neon Cyber Zip-Up Hoodie",
+    "category": "kpop",
+    "franchise": "Stray Kids",
+    "price": 68,
+    "rating": 4.95,
+    "image": "/images/merch/straykids-hoodie.jpg",
+    "description": "Distressed acid-wash charcoal zip hoodie with neon-toxic green spiderweb stitching, double-ended chunky industrial zipper, and rubberized SKZ logo patch.",
+    "itemType": "Apparel",
+    "subType": "Hoodie",
+    "inStock": true,
+    "badge": "⚡ Tour Exclusive",
+    "options": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL"
+    ]
+  },
+  {
+    "id": "merch-cloth-5",
+    "name": "NewJeans 'Get Up' Bunny Club Y2K Vintage Jacquard Knit Sweater",
+    "category": "kpop",
+    "franchise": "NewJeans",
+    "price": 58,
+    "rating": 4.9,
+    "image": "/images/merch/newjeans-bunny-merch.jpg",
+    "description": "Aesthetic Y2K jacquard knit crewneck sweater featuring the iconic Powerpuff pixel bunny motif, pastel stripe ribbing, and soft cloud-spun yarn.",
+    "itemType": "Apparel",
+    "subType": "Sweater",
+    "inStock": true,
+    "badge": "🐰 Y2K Aesthetic",
+    "options": [
+      "S",
+      "M",
+      "L"
+    ]
+  },
+  {
+    "id": "merch-14",
+    "name": "BLACKPINK 'Born Pink' World Tour Cropped Acid-Wash Hoodie",
+    "category": "kpop",
+    "franchise": "BLACKPINK",
+    "price": 58,
+    "rating": 4.85,
+    "image": "/images/merch/blackpink-merch.png",
+    "description": "Washed black raw-hem cropped hoodie with neon pink barbed wire lettering and world tour stadium stops printed on sleeve panels.",
+    "itemType": "Apparel",
+    "subType": "Hoodie",
+    "inStock": true,
+    "badge": "✨ Concert Merch",
+    "options": [
+      "XS",
+      "S",
+      "M",
+      "L"
+    ]
+  },
+  {
+    "id": "merch-12",
+    "name": "BTS Official Light Stick Special Edition (ARMY Bomb Ver. 4)",
+    "category": "kpop",
+    "franchise": "BTS",
+    "price": 68,
+    "rating": 5,
+    "image": "/images/merch/bts-lightstick.jpg",
+    "description": "Authentic concert lightstick with Bluetooth stadium pairing capability, custom light modes, and member photo card pack.",
+    "itemType": "Lightstick",
+    "subType": "Collectible",
+    "inStock": true,
+    "badge": "Official Concert Gear",
+    "options": [
+      "Standard Pack"
+    ]
+  },
+  {
+    "id": "merch-13",
+    "name": "NewJeans Official Bunny Lightstick 'Binky Bong'",
+    "category": "kpop",
+    "franchise": "NewJeans",
+    "price": 62,
+    "rating": 4.9,
+    "image": "/images/merch/newjeans-binky-bong.jpg",
+    "description": "Adorable white bunny-shaped concert wand with customizable colored silicone ear parts and pastel strobe effects.",
+    "itemType": "Lightstick",
+    "subType": "Collectible",
+    "inStock": true,
+    "badge": "Must Have",
+    "options": [
+      "Pastel Pink",
+      "Sky Blue"
+    ]
+  },
+  {
+    "id": "merch-cloth-6",
+    "name": "Arcane Firelight Ekko Hoverboarder Pullover Hoodie",
+    "category": "tvshows",
+    "franchise": "Arcane",
+    "price": 64,
+    "rating": 4.95,
+    "image": "/images/merch/arcane-ekko-hoodie.jpg",
+    "description": "Zaun street-style colorblocked hoodie in petrol teal, rust orange, and bone white, featuring Ekko's glow-in-the-dark owl mask emblem and reinforced thumbholes.",
+    "itemType": "Apparel",
+    "subType": "Hoodie",
+    "inStock": true,
+    "badge": "🔥 Piltover & Zaun",
+    "options": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL"
+    ]
+  },
+  {
+    "id": "merch-cloth-7",
+    "name": "Stranger Things Hawkins High 1986 Tigers Varsity Letterman Jacket",
+    "category": "tvshows",
+    "franchise": "Stranger Things",
+    "price": 79.99,
+    "rating": 4.9,
+    "image": "/images/merch/hawkins-varsity.jpg",
+    "description": "Authentic retro 80s varsity bomber jacket with emerald green wool body, cream vegan leather sleeves, chenille 'H' patch, and striped knit collar.",
+    "itemType": "Apparel",
+    "subType": "Jacket",
+    "inStock": true,
+    "badge": "📼 Retro 1986",
+    "options": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ]
+  },
+  {
+    "id": "merch-cloth-8",
+    "name": "The Last of Us Part II Ellie's Moth & Fern Embroidered Denim Jacket",
+    "category": "tvshows",
+    "franchise": "The Last of Us",
+    "price": 84.99,
+    "rating": 4.95,
+    "image": "/images/merch/ellie-denim-jacket.jpg",
+    "description": "Stonewashed vintage olive-grey denim trucker jacket featuring intricate silk embroidery of Ellie's iconic Luna moth and fern branch tattoo across the rear yoke.",
+    "itemType": "Apparel",
+    "subType": "Jacket",
+    "inStock": true,
+    "badge": "🌿 Screen Accurate",
+    "options": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL"
+    ]
+  },
+  {
+    "id": "merch-10",
+    "name": "Stranger Things Hellfire Club Raglan Vintage Baseball Tee",
+    "category": "tvshows",
+    "franchise": "Stranger Things",
+    "price": 34.99,
+    "rating": 4.95,
+    "image": "/images/merch/hellfire-tee.jpg",
+    "description": "Exact screen-accurate 3/4 sleeve black and white raglan tee worn by Eddie Munson with horned devil D&D artwork.",
+    "itemType": "Apparel",
+    "subType": "T-Shirt",
+    "inStock": true,
+    "badge": "Cult Classic",
+    "options": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ]
+  },
+  {
+    "id": "merch-11",
+    "name": "Arcane Jinx Graffiti Chomp Grenade LED Desk Lamp",
+    "category": "tvshows",
+    "franchise": "Arcane",
+    "price": 54.99,
+    "rating": 4.9,
+    "image": "/images/merch/arcane-jinx-lamp.png",
+    "description": "Hand-painted mechanical chomper lamp with glowing neon pink eyes, glowing teeth, and USB-C touch power switch.",
+    "itemType": "Collectible",
+    "subType": "Lamp",
+    "inStock": true,
+    "badge": "Neon Tech",
+    "options": [
+      "Pink Glow",
+      "Multi-Color RGB"
+    ]
+  },
+  {
+    "id": "merch-6",
+    "name": "Cyberpunk 2077 Samurai Oni Reversible Bomber Jacket",
+    "category": "gaming",
+    "franchise": "Cyberpunk 2077",
+    "price": 89.99,
+    "rating": 4.85,
+    "image": "/images/merch/samurai-bomber.jpg",
+    "description": "Reversible satin souvenir bomber jacket with high-density embroidered Samurai burning demon mask and illuminated neon yellow collar lining.",
+    "itemType": "Apparel",
+    "subType": "Jacket",
+    "inStock": true,
+    "badge": "🔥 Cyberpunk Streetwear",
+    "options": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL"
+    ]
+  },
+  {
+    "id": "merch-cloth-9",
+    "name": "Genshin Impact Xiao Anemo Yaksha Tactical Windbreaker Jacket",
+    "category": "gaming",
+    "franchise": "Genshin Impact",
+    "price": 74.99,
+    "rating": 4.9,
+    "image": "/images/merch/genshin-xiao-merch.jpg",
+    "description": "Waterproof techwear windbreaker in teal and matte black ripstop, featuring Xiao's Yaksha demon crest in metallic gold, waterproof zippers, and multi-pocket straps.",
+    "itemType": "Apparel",
+    "subType": "Jacket",
+    "inStock": true,
+    "badge": "⚡ Tactical Techwear",
+    "options": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ]
+  },
+  {
+    "id": "merch-cloth-10",
+    "name": "Elden Ring 'Tarnished' Erdtree Grace Fleece Pullover Hoodie",
+    "category": "gaming",
+    "franchise": "Elden Ring",
+    "price": 64.5,
+    "rating": 4.92,
+    "image": "/images/merch/elden-ring-hoodie.jpg",
+    "description": "Washed charcoal heavyweight pullover hoodie featuring intricate golden metallic thread embroidery of the Elden Ring rune of death and Site of Grace compass.",
+    "itemType": "Apparel",
+    "subType": "Hoodie",
+    "inStock": true,
+    "badge": "👑 Soullike Masterpiece",
+    "options": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL"
+    ]
+  },
+  {
+    "id": "merch-4",
+    "name": "Genshin Impact Raiden Shogun Light-Up Display Sword Stand",
+    "category": "gaming",
+    "franchise": "Genshin Impact",
+    "price": 49.99,
+    "rating": 4.9,
+    "image": "/images/merch/raiden-display-merch.jpg",
+    "description": "LED ambient lighted acrylic blade stand with Electro purple backlight and gold Mitsudomoe crest.",
+    "itemType": "Collectible",
+    "subType": "Display",
+    "inStock": true,
+    "badge": "RGB Backlit",
+    "options": [
+      "Purple LED",
+      "Dual Pulse LED"
+    ]
+  },
+  {
+    "id": "merch-cloth-11",
+    "name": "Spider-Man 2099 Miguel O'Hara Techwear Cyber High-Collar Hoodie",
+    "category": "movies",
+    "franchise": "Spider-Man",
+    "price": 68,
+    "rating": 4.9,
+    "image": "/images/merch/spiderman-2099-hoodie.jpg",
+    "description": "Futuristic high-neck scuba hoodie in deep midnight blue with neon scarlet angular skull ribbing, thumbhole cuffs, and moisture-wicking aerodynamic weave.",
+    "itemType": "Apparel",
+    "subType": "Hoodie",
+    "inStock": true,
+    "badge": "🕷️ Nueva York 2099",
+    "options": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ]
+  },
+  {
+    "id": "merch-cloth-12",
+    "name": "Dune Fremen Desert Dune-Washed Oversized Cowl Poncho Hoodie",
+    "category": "movies",
+    "franchise": "Dune",
+    "price": 72,
+    "rating": 4.88,
+    "image": "/images/merch/dune-poncho.jpg",
+    "description": "Desert sand-washed heavy cotton cowl-neck hoodie styled after Arrakis stillsuit cloaks, with oversized dramatic hood and deep utility kangaroo pouch.",
+    "itemType": "Apparel",
+    "subType": "Hoodie",
+    "inStock": true,
+    "badge": "🏜️ Arrakis Stillsuit",
+    "options": [
+      "S/M Oversized",
+      "L/XL Oversized"
+    ]
+  },
+  {
+    "id": "merch-8",
+    "name": "Dune Sandworm Crysknife Replica with Carved Bone Sheath",
+    "category": "movies",
+    "franchise": "Dune",
+    "price": 79.99,
+    "rating": 4.8,
+    "image": "/images/merch/dune-crysknife.jpg",
+    "description": "Sacred Fremen blade cast from milky-white resin mimicking a juvenile Shai-Hulud tooth, complete with leather-wrapped hilt.",
+    "itemType": "Collectible",
+    "subType": "Prop Replica",
+    "inStock": true,
+    "badge": "Collector Prop",
+    "options": [
+      "Numbered Edition"
+    ]
+  },
+  {
+    "id": "merch-cloth-13",
+    "name": "Batman The Dark Knight Gotham Vigilante Heavyweight Zip-Up Hoodie",
+    "category": "comics",
+    "franchise": "Batman",
+    "price": 64.99,
+    "rating": 4.95,
+    "image": "/images/merch/batman-hoodie.jpg",
+    "description": "Heavy matte-black 480GSM fleece hoodie with armored elbow patches, gunmetal Wayne Enterprises zipper pull, and subtle tonal bat crest embroidery.",
+    "itemType": "Apparel",
+    "subType": "Hoodie",
+    "inStock": true,
+    "badge": "🦇 Gotham Armor",
+    "options": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL"
+    ]
+  },
+  {
+    "id": "merch-cloth-14",
+    "name": "X-Men 97 Xavier Institute Alumni Varsity Letterman Jacket",
+    "category": "comics",
+    "franchise": "X-Men",
+    "price": 82,
+    "rating": 4.9,
+    "image": "/images/merch/xmen-jacket.png",
+    "description": "Retro mutant varsity jacket in bold royal blue and golden yellow wool, featuring large chenille 'X' chest emblem and 'Mutant & Proud' inner silk lining.",
+    "itemType": "Apparel",
+    "subType": "Jacket",
+    "inStock": true,
+    "badge": "🧬 Mutant Class of 97",
+    "options": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ]
+  },
+  {
+    "id": "merch-15",
+    "name": "Marvel Comics Spider-Man 1962 Heritage Comic Cover Metal Poster",
+    "category": "comics",
+    "franchise": "Spider-Man",
+    "price": 44,
+    "rating": 4.9,
+    "image": "/images/merch/spiderman-comic-poster.png",
+    "description": "Displate-style heavy-gauge magnetic steel art print displaying Amazing Fantasy #15 in vivid gallery reproduction.",
+    "itemType": "Poster",
+    "subType": "Art",
+    "inStock": true,
+    "badge": "Steel Print",
+    "options": [
+      "Medium (45x32cm)",
+      "Large (67x48cm)"
+    ]
+  },
+  {
+    "id": "merch-cloth-15",
+    "name": "Berserk Brand of Sacrifice Crimson Embroidered Acid-Wash Hoodie",
+    "category": "manga",
+    "franchise": "Berserk",
+    "price": 66,
+    "rating": 5,
+    "image": "/images/merch/berserk-hoodie.jpg",
+    "description": "Brutal heavyweight 460GSM vintage distressed charcoal hoodie with thick blood-crimson thread embroidery of the Brand of Sacrifice at the neck and Guts' Berserker armor back art.",
+    "itemType": "Apparel",
+    "subType": "Hoodie",
+    "inStock": true,
+    "badge": "🩸 Heavyweight 460GSM",
+    "options": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL"
+    ]
+  },
+  {
+    "id": "merch-18",
+    "name": "One Piece Straw Hat Pirates Embroidered Crewneck Sweatshirt",
+    "category": "manga",
+    "franchise": "One Piece",
+    "price": 52,
+    "rating": 4.9,
+    "image": "/images/merch/one-piece-merch.jpg",
+    "description": "Cozy fleece sweatshirt with 3D puff embroidery of the classic Jolly Roger skull with straw hat.",
+    "itemType": "Apparel",
+    "subType": "Sweater",
+    "inStock": true,
+    "badge": "☠️ Grand Line Crew",
+    "options": [
+      "Sand Beige",
+      "Navy Blue",
+      "Vintage Black"
+    ]
+  },
+  {
+    "id": "merch-19",
+    "name": "Spy x Family Anya Forger 'Heh' Smug Face Plush Cushion",
+    "category": "manga",
+    "franchise": "Spy x Family",
+    "price": 28,
+    "rating": 5,
+    "image": "/images/merch/anya-merch.jpg",
+    "description": "Ultra-soft microfleece plush pillow featuring Anya's viral sly grin that instantly improves any room.",
+    "itemType": "Plushie",
+    "subType": "Collectible",
+    "inStock": true,
+    "badge": "Viral Plush",
+    "options": [
+      "16-inch",
+      "24-inch Jumbo"
+    ]
+  },
+  {
+    "id": "merch-20",
+    "name": "Chainsaw Man Pochita Life-Sized Squeezable Plush Companion",
+    "category": "manga",
+    "franchise": "Chainsaw Man",
+    "price": 32,
+    "rating": 4.9,
+    "image": "/images/merch/pochita-merch.jpg",
+    "description": "Vibrant orange devil dog plushie with soft fabric chainsaw blade, top carrying handle, and pull-cord tail.",
+    "itemType": "Plushie",
+    "subType": "Collectible",
+    "inStock": true,
+    "badge": "Best Seller",
+    "options": [
+      "30cm Regular",
+      "50cm Giant"
+    ]
+  }
+]

@@ -1,0 +1,93 @@
+[
+  {
+    "id": "kpop-1",
+    "categoryId": "kpop",
+    "title": "BTS: Dynamite & Butter Global Record Triumphs Special",
+    "thumbnail": "/images/characters/char-21.jpg",
+    "description": "How RM, Jin, SUGA, j-hope, Jimin, V, and Jung Kook bridged continents, broke Billboard records, and redefined pop history.",
+    "contentType": "article",
+    "tags": [
+      "Boy Group",
+      "Music Video"
+    ],
+    "date": "2024-05-18",
+    "popularity": 100,
+    "featured": true,
+    "rating": 5,
+    "franchise": "BTS"
+  },
+  {
+    "id": "kpop-2",
+    "categoryId": "kpop",
+    "title": "NewJeans: 'Super Shy' & 'Ditto' Y2K Aesthetic Music Video",
+    "thumbnail": "/images/characters/char-23.jpg",
+    "description": "Minji, Hanni, Danielle, Haerin, and Hyein enchant fans worldwide with nostalgic Camcorder cuts and Baltimore club beats.",
+    "contentType": "video",
+    "tags": [
+      "Girl Group",
+      "Comeback",
+      "Music Video"
+    ],
+    "date": "2024-04-05",
+    "popularity": 98,
+    "featured": true,
+    "mediaUrl": "https://www.youtube.com/embed/ArmDp-zijuc",
+    "franchise": "NewJeans"
+  },
+  {
+    "id": "kpop-3",
+    "categoryId": "kpop",
+    "title": "BLACKPINK: 'Born Pink' World Tour Stadium Stage Gallery",
+    "thumbnail": "/images/characters/char-22.png",
+    "description": "Electrifying stadium pyrotechnics, custom Mugler haute couture, and 1.8 million BLINKs singing in unison worldwide.",
+    "contentType": "gallery",
+    "tags": [
+      "Girl Group",
+      "World Tour"
+    ],
+    "date": "2024-03-01",
+    "popularity": 97,
+    "featured": false,
+    "galleryImages": [
+      "/images/characters/char-22.png",
+      "/images/characters/char-21.jpg",
+      "/images/characters/char-23.jpg"
+    ],
+    "franchise": "BLACKPINK"
+  },
+  {
+    "id": "kpop-4",
+    "categoryId": "kpop",
+    "title": "Stray Kids: 'LALALALA' Rock-Star Energy Audio Masterpiece",
+    "thumbnail": "/images/characters/char-24.png",
+    "description": "3RACHA (Bang Chan, Changbin, Han) deliver signature thunderous brass stabs and hyper-energetic phonk rhythms.",
+    "contentType": "audio",
+    "tags": [
+      "Boy Group",
+      "Comeback"
+    ],
+    "date": "2024-02-12",
+    "popularity": 95,
+    "featured": true,
+    "audioUrl": "https://assets.mixkit.co/music/preview/mixkit-raising-me-higher-34.mp3",
+    "audioArtist": "Stray Kids (3RACHA)",
+    "franchise": "Stray Kids"
+  },
+  {
+    "id": "kpop-5",
+    "categoryId": "kpop",
+    "title": "LE SSERAFIM: 'EASY' & 'CRAZY' Concept Visual Teaser",
+    "thumbnail": "/images/characters/char-25.png",
+    "description": "Fearless voguing, gothic cathedrals, and infectious UK garage house beats redefine the quintet's sonic identity.",
+    "contentType": "releases",
+    "tags": [
+      "Girl Group",
+      "Comeback"
+    ],
+    "date": "2024-08-30",
+    "popularity": 96,
+    "featured": false,
+    "mediaUrl": "https://www.youtube.com/embed/bNKXxwOQONs",
+    "franchise": "LE SSERAFIM"
+  }
+]

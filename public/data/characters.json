@@ -1,0 +1,597 @@
+[
+  {
+    "id": "char-1",
+    "name": "Tanjiro Kamado",
+    "series": "Demon Slayer",
+    "category": "anime",
+    "image": "/images/characters/char-1.jpg",
+    "biography": "A kind-hearted Demon Slayer who masters Sun Breathing and Water Breathing in an unyielding quest to cure his sister Nezuko and extinguish Muzan Kibutsuji's reign of terror.",
+    "traits": [
+      "Empathetic",
+      "Sun Breathing",
+      "Determined",
+      "Hard-Headed",
+      "Demon Slayer Core"
+    ],
+    "quote": "No matter how many people you may lose, you have no choice but to go on living.",
+    "popularity": 98
+  },
+  {
+    "id": "char-2",
+    "name": "Satoru Gojo",
+    "series": "Jujutsu Kaisen",
+    "category": "anime",
+    "image": "/images/characters/char-2.jpg",
+    "biography": "The strongest Jujutsu Sorcerer of the modern era, wielding the Six Eyes and Limitless cursed technique with casual supremacy and deep devotion to his students.",
+    "traits": [
+      "Limitless",
+      "Six Eyes",
+      "Playful",
+      "Honored One",
+      "Teacher"
+    ],
+    "quote": "Throughout Heaven and Earth, I alone am the honored one.",
+    "popularity": 99
+  },
+  {
+    "id": "char-3",
+    "name": "Levi Ackerman",
+    "series": "Attack on Titan",
+    "category": "anime",
+    "image": "/images/characters/char-3.jpg",
+    "biography": "Captain of the Survey Corps' Special Operations Squad, widely revered as humanity's strongest soldier capable of slicing through hordes of Titans in seconds.",
+    "traits": [
+      "Humanity's Strongest",
+      "Ackerman Bloodline",
+      "Disciplined",
+      "Clean Freak",
+      "Tactical Genius"
+    ],
+    "quote": "Give up on your dreams and die. Lead the recruits straight into hell.",
+    "popularity": 97
+  },
+  {
+    "id": "char-4",
+    "name": "Sung Jin-woo",
+    "series": "Solo Leveling",
+    "category": "anime",
+    "image": "/images/characters/char-4.jpg",
+    "biography": "Originally known as humanity's weakest E-rank Hunter, he awakens through the mysterious System into the god-like Shadow Monarch, commanding endless shadow legions.",
+    "traits": [
+      "Shadow Monarch",
+      "Necromancer",
+      "Resilient",
+      "Strategic",
+      "Protector"
+    ],
+    "quote": "Arise.",
+    "popularity": 96
+  },
+  {
+    "id": "char-5",
+    "name": "Frieren",
+    "series": "Frieren",
+    "category": "anime",
+    "image": "/images/characters/char-5.jpg",
+    "biography": "An elven mage who was part of the Hero Party that defeated the Demon King. Over a millennium old, she embarks on a quiet voyage to understand human emotion and time.",
+    "traits": [
+      "Elven Mage",
+      "Mana Concealment",
+      "Long-Lived",
+      "Curious",
+      "Zoltraak Master"
+    ],
+    "quote": "It is because life is so short that human hearts are so gentle.",
+    "popularity": 95
+  },
+  {
+    "id": "char-6",
+    "name": "Raiden Shogun (Ei)",
+    "series": "Genshin Impact",
+    "category": "gaming",
+    "image": "/images/characters/char-6.png",
+    "biography": "The Electro Archon and ruler of Inazuma, Ei seeks Eternity through absolute stillness within the Plane of Euthymia, brandishing the devastating Musou no Hitotachi.",
+    "traits": [
+      "Electro Archon",
+      "Musou Isshin",
+      "Eternal",
+      "Dual Persona",
+      "Polearm Master"
+    ],
+    "quote": "Tear to shreds! The mortal world is but a shadow.",
+    "popularity": 97
+  },
+  {
+    "id": "char-7",
+    "name": "Cloud Strife",
+    "series": "Final Fantasy",
+    "category": "gaming",
+    "image": "/images/characters/char-7.png",
+    "biography": "An ex-SOLDIER 1st Class mercenary brandishing the Buster Sword, battling Shinra Electric Power Company and confronting the haunting phantom of Sephiroth.",
+    "traits": [
+      "Buster Sword",
+      "Mako Infused",
+      "Stoic",
+      "Limit Break",
+      "Mercenary"
+    ],
+    "quote": "Stay where you belong... in my memories.",
+    "popularity": 96
+  },
+  {
+    "id": "char-8",
+    "name": "Malenia, Blade of Miquella",
+    "series": "Elden Ring",
+    "category": "gaming",
+    "image": "/images/characters/char-8.jpg",
+    "biography": "An Empyrean demigod blessed with unalloyed gold prosthetic limbs and cursed by the Scarlet Rot, who has never known defeat in combat.",
+    "traits": [
+      "Waterfowl Dance",
+      "Goddess of Rot",
+      "Unbeaten",
+      "Prosthetic Katana",
+      "Demigod"
+    ],
+    "quote": "I am Malenia, Blade of Miquella. And I have never known defeat.",
+    "popularity": 98
+  },
+  {
+    "id": "char-9",
+    "name": "Acheron",
+    "series": "Honkai: Star Rail",
+    "category": "gaming",
+    "image": "/images/characters/char-9.png",
+    "biography": "A Galaxy Ranger and Emanator of Nihility wandering the cosmos with a scabbard she only draws when severing destiny itself under the black hole's red gaze.",
+    "traits": [
+      "Emanator of Nihility",
+      "Long Blade",
+      "Amnesiac Wanderer",
+      "Crimson Slash",
+      "Cosmic"
+    ],
+    "quote": "I weep for the departed... their sorrow shall be extinguished in rain.",
+    "popularity": 95
+  },
+  {
+    "id": "char-10",
+    "name": "Johnny Silverhand",
+    "series": "Cyberpunk 2077",
+    "category": "gaming",
+    "image": "/images/characters/char-10.jpg",
+    "biography": "Legendary rockerboy, charismatic frontman of Samurai, and rebellious iconoclast living on a biochip inside mercenary V's neural network.",
+    "traits": [
+      "Silver Arm",
+      "Malorian Arms",
+      "Anarchist",
+      "Rock Legend",
+      "Relic Construct"
+    ],
+    "quote": "Wake the f*** up, Samurai. We have a city to burn.",
+    "popularity": 94
+  },
+  {
+    "id": "char-11",
+    "name": "Miles Morales",
+    "series": "Spider-Man",
+    "category": "movies",
+    "image": "/images/characters/char-11.jpg",
+    "biography": "Brooklyn's teenage Spider-Man who defies the Multiverse's canon events, mastering Venom Strike bio-electricity and camouflage to save everyone.",
+    "traits": [
+      "Bio-Electricity",
+      "Invisibility",
+      "Graffiti Artist",
+      "Multiverse Rebel",
+      "Leap of Faith"
+    ],
+    "quote": "Everyone keeps telling me how my story is supposed to go. Nah. Imma do my own thing.",
+    "popularity": 99
+  },
+  {
+    "id": "char-12",
+    "name": "Paul Atreides",
+    "series": "Dune",
+    "category": "movies",
+    "image": "/images/characters/char-12.jpeg",
+    "biography": "Ducal heir of House Atreides who drinks the Water of Life, unites the Fremen fedaykin, and unleashes holy war across the known universe as Muad'Dib.",
+    "traits": [
+      "Kwisatz Haderach",
+      "Voice Command",
+      "Prescient Vision",
+      "Sandworm Rider",
+      "Fremen Leader"
+    ],
+    "quote": "Lead them to Paradise.",
+    "popularity": 97
+  },
+  {
+    "id": "char-13",
+    "name": "Bruce Wayne / Batman",
+    "series": "The Batman",
+    "category": "movies",
+    "image": "/images/characters/char-13.jpg",
+    "biography": "In his second year as Gotham's vigilante, Bruce Wayne investigates the Riddler's corruption ring and transitions from a tool of vengeance to a symbol of hope.",
+    "traits": [
+      "Master Detective",
+      "No Kill Code",
+      "Martial Artist",
+      "High-Tech Arsenal",
+      "Vengeance to Hope"
+    ],
+    "quote": "I am vengeance. I am the night.",
+    "popularity": 98
+  },
+  {
+    "id": "char-14",
+    "name": "Tony Stark / Iron Man",
+    "series": "Avengers",
+    "category": "movies",
+    "image": "/images/characters/char-14.jpg",
+    "biography": "Genius, billionaire, playboy, philanthropist who forged the Iron Man armor and made the ultimate sacrifice with the Infinity Gauntlet to restore half the universe.",
+    "traits": [
+      "Nanotech Armor",
+      "Arc Reactor",
+      "Genius Inventor",
+      "Philanthropist",
+      "Avenger"
+    ],
+    "quote": "And I... am... Iron Man.",
+    "popularity": 100
+  },
+  {
+    "id": "char-15",
+    "name": "J. Robert Oppenheimer",
+    "series": "Oppenheimer",
+    "category": "movies",
+    "image": "/images/characters/char-15.jpg",
+    "biography": "Theoretical physicist and director of the Los Alamos Laboratory during the Manhattan Project, burdened by the moral fallout of unleashing atomic fire.",
+    "traits": [
+      "Quantum Physicist",
+      "Visionary",
+      "Complex",
+      "Philosophical",
+      "Historic Icon"
+    ],
+    "quote": "Now I am become Death, the destroyer of worlds.",
+    "popularity": 93
+  },
+  {
+    "id": "char-16",
+    "name": "Eleven (Jane Hopper)",
+    "series": "Stranger Things",
+    "category": "tvshows",
+    "image": "/images/characters/char-16.jpg",
+    "biography": "A girl raised in Hawkins National Laboratory with telekinetic and psychic capabilities who repeatedly closes the gate to the Upside Down to protect her friends.",
+    "traits": [
+      "Telekinesis",
+      "Remote Viewing",
+      "Eggo Waffles",
+      "Fierce Loyalty",
+      "Laboratory Survivor"
+    ],
+    "quote": "Friends don't lie.",
+    "popularity": 97
+  },
+  {
+    "id": "char-17",
+    "name": "Jinx (Powder)",
+    "series": "Arcane",
+    "category": "tvshows",
+    "image": "/images/characters/char-17.jpg",
+    "biography": "A manic Zaunite inventor and marksman armed with Fishbones and Pow-Pow, torn between traumatic childhood memories and her destructive chaotic identity.",
+    "traits": [
+      "Super-Gunner",
+      "Explosive Expert",
+      "Chaotic Mind",
+      "Shimmer Infused",
+      "Twin Braids"
+    ],
+    "quote": "I'm not crazy! I'm just ahead of the curve.",
+    "popularity": 98
+  },
+  {
+    "id": "char-18",
+    "name": "Joel Miller",
+    "series": "The Last of Us",
+    "category": "tvshows",
+    "image": "/images/characters/char-18.jpg",
+    "biography": "A hardened black-market smuggler surviving twenty years in post-apocalyptic quarantine zones who discovers paternal redemption while escorting Ellie across America.",
+    "traits": [
+      "Survivor",
+      "Marksman",
+      "Protective Father",
+      "Unforgiving",
+      "Brawler"
+    ],
+    "quote": "No matter what, you keep finding something to fight for.",
+    "popularity": 96
+  },
+  {
+    "id": "char-19",
+    "name": "Daemon Targaryen",
+    "series": "House of the Dragon",
+    "category": "tvshows",
+    "image": "/images/characters/char-19.jpg",
+    "biography": "The Rogue Prince of Dragonstone, rider of the blood wyrm Caraxes, and wielder of Dark Sister whose ambition sparks the devastating Targaryen civil war.",
+    "traits": [
+      "Dragon Rider (Caraxes)",
+      "Dark Sister Sword",
+      "Unpredictable",
+      "Fierce Warrior",
+      "Rogue Prince"
+    ],
+    "quote": "Dreams didn't make us kings. Dragons did.",
+    "popularity": 95
+  },
+  {
+    "id": "char-20",
+    "name": "Geralt of Rivia",
+    "series": "The Witcher",
+    "category": "tvshows",
+    "image": "/images/characters/char-20.jpg",
+    "biography": "A mutated monster hunter of the School of the Wolf wielding silver and steel blades, bound by Destiny to Princess Cirilla of Cintra.",
+    "traits": [
+      "Witcher Signs",
+      "Mutant Reflexes",
+      "Silver Blade",
+      "White Wolf",
+      "Neutral Pragmatist"
+    ],
+    "quote": "Evil is evil. Lesser, greater, middling, it's all the same.",
+    "popularity": 94
+  },
+  {
+    "id": "char-21",
+    "name": "RM (Kim Nam-joon)",
+    "series": "BTS",
+    "category": "kpop",
+    "image": "/images/characters/char-21.jpg",
+    "biography": "Leader and main rapper of 21st-century pop icons BTS. A philosophically profound lyricist, composer, and UN speaker advocating youth empowerment.",
+    "traits": [
+      "Leader",
+      "Main Rapper",
+      "Composer",
+      "Art Connoisseur",
+      "Philosopher"
+    ],
+    "quote": "Find your name, find your voice by speaking yourself.",
+    "popularity": 99
+  },
+  {
+    "id": "char-22",
+    "name": "Jennie Kim",
+    "series": "BLACKPINK",
+    "category": "kpop",
+    "image": "/images/characters/char-22.png",
+    "biography": "Main rapper and lead vocalist of BLACKPINK, global Chanel house ambassador, and fashion powerhouse renowned for her charismatic stage aura.",
+    "traits": [
+      "Main Rapper",
+      "Lead Vocalist",
+      "Fashion Trendsetter",
+      "Charismatic",
+      "All-Rounder"
+    ],
+    "quote": "Bitch, I'm a star, but not Patrick.",
+    "popularity": 98
+  },
+  {
+    "id": "char-23",
+    "name": "Hanni Pham",
+    "series": "NewJeans",
+    "category": "kpop",
+    "image": "/images/characters/char-23.jpg",
+    "biography": "Vietnamese-Australian vocalist and dancer of NewJeans known for sweet vocals, writing lyrics on 'Hype Boy' and 'OMG', and bright youthful energy.",
+    "traits": [
+      "Songwriter",
+      "Lead Dancer",
+      "Warm Vocals",
+      "Gucci Ambassador",
+      "Multilingual"
+    ],
+    "quote": "Music is something that brings people together without needing any translation.",
+    "popularity": 96
+  },
+  {
+    "id": "char-24",
+    "name": "Bang Chan",
+    "series": "Stray Kids",
+    "category": "kpop",
+    "image": "/images/characters/char-24.png",
+    "biography": "Leader, producer, and mentor of Stray Kids and 3RACHA, orchestrating self-produced chart-topping anthems with limitless creative passion.",
+    "traits": [
+      "Producer (3RACHA)",
+      "Leader",
+      "Vocalist & Rapper",
+      "Supportive",
+      "Gym Beast"
+    ],
+    "quote": "Stray Kids everywhere all around the world. You make Stray Kids stay.",
+    "popularity": 95
+  },
+  {
+    "id": "char-25",
+    "name": "Huh Yunjin",
+    "series": "LE SSERAFIM",
+    "category": "kpop",
+    "image": "/images/characters/char-25.png",
+    "biography": "Korean-American vocalist, acoustic songwriter, and former classical opera trainee dedicated to dismantling idols' conventional stereotypes.",
+    "traits": [
+      "Opera Vocals",
+      "Indie Songwriter",
+      "Expressive",
+      "Guitarist",
+      "Fearless"
+    ],
+    "quote": "I want to change the idol industry.",
+    "popularity": 94
+  },
+  {
+    "id": "char-26",
+    "name": "Peter Parker (Spider-Man)",
+    "series": "Spider-Man",
+    "category": "comics",
+    "image": "/images/characters/char-26.png",
+    "biography": "The definitive web-slinging hero of Marvel Comics who learns through tragic loss that with great power there must also come great responsibility.",
+    "traits": [
+      "Spider-Sense",
+      "Web Shooters",
+      "Photographer",
+      "Selfless Hero",
+      "Witty"
+    ],
+    "quote": "With great power comes great responsibility.",
+    "popularity": 100
+  },
+  {
+    "id": "char-27",
+    "name": "Wolverine (Logan)",
+    "series": "X-Men",
+    "category": "comics",
+    "image": "/images/characters/char-27.jpg",
+    "biography": "Mutant brawler laced with an unbreakable Adamantium skeleton and regenerative healing factor, fighting for Xavier's dream of mutant equality.",
+    "traits": [
+      "Adamantium Claws",
+      "Healing Factor",
+      "Berserker Rage",
+      "Century-Old",
+      "Loyal"
+    ],
+    "quote": "I'm the best there is at what I do, but what I do best isn't very nice.",
+    "popularity": 97
+  },
+  {
+    "id": "char-28",
+    "name": "The Joker",
+    "series": "Batman",
+    "category": "comics",
+    "image": "/images/characters/char-28.jpg",
+    "biography": "The Clown Prince of Crime, Batman's eternal psychological antithesis who seeks to prove that one bad day can reduce anyone to sheer madness.",
+    "traits": [
+      "Criminal Genius",
+      "Joker Venom",
+      "Anarchist",
+      "Unpredictable",
+      "Theatrical"
+    ],
+    "quote": "All it takes is one bad day to reduce the sanest man alive to lunacy.",
+    "popularity": 98
+  },
+  {
+    "id": "char-29",
+    "name": "Mark Grayson (Invincible)",
+    "series": "Invincible",
+    "category": "comics",
+    "image": "/images/characters/char-29.jpg",
+    "biography": "Son of Omni-Man who inherits Viltrumite superhuman flight and strength, enduring brutal cosmic wars to safeguard Earth from galactic conquests.",
+    "traits": [
+      "Super Strength",
+      "Flight",
+      "Viltrumite Heritage",
+      "Indomitable Will",
+      "Defender"
+    ],
+    "quote": "I'll still have you, Dad.",
+    "popularity": 94
+  },
+  {
+    "id": "char-30",
+    "name": "Dream of the Endless (Morpheus)",
+    "series": "The Sandman",
+    "category": "comics",
+    "image": "/images/characters/char-30.jpg",
+    "biography": "The Lord of Dreams and ruler of the Dreaming, an anthropomorphic personification of story, fantasy, and slumber spanning trillions of years.",
+    "traits": [
+      "Lord of Dreams",
+      "Sand Pouch",
+      "Ruby of Dreams",
+      "Ancient Being",
+      "Poetic"
+    ],
+    "quote": "Things need not have happened to be true. Tales and dreams are the shadow-truths that will endure.",
+    "popularity": 93
+  },
+  {
+    "id": "char-31",
+    "name": "Monkey D. Luffy",
+    "series": "One Piece",
+    "category": "manga",
+    "image": "/images/characters/char-31.jpg",
+    "biography": "Captain of the Straw Hat Pirates and the reincarnation of Sun God Nika (Joy Boy), sailing across the Grand Line to discover the One Piece and attain absolute freedom.",
+    "traits": [
+      "Gear 5 (Sun God Nika)",
+      "Conqueror's Haki",
+      "Rubber Body",
+      "Straw Hat",
+      "Meat Lover"
+    ],
+    "quote": "I'm gonna be King of the Pirates!",
+    "popularity": 100
+  },
+  {
+    "id": "char-32",
+    "name": "Guts (The Black Swordsman)",
+    "series": "Berserk",
+    "category": "manga",
+    "image": "/images/characters/char-32.png",
+    "biography": "A branded struggler wielding the massive Dragonslayer blade, defying demonic Apostles and the God Hand with indomitable human rage and unyielding will.",
+    "traits": [
+      "Dragonslayer",
+      "Berserker Armor",
+      "Cannon Arm",
+      "Branded Struggler",
+      "Unyielding"
+    ],
+    "quote": "He who acts under destiny without fighting is not a human being. Struggle, contend, wriggle!",
+    "popularity": 99
+  },
+  {
+    "id": "char-33",
+    "name": "Denji (Chainsaw Man)",
+    "series": "Chainsaw Man",
+    "category": "manga",
+    "image": "/images/characters/char-33.jpg",
+    "biography": "A hybrid Devil Hunter who fused with his Chainsaw Devil dog Pochita, pulling the ripcord in his chest to sprout whirling blades from his skull and limbs.",
+    "traits": [
+      "Chainsaw Hybrid",
+      "Ripcord Engine",
+      "Blood Regeneration",
+      "Simple Desires",
+      "Devil Hunter"
+    ],
+    "quote": "If there is such a thing as a happy life, it's about being able to eat jam with bread!",
+    "popularity": 97
+  },
+  {
+    "id": "char-34",
+    "name": "Anya Forger",
+    "series": "Spy x Family",
+    "category": "manga",
+    "image": "/images/characters/char-34.jpg",
+    "biography": "A telepathic orphan girl adopted by spy Twilight and assassin Thorn Princess who uses mind reading to secretly maintain world peace and gather Stella Stars.",
+    "traits": [
+      "Telepathy",
+      "Peanut Enthusiast",
+      "Smug 'Heh' Face",
+      "Eden Academy Student",
+      "World Peacekeeper"
+    ],
+    "quote": "Waku waku!",
+    "popularity": 98
+  },
+  {
+    "id": "char-35",
+    "name": "Yoichi Isagi",
+    "series": "Blue Lock",
+    "category": "manga",
+    "image": "/images/characters/char-35.png",
+    "biography": "An analytical football striker who awakens spatial awareness and Meta-Vision within the ruthless Blue Lock project to become the world's most lethal egotist.",
+    "traits": [
+      "Meta-Vision",
+      "Spatial Awareness",
+      "Direct Volley",
+      "Puzzle Pieces",
+      "Egotist"
+    ],
+    "quote": "I am the protagonist of this field!",
+    "popularity": 95
+  }
+]

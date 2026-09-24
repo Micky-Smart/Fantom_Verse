@@ -1,0 +1,93 @@
+[
+  {
+    "id": "comics-1",
+    "categoryId": "comics",
+    "title": "Batman: The Court of Owls - Scott Snyder Masterwork Analysis",
+    "thumbnail": "/images/characters/char-13.jpg",
+    "description": "How the Talon assassins, the labyrinth maze issue, and nursery rhymes challenged Bruce Wayne's belief that he truly owned Gotham.",
+    "contentType": "article",
+    "tags": [
+      "DC",
+      "Dark Knight",
+      "Graphic Novel"
+    ],
+    "date": "2024-04-14",
+    "popularity": 96,
+    "featured": true,
+    "rating": 4.9,
+    "franchise": "Batman"
+  },
+  {
+    "id": "comics-2",
+    "categoryId": "comics",
+    "title": "X-Men: From Krakoa Age to From the Ashes Animated Trailer",
+    "thumbnail": "/images/characters/char-27.jpg",
+    "description": "Jonathan Hickman's mutant nation-building concludes as Cyclops, Rogue, and Wolverine disperse into gritty new operational bases.",
+    "contentType": "video",
+    "tags": [
+      "Marvel",
+      "Multiverse"
+    ],
+    "date": "2024-05-02",
+    "popularity": 94,
+    "featured": true,
+    "mediaUrl": "https://www.youtube.com/embed/pv3Ss8o99qA",
+    "franchise": "X-Men"
+  },
+  {
+    "id": "comics-3",
+    "categoryId": "comics",
+    "title": "Alex Ross: Marvels & Kingdom Come Gouache Painting Gallery",
+    "thumbnail": "/images/categories/comics-cover.jpg",
+    "description": "A curated master collection of photo-realistic gouache illustrations portraying gods walking among everyday humans.",
+    "contentType": "gallery",
+    "tags": [
+      "Graphic Novel",
+      "Marvel",
+      "DC"
+    ],
+    "date": "2024-03-25",
+    "popularity": 97,
+    "featured": false,
+    "galleryImages": [
+      "/images/categories/comics-cover.jpg",
+      "/images/characters/char-26.png",
+      "/images/characters/char-13.jpg"
+    ],
+    "franchise": "Marvels"
+  },
+  {
+    "id": "comics-4",
+    "categoryId": "comics",
+    "title": "Invincible: Viltrumite War Audio Drama Excerpt",
+    "thumbnail": "/images/characters/char-29.jpg",
+    "description": "Soundtrack and full-cast voice drama capturing Mark Grayson and Omni-Man confronting Conquest and Thragg.",
+    "contentType": "audio",
+    "tags": [
+      "Indie"
+    ],
+    "date": "2024-02-20",
+    "popularity": 93,
+    "featured": false,
+    "audioUrl": "https://assets.mixkit.co/music/preview/mixkit-epic-heroic-orchestral-dramatic-735.mp3",
+    "audioArtist": "Skybound Audio Collective",
+    "franchise": "Invincible"
+  },
+  {
+    "id": "comics-5",
+    "categoryId": "comics",
+    "title": "Ultimate Spider-Man (2024): Jonathan Hickman's Peter & MJ Saga",
+    "thumbnail": "/images/characters/char-26.png",
+    "description": "A 35-year-old married Peter Parker with two children finally gets bitten by the radioactive spider in Earth-6160.",
+    "contentType": "releases",
+    "tags": [
+      "Marvel",
+      "Multiverse"
+    ],
+    "date": "2024-01-10",
+    "popularity": 98,
+    "featured": true,
+    "mediaUrl": "https://www.youtube.com/embed/yFhsfQx0k-U",
+    "franchise": "Spider-Man"
+  }
+]

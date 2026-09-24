@@ -1,0 +1,92 @@
+[
+  {
+    "id": "gaming-1",
+    "categoryId": "gaming",
+    "title": "Genshin Impact: Natlan Nation of Pyro Reveal & Exploration",
+    "thumbnail": "/images/gaming/genshin-impact.png",
+    "description": "Travelers prepare to traverse volcanic peaks, tribal arenas, and partner with ancient Saurian companions in Version 5.0.",
+    "contentType": "video",
+    "tags": ["Action RPG", "Gacha", "Open World"],
+    "date": "2024-05-24",
+    "popularity": 99,
+    "featured": true,
+    "mediaUrl": "https://www.youtube.com/embed/TAlKhARUcoY",
+    "rating": 4.9,
+    "franchise": "Genshin Impact"
+  },
+  {
+    "id": "gaming-2",
+    "categoryId": "gaming",
+    "title": "Elden Ring: Shadow of the Erdtree - Realm of Shadow Lore",
+    "thumbnail": "/images/gaming/elden-ring-shadow.jpg",
+    "description": "Following in Miquella's footsteps: unraveling the Scadutree, Messmer the Impaler, and subterranean Marika secrets.",
+    "contentType": "article",
+    "tags": ["Souls-like", "Action RPG", "Open World"],
+    "date": "2024-06-15",
+    "popularity": 98,
+    "featured": true,
+    "rating": 5.0,
+    "franchise": "Elden Ring"
+  },
+  {
+    "id": "gaming-3",
+    "categoryId": "gaming",
+    "title": "Cyberpunk 2077: Phantom Liberty Night City Architecture Gallery",
+    "thumbnail": "/images/gaming/cyberpunk-phantom-liberty.jpg",
+    "description": "Ray-traced photomode capture archive examining Dogtown's brutalist megastructures, black markets, and neon skylines.",
+    "contentType": "gallery",
+    "tags": ["Cyberpunk", "Action RPG"],
+    "date": "2024-04-10",
+    "popularity": 91,
+    "featured": false,
+    "galleryImages": [
+      "/images/gaming/cyberpunk-phantom-liberty.jpg",
+      "/images/merch/samurai-bomber.jpg",
+      "/images/gaming/elden-ring-shadow.jpg"
+    ],
+    "franchise": "Cyberpunk 2077"
+  },
+  {
+    "id": "gaming-4",
+    "categoryId": "gaming",
+    "title": "Honkai: Star Rail - Penacony Dreamscape Symphony",
+    "thumbnail": "/images/gaming/honkai-star-rail.png",
+    "description": "HOYO-MiX's jazz-infused dream pop anthem accompanying Robin, Firefly, and the Astral Express masquerade.",
+    "contentType": "audio",
+    "tags": ["Gacha", "Strategy"],
+    "date": "2024-03-22",
+    "popularity": 94,
+    "featured": false,
+    "audioUrl": "https://assets.mixkit.co/music/preview/mixkit-electronic-retro-game-213.mp3",
+    "audioArtist": "HOYO-MiX & Chevy",
+    "franchise": "Honkai: Star Rail"
+  },
+  {
+    "id": "gaming-5",
+    "categoryId": "gaming",
+    "title": "Final Fantasy VII Rebirth: Evolution of Active Time Battle",
+    "thumbnail": "/images/gaming/ffvii-rebirth.png",
+    "description": "How synergy abilities, staggering mechanics, and tactical pause created one of the best combat loops in JRPG history.",
+    "contentType": "article",
+    "tags": ["Action RPG"],
+    "date": "2024-03-05",
+    "popularity": 93,
+    "featured": false,
+    "rating": 4.85,
+    "franchise": "Final Fantasy"
+  },
+  {
+    "id": "gaming-6",
+    "categoryId": "gaming",
+    "title": "Grand Theft Auto VI: Vice City Reimagined Launch Forecast",
+    "thumbnail": "/images/gaming/gta-vi.png",
+    "description": "Rockstar Games prepares for record-shattering open-world realism across Leonida with Lucia and Jason.",
+    "contentType": "releases",
+    "tags": ["Open World"],
+    "date": "2025-09-01",
+    "popularity": 100,
+    "featured": true,
+    "mediaUrl": "https://www.youtube.com/embed/QdBZY2fkU-0",
+    "franchise": "GTA"
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "tvshows-1",
+    "categoryId": "tvshows",
+    "title": "Stranger Things 5: The Final Battle for Hawkins Teaser Breakdown",
+    "thumbnail": "/images/characters/char-16.jpg",
+    "description": "Vecna's domain has breached the real world. Eleven, Mike, Dustin, and Will prepare for the emotional concluding chapter.",
+    "contentType": "video",
+    "tags": [
+      "Supernatural",
+      "Mystery"
+    ],
+    "date": "2024-04-18",
+    "popularity": 99,
+    "featured": true,
+    "mediaUrl": "https://www.youtube.com/embed/b9EkMc79ZSU",
+    "rating": 4.9,
+    "franchise": "Stranger Things"
+  },
+  {
+    "id": "tvshows-2",
+    "categoryId": "tvshows",
+    "title": "Arcane Season 2: Zaun, Piltover, and the Fall of the Sisters",
+    "thumbnail": "/images/characters/char-17.jpg",
+    "description": "Fortiche and Riot Games return for the climactic clash between Vi and Jinx, Hextech warfare, and Ambessa Medarda's ambition.",
+    "contentType": "releases",
+    "tags": [
+      "Animation",
+      "High Fantasy"
+    ],
+    "date": "2024-11-09",
+    "popularity": 100,
+    "featured": true,
+    "mediaUrl": "https://www.youtube.com/embed/ysQImeq1gvg",
+    "franchise": "Arcane"
+  },
+  {
+    "id": "tvshows-3",
+    "categoryId": "tvshows",
+    "title": "The Last of Us: Cordyceps Apocalyptic Set Design Photography",
+    "thumbnail": "/images/categories/tvshows-cover.jpg",
+    "description": "Behind the lens in Calgary: converting modern cityscapes into moss-covered post-pandemic ruins and fungal tendril tunnels.",
+    "contentType": "gallery",
+    "tags": [
+      "Post-Apocalyptic",
+      "Mystery"
+    ],
+    "date": "2024-02-28",
+    "popularity": 93,
+    "featured": false,
+    "galleryImages": [
+      "/images/categories/tvshows-cover.jpg",
+      "/images/characters/char-18.jpg",
+      "/images/merch/ellie-denim-jacket.jpg"
+    ],
+    "franchise": "The Last of Us"
+  },
+  {
+    "id": "tvshows-4",
+    "categoryId": "tvshows",
+    "title": "House of the Dragon: Dance of the Dragons War Strategy Retrospective",
+    "thumbnail": "/images/characters/char-19.jpg",
+    "description": "Team Black vs Team Green: analyzing dragon riders, naval blockades, and political betrayal across Westeros.",
+    "contentType": "article",
+    "tags": [
+      "High Fantasy"
+    ],
+    "date": "2024-06-20",
+    "popularity": 95,
+    "featured": false,
+    "rating": 4.85,
+    "franchise": "Game of Thrones"
+  },
+  {
+    "id": "tvshows-5",
+    "categoryId": "tvshows",
+    "title": "Severance: Lumon Industries Macrodata Refinement Audio Tape",
+    "thumbnail": "/images/characters/char-20.jpg",
+    "description": "The eerie, hypnotic piano motif by Theodore Shapiro that echoes throughout the sterile, fluorescent corridors of Lumon.",
+    "contentType": "audio",
+    "tags": [
+      "Mystery",
+      "Psychological"
+    ],
+    "date": "2024-03-10",
+    "popularity": 91,
+    "featured": false,
+    "audioUrl": "https://assets.mixkit.co/music/preview/mixkit-piano-reflections-22.mp3",
+    "audioArtist": "Theodore Shapiro",
+    "franchise": "Severance"
+  }
+]

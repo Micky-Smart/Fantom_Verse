@@ -1,0 +1,113 @@
+[
+  {
+    "id": "anime-1",
+    "categoryId": "anime",
+    "title": "Demon Slayer: Kimetsu no Yaiba - Swordsmith Village Arc",
+    "thumbnail": "/images/categories/anime-cover.jpg",
+    "description": "Tanjiro journeys to a village of swordsmiths and must confront dual Upper Rank demons alongside Mist and Love Hashiras.",
+    "contentType": "video",
+    "tags": [
+      "Action",
+      "Shonen",
+      "Dark Fantasy"
+    ],
+    "date": "2024-05-12",
+    "popularity": 98,
+    "featured": true,
+    "mediaUrl": "https://www.youtube.com/embed/a9tq0aS5Zu8",
+    "rating": 4.9,
+    "franchise": "Demon Slayer"
+  },
+  {
+    "id": "anime-2",
+    "categoryId": "anime",
+    "title": "Jujutsu Kaisen: Shibuya Incident Breakdown & Cursed Energy Lore",
+    "thumbnail": "/images/characters/char-2.jpg",
+    "description": "An exhaustive analysis of Gojo Satoru's sealing, Sukuna's devastation, and what comes next in the Culling Game.",
+    "contentType": "article",
+    "tags": [
+      "Supernatural",
+      "Action",
+      "Dark Fantasy"
+    ],
+    "date": "2024-04-20",
+    "popularity": 96,
+    "featured": true,
+    "rating": 4.8,
+    "franchise": "Jujutsu Kaisen"
+  },
+  {
+    "id": "anime-3",
+    "categoryId": "anime",
+    "title": "Attack on Titan: The Final Chapters Memorial Art Gallery",
+    "thumbnail": "/images/characters/char-3.jpg",
+    "description": "Visual archive showcasing official MAPPA production keyframes, Rumbling concept boards, and character design progressions.",
+    "contentType": "gallery",
+    "tags": [
+      "Dark Fantasy",
+      "Action"
+    ],
+    "date": "2024-03-15",
+    "popularity": 94,
+    "featured": false,
+    "galleryImages": [
+      "/images/characters/char-3.jpg",
+      "/images/categories/anime-cover.jpg",
+      "/images/characters/char-2.jpg"
+    ],
+    "franchise": "Attack on Titan"
+  },
+  {
+    "id": "anime-4",
+    "categoryId": "anime",
+    "title": "Solo Leveling: Arise Opening Theme & Hunter Symphony",
+    "thumbnail": "/images/characters/char-4.jpg",
+    "description": "Hiroyuki Sawano delivers an electrifying orchestral score fueling Sung Jin-woo's ascent from E-rank to Shadow Monarch.",
+    "contentType": "audio",
+    "tags": [
+      "Action",
+      "Supernatural"
+    ],
+    "date": "2024-02-18",
+    "popularity": 95,
+    "featured": true,
+    "audioUrl": "https://assets.mixkit.co/music/preview/mixkit-game-level-music-689.mp3",
+    "audioArtist": "Hiroyuki Sawano & TOMORROW X TOGETHER",
+    "franchise": "Solo Leveling"
+  },
+  {
+    "id": "anime-5",
+    "categoryId": "anime",
+    "title": "Frieren: Beyond Journey's End - Contemplating Immortality",
+    "thumbnail": "/images/characters/char-5.jpg",
+    "description": "Why Madhouse's masterclass in pacing and melancholic nostalgia redefined modern fantasy anime storytelling.",
+    "contentType": "article",
+    "tags": [
+      "Slice of Life",
+      "Action"
+    ],
+    "date": "2024-01-30",
+    "popularity": 97,
+    "featured": false,
+    "rating": 4.95,
+    "franchise": "Frieren"
+  },
+  {
+    "id": "anime-6",
+    "categoryId": "anime",
+    "title": "Chainsaw Man: The Movie - Reze Arc Official Teaser",
+    "thumbnail": "/images/characters/char-33.jpg",
+    "description": "Denji meets the enigmatic bomb devil girl Reze in the highly anticipated theatrical feature from MAPPA.",
+    "contentType": "releases",
+    "tags": [
+      "Dark Fantasy",
+      "Action",
+      "Shonen"
+    ],
+    "date": "2024-06-01",
+    "popularity": 99,
+    "featured": true,
+    "mediaUrl": "https://www.youtube.com/embed/v4yLeNt-kCU",
+    "franchise": "Chainsaw Man"
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "id": "anime",
+    "name": "Anime",
+    "icon": "Tv",
+    "color": "#f43f5e",
+    "secondaryColor": "#fb7185",
+    "badgeColor": "bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-950/50 dark:text-rose-300 dark:border-rose-900/50",
+    "tagline": "Epic shonen tournament arcs, hand-drawn sakuga animation, and dark fantasy adventures",
+    "coverImage": "/images/categories/anime-cover.jpg",
+    "itemCount": 48,
+    "subTags": ["Shonen", "Action", "Dark Fantasy", "Supernatural", "Slice of Life", "Sci-Fi"]
+  },
+  {
+    "id": "gaming",
+    "name": "Gaming",
+    "icon": "Gamepad2",
+    "color": "#8b5cf6",
+    "secondaryColor": "#a78bfa",
+    "badgeColor": "bg-violet-50 text-violet-700 border-violet-200 dark:bg-violet-950/50 dark:text-violet-300 dark:border-violet-900/50",
+    "tagline": "Expansive open-world RPGs, competitive esports arenas, and next-generation interactive storytelling",
+    "coverImage": "/images/categories/gaming-cover.jpg",
+    "itemCount": 52,
+    "subTags": ["Open World", "Action RPG", "Souls-like", "Cyberpunk", "Strategy", "Gacha"]
+  },
+  {
+    "id": "movies",
+    "name": "Movies",
+    "icon": "Film",
+    "color": "#f59e0b",
+    "secondaryColor": "#fbbf24",
+    "badgeColor": "bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-950/50 dark:text-amber-300 dark:border-amber-900/50",
+    "tagline": "Widescreen cinematic spectacles, award-winning sagas, and unforgettable blockbusters",
+    "coverImage": "/images/categories/movies-cover.jpg",
+    "itemCount": 42,
+    "subTags": ["Superhero", "Sci-Fi", "Blockbuster", "Psychological", "Epic Fantasy"]
+  },
+  {
+    "id": "tvshows",
+    "name": "TV Shows",
+    "icon": "Tv2",
+    "color": "#06b6d4",
+    "secondaryColor": "#38bdf8",
+    "badgeColor": "bg-cyan-50 text-cyan-700 border-cyan-200 dark:bg-cyan-950/50 dark:text-cyan-300 dark:border-cyan-900/50",
+    "tagline": "Prestige multi-season mysteries, dystopian sci-fi thrillers, and acclaimed television serials",
+    "coverImage": "/images/categories/tvshows-cover.jpg",
+    "itemCount": 39,
+    "subTags": ["Supernatural", "Post-Apocalyptic", "High Fantasy", "Mystery", "Animation"]
+  },
+  {
+    "id": "kpop",
+    "name": "K-Pop",
+    "icon": "Music",
+    "color": "#ec4899",
+    "secondaryColor": "#f472b6",
+    "badgeColor": "bg-pink-50 text-pink-700 border-pink-200 dark:bg-pink-950/50 dark:text-pink-300 dark:border-pink-900/50",
+    "tagline": "Electrifying choreography, chart-shattering global anthems, and worldwide stadium tours",
+    "coverImage": "/images/categories/kpop-cover.jpg",
+    "itemCount": 45,
+    "subTags": ["Boy Group", "Girl Group", "Comeback", "World Tour", "Music Video", "OST"]
+  },
+  {
+    "id": "comics",
+    "name": "Comics",
+    "icon": "BookOpen",
+    "color": "#3b82f6",
+    "secondaryColor": "#60a5fa",
+    "badgeColor": "bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-950/50 dark:text-blue-300 dark:border-blue-900/50",
+    "tagline": "Iconic sequential art panels, mythological superheroes, and multiverse-spanning graphic epics",
+    "coverImage": "/images/categories/comics-cover.jpg",
+    "itemCount": 36,
+    "subTags": ["Marvel", "DC", "Graphic Novel", "Indie", "Multiverse", "Dark Knight"]
+  },
+  {
+    "id": "manga",
+    "name": "Manga",
+    "icon": "BookMarked",
+    "color": "#10b981",
+    "secondaryColor": "#34d399",
+    "badgeColor": "bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/50 dark:text-emerald-300 dark:border-emerald-900/50",
+    "tagline": "Hand-inked masterwork storytelling, gripping dark fantasy, and weekly chapter sagas",
+    "coverImage": "/images/categories/manga-cover.jpg",
+    "itemCount": 41,
+    "subTags": ["Seinen", "Dark Action", "Sports", "Comedy", "Psychological", "Supernatural"]
+  }
+]

@@ -1,0 +1,90 @@
+{
+  "botName": "FandomBot",
+  "welcomeMessage": "Hello fellow fan! 🌟 I'm FandomBot, your AI guide to the FandomVerse portal. Ask me anything about Anime, Gaming, Movies, TV Shows, K-Pop, Comics, or Manga, or click a quick suggestion below!",
+  "quickSuggestions": [
+    { "label": "🔥 Top Anime recommendations", "query": "recommend anime" },
+    { "label": "🎮 Best RPGs to play", "query": "recommend gaming" },
+    { "label": "🍿 Upcoming movie trailers", "query": "upcoming trailers" },
+    { "label": "🎵 What K-Pop tracks are trending?", "query": "kpop music" },
+    { "label": "🛍️ Explore fan merchandise", "query": "merchandise" },
+    { "label": "📅 Find upcoming conventions", "query": "events" }
+  ],
+  "faq": [
+    {
+      "keywords": ["what is fandomverse", "about fandomverse", "about this website", "who made this"],
+      "response": "FandomVerse is the ultimate centralized cultural portal uniting 7 massive fandom categories (Anime, Gaming, Movies, TV Shows, K-Pop, Comics, and Manga) with trailers, articles, character lore, high-res galleries, and official fan merchandise under one interactive experience!",
+      "link": { "view": "about", "label": "Learn More in About Us" }
+    },
+    {
+      "keywords": ["anime", "recommend anime", "demon slayer", "jujutsu kaisen", "solo leveling", "frieren"],
+      "response": "Our Anime Hub is packed with top titles like Demon Slayer: Swordsmith Village Arc, Jujutsu Kaisen Shibuya analysis, Solo Leveling OSTs, and Frieren! Explore character profiles for Tanjiro and Gojo, or browse high-res art galleries.",
+      "link": { "view": "category", "categoryId": "anime", "label": "Explore Anime Hub" }
+    },
+    {
+      "keywords": ["gaming", "game", "rpg", "genshin", "elden ring", "cyberpunk", "final fantasy"],
+      "response": "Welcome gamers! Check out our Gaming Hub for Elden Ring: Shadow of the Erdtree lore, Genshin Impact's Natlan reveal, Cyberpunk 2077 Night City galleries, and character stats for Malenia and Raiden Shogun!",
+      "link": { "view": "category", "categoryId": "gaming", "label": "Go to Gaming Hub" }
+    },
+    {
+      "keywords": ["movie", "movies", "spider-man", "spider-verse", "dune", "batman", "oppenheimer", "deadpool"],
+      "response": "From Dune: Part Two to Across the Spider-Verse and The Batman, our Movies section features 4K trailer embeds, deep-dive articles, and character breakdowns of Miles Morales and Bruce Wayne.",
+      "link": { "view": "category", "categoryId": "movies", "label": "Browse Movies Hub" }
+    },
+    {
+      "keywords": ["tv", "tv shows", "stranger things", "arcane", "last of us", "house of dragon", "severance"],
+      "response": "Binge-watchers rejoice! Explore Stranger Things Season 5 teasers, Arcane Season 2 trailers, The Last of Us set galleries, and character profiles for Eleven and Jinx.",
+      "link": { "view": "category", "categoryId": "tvshows", "label": "Open TV Shows Hub" }
+    },
+    {
+      "keywords": ["kpop", "k-pop", "bts", "newjeans", "blackpink", "stray kids", "le sserafim"],
+      "response": "Stan the legends! Our K-Pop Hub features audio previews for Stray Kids and BTS, MV breakdowns for NewJeans and LE SSERAFIM, official lightsticks, and artist profiles for RM and Jennie.",
+      "link": { "view": "category", "categoryId": "kpop", "label": "Step into K-Pop Hub" }
+    },
+    {
+      "keywords": ["comic", "comics", "marvel", "dc", "x-men", "batman comics", "invincible", "sandman"],
+      "response": "Discover sequential storytelling masterpieces! Explore Batman: Court of Owls, X-Men Krakoa arcs, Alex Ross gouache galleries, and character profiles for Peter Parker and Logan.",
+      "link": { "view": "category", "categoryId": "comics", "label": "Discover Comics Hub" }
+    },
+    {
+      "keywords": ["manga", "berserk", "one piece", "chainsaw man", "spy x family", "blue lock"],
+      "response": "Ink lovers assemble! Check out the Berserk Kentaro Miura Memorial ink gallery, One Piece Void Century revelations, Anya Forger plushies, and Guts' character profile.",
+      "link": { "view": "category", "categoryId": "manga", "label": "Read Manga Hub" }
+    },
+    {
+      "keywords": ["trailer", "trailers", "video", "videos", "teaser"],
+      "response": "Head over to our dedicated Trailers section to watch responsive YouTube trailers with filters for 'Upcoming Releases' and 'Recently Released' across all 7 categories!",
+      "link": { "view": "trailers", "label": "Watch All Trailers" }
+    },
+    {
+      "keywords": ["character", "characters", "hero", "villain", "roster", "profiles"],
+      "response": "We have 35+ detailed character profiles across all fandoms—each complete with biography, franchise, power stats, and iconic quotes! Filterable by category and franchise.",
+      "link": { "view": "characters", "label": "View Character Roster" }
+    },
+    {
+      "keywords": ["event", "events", "convention", "comic con", "expo", "meetup"],
+      "response": "Looking for fellow fans? Check out our 21+ Events Hub covering San Diego Comic-Con, Anime Expo, KCON LA, Gamescom, and local watch parties with live countdowns.",
+      "link": { "view": "events", "label": "See Fandom Events" }
+    },
+    {
+      "keywords": ["merchandise", "merch", "shop", "store", "buy", "t-shirt", "figure", "plushie", "cart"],
+      "response": "Browse our Fan Store for officially inspired apparel, figures, plushies, and collectibles. You can add items to your temporary shopping cart and see the total billing calculated instantly!",
+      "link": { "view": "merchandise", "label": "Visit Merchandise Store" }
+    },
+    {
+      "keywords": ["bookmark", "bookmarks", "favorites", "saved", "notes", "export"],
+      "response": "You can bookmark any article, character, media clip, or event by clicking the bookmark/heart icon! Your bookmarks are saved in LocalStorage, and you can add private personal notes (saved in SessionStorage) or export them as a file.",
+      "link": { "view": "bookmarks", "label": "View My Bookmarks" }
+    },
+    {
+      "keywords": ["contact", "help", "support", "location", "address", "map", "gps"],
+      "response": "Have a question or feedback? Visit our Contact Us page to send a message to our team and view our headquarters on the interactive GPS map.",
+      "link": { "view": "contact", "label": "Go to Contact Us" }
+    },
+    {
+      "keywords": ["clock", "time", "counter", "visitor"],
+      "response": "Notice the top bar! We have a live Real-Time Clock with seconds and a simulated 7-digit retro odometer Visitor Counter powered by LocalStorage that tracks community views.",
+      "link": { "view": "home", "label": "Return to Home" }
+    }
+  ],
+  "fallbackResponse": "That's an intriguing question! While I'm a pre-scripted assistant powered by local JSON data, I can guide you through any of our 7 category hubs, trailers, character bios, events, or merchandise. Try asking about 'Anime', 'Trailers', 'Characters', or 'Merchandise'!"
+}

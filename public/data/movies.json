@@ -1,0 +1,94 @@
+[
+  {
+    "id": "movies-1",
+    "categoryId": "movies",
+    "title": "Spider-Man: Across the Spider-Verse - Visual Metaphor & Artistry",
+    "thumbnail": "/images/categories/movies-cover.jpg",
+    "description": "Miles Morales leaps across Earth-50101 and Nueva York in a groundbreaking fusion of watercolor, punk zine, and Syd Mead sci-fi.",
+    "contentType": "video",
+    "tags": [
+      "Superhero",
+      "Blockbuster"
+    ],
+    "date": "2024-02-14",
+    "popularity": 99,
+    "featured": true,
+    "mediaUrl": "https://www.youtube.com/embed/cqGjhVJWtEg",
+    "rating": 4.95,
+    "franchise": "Spider-Man"
+  },
+  {
+    "id": "movies-2",
+    "categoryId": "movies",
+    "title": "Dune: Part Two - Denis Villeneuve's Sci-Fi Masterpiece Analysis",
+    "thumbnail": "/images/characters/char-12.jpeg",
+    "description": "Paul Atreides embraces the Kwisatz Haderach mantle amid Fremen fervor, Giedi Prime gladiatorial monochrome, and sandworm conquest.",
+    "contentType": "article",
+    "tags": [
+      "Sci-Fi",
+      "Blockbuster",
+      "Epic Fantasy"
+    ],
+    "date": "2024-03-12",
+    "popularity": 98,
+    "featured": true,
+    "rating": 4.9,
+    "franchise": "Dune"
+  },
+  {
+    "id": "movies-3",
+    "categoryId": "movies",
+    "title": "The Batman: Gotham Noir Cinematic Production Gallery",
+    "thumbnail": "/images/characters/char-13.jpg",
+    "description": "Greig Fraser's atmospheric cinematography captures rain-soaked asphalt, amber lens flares, and the brooding Batmobile ignition.",
+    "contentType": "gallery",
+    "tags": [
+      "Superhero",
+      "Psychological"
+    ],
+    "date": "2024-01-18",
+    "popularity": 92,
+    "featured": false,
+    "galleryImages": [
+      "/images/characters/char-13.jpg",
+      "/images/categories/movies-cover.jpg",
+      "/images/characters/char-12.jpeg"
+    ],
+    "franchise": "Batman"
+  },
+  {
+    "id": "movies-4",
+    "categoryId": "movies",
+    "title": "Oppenheimer: Can You Hear The Music - Ludwig Göransson Score",
+    "thumbnail": "/images/characters/char-15.jpg",
+    "description": "Oscillating tempo strings and atomic accelerations capturing quantum theory and the terrifying beauty of scientific breakthrough.",
+    "contentType": "audio",
+    "tags": [
+      "Psychological",
+      "Blockbuster"
+    ],
+    "date": "2024-02-05",
+    "popularity": 96,
+    "featured": false,
+    "audioUrl": "https://assets.mixkit.co/music/preview/mixkit-cinematic-mystery-suspense-hum-2852.mp3",
+    "audioArtist": "Ludwig Göransson",
+    "franchise": "Oppenheimer"
+  },
+  {
+    "id": "movies-5",
+    "categoryId": "movies",
+    "title": "Deadpool & Wolverine: The MCU Multiverse Savior Phenomenon",
+    "thumbnail": "/images/characters/char-27.jpg",
+    "description": "Ryan Reynolds and Hugh Jackman team up to rescue the Sacred Timeline with R-rated irreverence and nostalgic cameos.",
+    "contentType": "releases",
+    "tags": [
+      "Superhero",
+      "Blockbuster"
+    ],
+    "date": "2024-07-26",
+    "popularity": 97,
+    "featured": true,
+    "mediaUrl": "https://www.youtube.com/embed/73_1biulkYk",
+    "franchise": "Deadpool"
+  }
+]
