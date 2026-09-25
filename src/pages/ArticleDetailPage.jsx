@@ -7,7 +7,6 @@ import {
   User,
   Bookmark,
   Share2,
-  ArrowLeft,
   Quote,
   Sparkles,
   ChevronRight

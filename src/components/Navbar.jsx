@@ -23,8 +23,7 @@ import {
   Mail,
   ChevronDown,
   Sun,
-  Moon,
-  ArrowLeft
+  Moon
 } from 'lucide-react';
 
 const categoryIconMap = {
@@ -42,7 +41,6 @@ export const Navbar = () => {
     currentView,
     activeCategoryId,
     navigateTo,
-    goBack,
     categories,
     bookmarks,
     setIsAuthOpen,
@@ -128,19 +126,7 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-3 sm:px-6">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <div className="flex items-center gap-2 sm:gap-3 min-w-0">
-            {currentView !== 'home' && (
-              <button
-                type="button"
-                onClick={goBack}
-                className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-slate-100 dark:bg-white/5 hover:bg-slate-200 dark:hover:bg-white/10 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-white/10 text-xs font-bold transition-all transform hover:-translate-x-0.5 shadow-xs flex-shrink-0 cursor-pointer"
-                title="Go back to previous page"
-              >
-                <ArrowLeft className="w-3.5 h-3.5 text-rose-500 dark:text-purple-400" />
-                <span className="hidden sm:inline">Back</span>
-              </button>
-            )}
-
+          <div className="flex items-center gap-3 min-w-0">
             <button
               onClick={() => navigateTo('home')}
               className="flex items-center gap-2.5 text-left group focus:outline-none min-w-0"
