@@ -272,11 +272,25 @@ export const Navbar = () => {
 
           {/* Right Action Icons */}
           <div className="flex items-center gap-1.5 sm:gap-3 flex-shrink-0">
-            {/* Bright Light / Dark Neon Mode Toggle */}
+            {/* Bright Light / Dark Neon Mode Toggle (Desktop / System View - Unaltered) */}
             <button
               onClick={toggleTheme}
               className="hidden sm:block p-2 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-white/10 text-slate-700 dark:text-amber-300 hover:bg-slate-200 dark:hover:bg-white/10 transition-all shadow-sm"
               title={themeMode === 'light' ? 'Switch to Neon Dark Mode' : 'Switch to Radiant Cultural Light Mode'}
+            >
+              {themeMode === 'light' ? (
+                <Moon className="w-4 h-4 text-purple-600" />
+              ) : (
+                <Sun className="w-4 h-4 text-amber-400 animate-spin" style={{ animationDuration: '12s' }} />
+              )}
+            </button>
+
+            {/* Mobile View Theme Toggle (Visible only on mobile screens < sm, zero effect on system view) */}
+            <button
+              onClick={toggleTheme}
+              className="sm:hidden p-2 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-white/10 text-slate-700 dark:text-amber-300 hover:bg-slate-200 dark:hover:bg-white/10 transition-all shadow-sm"
+              title={themeMode === 'light' ? 'Switch to Neon Dark Mode' : 'Switch to Radiant Cultural Light Mode'}
+              aria-label="Toggle dark and light theme"
             >
               {themeMode === 'light' ? (
                 <Moon className="w-4 h-4 text-purple-600" />
@@ -386,6 +400,24 @@ export const Navbar = () => {
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200 dark:border-white/5">
             <RealTimeClock compact={true} />
             <VisitorCounter compact={true} />
+          </div>
+
+          {/* Mobile Drawer Theme Mode Switcher */}
+          <div className="sm:hidden flex items-center justify-between p-2.5 rounded-xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200 dark:border-white/5">
+            <span className="text-xs font-semibold text-slate-700 dark:text-slate-200 flex items-center gap-2">
+              {themeMode === 'light' ? (
+                <Sun className="w-4 h-4 text-amber-500" />
+              ) : (
+                <Moon className="w-4 h-4 text-purple-400" />
+              )}
+              <span>{themeMode === 'light' ? 'Light Mode Active' : 'Dark Mode Active'}</span>
+            </span>
+            <button
+              onClick={toggleTheme}
+              className="px-3 py-1.5 rounded-lg text-xs font-bold bg-white dark:bg-zinc-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-zinc-700 shadow-xs hover:border-purple-400 transition-colors"
+            >
+              Switch to {themeMode === 'light' ? 'Dark Mode' : 'Light Mode'}
+            </button>
           </div>
 
           <div className="grid grid-cols-2 gap-2 pt-1">
