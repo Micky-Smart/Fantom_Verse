@@ -88,5 +88,41 @@
     "featured": true,
     "mediaUrl": "https://www.youtube.com/embed/QdBZY2fkU-0",
     "franchise": "GTA"
+  },
+  {
+    "id": "gaming-7",
+    "categoryId": "gaming",
+    "title": "Elden Ring: Shadow of the Erdtree Boss & Environment Gallery",
+    "thumbnail": "/images/gaming/elden-ring-shadow.jpg",
+    "description": "Dark fantasy landscapes, Messmer the Impaler's throne room, and gold-hued Scadutree vista concept paintings.",
+    "contentType": "gallery",
+    "tags": ["Souls-like", "Action RPG", "Open World"],
+    "date": "2024-06-25",
+    "popularity": 99,
+    "featured": true,
+    "galleryImages": [
+      "/images/gaming/elden-ring-shadow.jpg",
+      "/images/merch/elden-ring-hoodie.jpg",
+      "/images/categories/gaming-cover.jpg"
+    ],
+    "franchise": "Elden Ring"
+  },
+  {
+    "id": "gaming-8",
+    "categoryId": "gaming",
+    "title": "Genshin Impact: Teyvat Landscapes & Natlan Character Art",
+    "thumbnail": "/images/gaming/genshin-impact.png",
+    "description": "Official HoYoverse panoramic landscape paintings, Archon portraits, and vibrant Pyro nation aesthetic renders.",
+    "contentType": "gallery",
+    "tags": ["Action RPG", "Gacha", "Open World"],
+    "date": "2024-05-30",
+    "popularity": 96,
+    "featured": false,
+    "galleryImages": [
+      "/images/gaming/genshin-impact.png",
+      "/images/merch/genshin-xiao-merch.jpg",
+      "/images/merch/raiden-display-merch.jpg"
+    ],
+    "franchise": "Genshin Impact"
   }
 ]

@@ -21,9 +21,15 @@ export const LightboxModal = () => {
   const currentImg = lightbox.images[lightbox.currentIndex];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-xl animate-in fade-in duration-200">
+    <div
+      onClick={closeLightbox}
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-xl animate-backdrop-fade cursor-pointer"
+    >
       {/* Top Header */}
-      <div className="absolute top-0 inset-x-0 p-4 sm:p-6 flex items-center justify-between z-10 bg-gradient-to-b from-black/80 to-transparent">
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="absolute top-0 inset-x-0 p-4 sm:p-6 flex items-center justify-between z-10 bg-gradient-to-b from-black/80 to-transparent cursor-default"
+      >
         <div className="flex items-center gap-3">
           <span className="px-2.5 py-1 rounded bg-purple-600/30 border border-purple-500/40 text-xs font-mono text-purple-300">
             {lightbox.currentIndex + 1} / {lightbox.images.length}
@@ -44,7 +50,10 @@ export const LightboxModal = () => {
       </div>
 
       {/* Main Image Display with Carousel controls */}
-      <div className="relative w-full h-full max-h-[85vh] max-w-6xl mx-auto flex items-center justify-center p-4 sm:p-12">
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="relative w-full h-full max-h-[85vh] max-w-6xl mx-auto flex items-center justify-center p-4 sm:p-12 cursor-default animate-modal-pop"
+      >
         <img
           src={currentImg}
           alt={lightbox.title || 'Gallery image'}
@@ -74,7 +83,10 @@ export const LightboxModal = () => {
 
       {/* Bottom Thumbnail Strip */}
       {lightbox.images.length > 1 && (
-        <div className="absolute bottom-4 inset-x-0 flex items-center justify-center gap-2 px-4 overflow-x-auto py-2">
+        <div
+          onClick={(e) => e.stopPropagation()}
+          className="absolute bottom-4 inset-x-0 flex items-center justify-center gap-2 px-4 overflow-x-auto py-2 cursor-default"
+        >
           {lightbox.images.map((img, idx) => (
             <button
               key={idx}

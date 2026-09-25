@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { useFandom } from '../context/FandomContext';
 import { Breadcrumbs } from '../components/Breadcrumbs';
-import { Film, Play, Filter, Calendar, Clock, Bookmark, Sparkles, Search } from 'lucide-react';
+import { Film, Play, Filter, Calendar, Clock, Bookmark, Sparkles, Search, X } from 'lucide-react';
 
 export const TrailersPage = () => {
   const { trailers, categories, setActiveVideo, isBookmarked, toggleBookmark, navigateTo } = useFandom();
@@ -47,26 +47,42 @@ export const TrailersPage = () => {
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-xl">
               High-definition official trailers, world premieres, and upcoming release teasers across all 7 fandom universes.
             </p>
-            <div className="relative mt-3 w-full max-w-2xl">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-red-500 dark:text-red-400" />
+          </div>
+        </div>
+
+        {/* Filter Controls Bar (Search, Release Status & Category Filter) */}
+        <div className="p-4 sm:p-5 rounded-3xl bg-white dark:bg-zinc-900 border border-slate-200/90 dark:border-zinc-800 shadow-sm dark:shadow-lg space-y-4">
+          {/* Search Bar: First element inside the box, styled a little wider with responsive layout */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3.5 border-b border-slate-100 dark:border-white/5">
+            <div className="relative w-full max-w-2xl">
+              <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-red-500 dark:text-red-400 pointer-events-none" />
               <input
                 type="search"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search trailers, franchises, or categories..."
                 aria-label="Search trailers"
-                className="w-full rounded-xl border border-slate-200 bg-white/90 py-2.5 pl-9 pr-4 text-sm text-slate-900 shadow-sm outline-none transition-colors placeholder:text-slate-400 focus:border-red-400 dark:border-zinc-700 dark:bg-zinc-900/90 dark:text-white dark:placeholder:text-zinc-500 dark:focus:border-red-500"
+                className="w-full rounded-2xl border border-slate-200 dark:border-zinc-700/80 bg-slate-50/90 dark:bg-zinc-950/80 py-2.5 pl-10 pr-10 text-xs sm:text-sm text-slate-900 dark:text-white shadow-inner focus:border-red-500 dark:focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/20 dark:focus:ring-red-500/20 transition-all placeholder:text-slate-400 dark:placeholder:text-zinc-500"
               />
+              {searchQuery && (
+                <button
+                  type="button"
+                  onClick={() => setSearchQuery('')}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 rounded-full hover:bg-slate-200 dark:hover:bg-zinc-800 transition-colors"
+                  title="Clear search"
+                >
+                  <X className="w-3.5 h-3.5" />
+                </button>
+              )}
+            </div>
+
+            <div className="flex items-center gap-2 self-end sm:self-center flex-shrink-0">
+              <span className="text-xs font-mono text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-zinc-950 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-zinc-800 shadow-sm">
+                Showing {filteredTrailers.length} of {trailers.length} trailers
+              </span>
             </div>
           </div>
 
-          <span className="text-xs font-mono text-slate-700 dark:text-slate-400 bg-slate-100 dark:bg-zinc-900 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-zinc-800">
-            Showing {filteredTrailers.length} of {trailers.length} trailers
-          </span>
-        </div>
-
-        {/* Filter Controls Bar (Category & Release Status Filter) */}
-        <div className="p-4 rounded-2xl bg-white dark:bg-zinc-900 border border-slate-200/90 dark:border-zinc-800 shadow-md dark:shadow-lg space-y-3">
           {/* Release Status Filter */}
           <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
             <span className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mr-2 flex-shrink-0">
@@ -123,7 +139,22 @@ export const TrailersPage = () => {
         </div>
 
         {/* Trailers Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {filteredTrailers.length === 0 ? (
+          <div className="text-center py-16 bg-white dark:bg-zinc-900 rounded-2xl border border-slate-200/90 dark:border-zinc-800 p-8 text-slate-600 dark:text-zinc-400 shadow-sm">
+            <p className="text-base font-semibold">No trailers match your search or filter criteria.</p>
+            <button
+              onClick={() => {
+                setSearchQuery('');
+                setSelectedCategory('all');
+                setSelectedStatus('all');
+              }}
+              className="mt-3 px-4 py-2 rounded-xl bg-red-600 text-white text-xs font-bold hover:bg-red-500 shadow-md"
+            >
+              Reset Filters & Search
+            </button>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredTrailers.map((trl) => {
             const isUpcoming = trl.releaseStatus === 'upcoming';
             const bookmarked = isBookmarked(trl.id);
@@ -225,6 +256,7 @@ export const TrailersPage = () => {
             );
           })}
         </div>
+        )}
       </section>
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useFandom } from '../context/FandomContext';
 import { X, Trash2, Plus, Minus, ShoppingBag, CheckCircle, ArrowRight, ShieldCheck } from 'lucide-react';
 import confetti from 'canvas-confetti';
@@ -19,6 +19,17 @@ export const CartDrawer = () => {
 
   const [checkoutComplete, setCheckoutComplete] = useState(false);
 
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' && isCartOpen) {
+        setIsCartOpen(false);
+        setCheckoutComplete(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isCartOpen, setIsCartOpen]);
+
   if (!isCartOpen) return null;
 
   const handleSimulateCheckout = () => {
@@ -38,9 +49,18 @@ export const CartDrawer = () => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-hidden bg-black/70 backdrop-blur-sm animate-in fade-in duration-200">
+    <div
+      onClick={() => {
+        setIsCartOpen(false);
+        setCheckoutComplete(false);
+      }}
+      className="fixed inset-0 z-50 overflow-hidden bg-black/70 backdrop-blur-sm animate-backdrop-fade cursor-pointer"
+    >
       <div className="absolute inset-y-0 right-0 max-w-full flex pl-4 sm:pl-10">
-        <div className="w-[calc(100vw-1rem)] sm:w-screen max-w-md bg-white dark:bg-zinc-900 border-l border-slate-200 dark:border-zinc-800 shadow-2xl flex flex-col">
+        <div
+          onClick={(e) => e.stopPropagation()}
+          className="w-[calc(100vw-1rem)] sm:w-screen max-w-md bg-white dark:bg-zinc-900 border-l border-slate-200 dark:border-zinc-800 shadow-2xl flex flex-col cursor-default animate-drawer-right"
+        >
           {/* Header */}
           <div className="p-5 border-b border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-950/80 flex items-center justify-between">
             <div className="flex items-center gap-2.5">

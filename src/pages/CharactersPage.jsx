@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { useFandom } from '../context/FandomContext';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { CharacterCard } from '../components/CharacterCard';
-import { Users2, Search, Filter } from 'lucide-react';
+import { Users2, Search, Filter, X } from 'lucide-react';
 
 export const CharactersPage = () => {
   const { characters, categories } = useFandom();
@@ -54,26 +54,42 @@ export const CharactersPage = () => {
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-xl">
               Explore 35+ legendary heroes, demigods, idols, and anti-heroes across Anime, Gaming, Movies, TV, K-Pop, Comics, and Manga.
             </p>
-            <div className="relative mt-3 w-full max-w-2xl">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-pink-500 dark:text-pink-400" />
+          </div>
+        </div>
+
+        {/* Filter Controls (Search, Category and Franchise) */}
+        <div className="p-4 sm:p-5 rounded-3xl bg-white dark:bg-zinc-900 border border-slate-200/90 dark:border-zinc-800 shadow-sm dark:shadow-lg space-y-4">
+          {/* Search Bar: First element inside the box, styled a little wider with responsive layout */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3.5 border-b border-slate-100 dark:border-white/5">
+            <div className="relative w-full max-w-2xl">
+              <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-pink-500 dark:text-pink-400 pointer-events-none" />
               <input
                 type="search"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search characters, series, or abilities..."
                 aria-label="Search characters"
-                className="w-full rounded-xl border border-slate-200 bg-white/90 py-2.5 pl-9 pr-4 text-sm text-slate-900 shadow-sm outline-none transition-colors placeholder:text-slate-400 focus:border-pink-400 dark:border-zinc-700 dark:bg-zinc-900/90 dark:text-white dark:placeholder:text-zinc-500 dark:focus:border-pink-500"
+                className="w-full rounded-2xl border border-slate-200 dark:border-zinc-700/80 bg-slate-50/90 dark:bg-zinc-950/80 py-2.5 pl-10 pr-10 text-xs sm:text-sm text-slate-900 dark:text-white shadow-inner focus:border-pink-500 dark:focus:border-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-500/20 dark:focus:ring-pink-500/20 transition-all placeholder:text-slate-400 dark:placeholder:text-zinc-500"
               />
+              {searchQuery && (
+                <button
+                  type="button"
+                  onClick={() => setSearchQuery('')}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 rounded-full hover:bg-slate-200 dark:hover:bg-zinc-800 transition-colors"
+                  title="Clear search"
+                >
+                  <X className="w-3.5 h-3.5" />
+                </button>
+              )}
+            </div>
+
+            <div className="flex items-center gap-2 self-end sm:self-center flex-shrink-0">
+              <span className="text-xs font-mono text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-zinc-950 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-zinc-800 shadow-sm">
+                Showing {filteredCharacters.length} of {characters.length} characters
+              </span>
             </div>
           </div>
 
-          <span className="text-xs font-mono text-slate-700 dark:text-slate-400 bg-slate-100 dark:bg-zinc-900 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-zinc-800">
-            Showing {filteredCharacters.length} of {characters.length} characters
-          </span>
-        </div>
-
-        {/* Filter Controls (Filterable by category and franchise) */}
-        <div className="p-4 rounded-2xl bg-white dark:bg-zinc-900 border border-slate-200/90 dark:border-zinc-800 shadow-md dark:shadow-lg space-y-3">
           {/* Category Tabs */}
           <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-1">
             <span className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mr-2 flex-shrink-0">
@@ -81,11 +97,10 @@ export const CharactersPage = () => {
             </span>
             <button
               onClick={() => setSelectedCategory('all')}
-              className={`px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all flex-shrink-0 ${
-                selectedCategory === 'all'
+              className={`px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all flex-shrink-0 ${selectedCategory === 'all'
                   ? 'bg-pink-600 text-white shadow-md'
                   : 'bg-slate-100 dark:bg-white/5 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
-              }`}
+                }`}
             >
               All (35+)
             </button>
@@ -95,11 +110,10 @@ export const CharactersPage = () => {
                 <button
                   key={c.id}
                   onClick={() => setSelectedCategory(c.id)}
-                  className={`px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all flex-shrink-0 ${
-                    selectedCategory === c.id
+                  className={`px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all flex-shrink-0 ${selectedCategory === c.id
                       ? 'bg-pink-600 text-white shadow-md'
                       : 'bg-slate-100 dark:bg-white/5 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
-                  }`}
+                    }`}
                 >
                   {c.name} ({count})
                 </button>
@@ -138,11 +152,27 @@ export const CharactersPage = () => {
         </div>
 
         {/* Character Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
-          {filteredCharacters.map((char) => (
-            <CharacterCard key={char.id} character={char} />
-          ))}
-        </div>
+        {filteredCharacters.length === 0 ? (
+          <div className="text-center py-16 bg-white dark:bg-zinc-900 rounded-2xl border border-slate-200/90 dark:border-zinc-800 p-8 text-slate-600 dark:text-zinc-400 shadow-sm">
+            <p className="text-base font-semibold">No characters match your search or filter criteria.</p>
+            <button
+              onClick={() => {
+                setSearchQuery('');
+                setSelectedCategory('all');
+                setFranchiseFilter('');
+              }}
+              className="mt-3 px-4 py-2 rounded-xl bg-pink-600 text-white text-xs font-bold hover:bg-pink-500 shadow-md"
+            >
+              Reset Filters & Search
+            </button>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
+            {filteredCharacters.map((char) => (
+              <CharacterCard key={char.id} character={char} />
+            ))}
+          </div>
+        )}
       </section>
     </div>
   );

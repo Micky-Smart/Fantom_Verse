@@ -56,6 +56,41 @@ export const Navbar = () => {
   const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false);
   const [isNavbarHidden, setIsNavbarHidden] = useState(false);
   const lastScrollY = useRef(0);
+  const categoryDropdownRef = useRef(null);
+  const dropdownTimeoutRef = useRef(null);
+
+  const handleDropdownMouseEnter = () => {
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current);
+      dropdownTimeoutRef.current = null;
+    }
+    setIsCategoryDropdownOpen(true);
+  };
+
+  const handleDropdownMouseLeave = () => {
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current);
+    }
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setIsCategoryDropdownOpen(false);
+    }, 150);
+  };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (categoryDropdownRef.current && !categoryDropdownRef.current.contains(e.target)) {
+        setIsCategoryDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      if (dropdownTimeoutRef.current) {
+        clearTimeout(dropdownTimeoutRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -77,6 +112,9 @@ export const Navbar = () => {
   }, [isMobileMenuOpen]);
 
   const handleCategoryClick = (catId) => {
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current);
+    }
     navigateTo('category', { categoryId: catId });
     setIsMobileMenuOpen(false);
     setIsCategoryDropdownOpen(false);
@@ -133,71 +171,74 @@ export const Navbar = () => {
           <nav className="hidden xl:flex items-center gap-1">
             <button
               onClick={() => navigateTo('home')}
-              className={`px-3 py-1.5 rounded-lg text-sm font-semibold transition-all ${
-                currentView === 'home'
-                  ? 'bg-rose-50 dark:bg-purple-600/20 text-rose-700 dark:text-purple-300 border border-rose-200 dark:border-purple-500/40 shadow-sm'
-                  : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5'
-              }`}
+              className={`px-3 py-1.5 rounded-lg text-sm font-semibold transition-all ${currentView === 'home'
+                ? 'bg-rose-50 dark:bg-purple-600/20 text-rose-700 dark:text-purple-300 border border-rose-200 dark:border-purple-500/40 shadow-sm'
+                : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5'
+                }`}
             >
               Home
             </button>
 
             {/* Categories Dropdown with Cultural Differentiation */}
-            <div className="relative">
+            <div
+              ref={categoryDropdownRef}
+              onMouseEnter={handleDropdownMouseEnter}
+              onMouseLeave={handleDropdownMouseLeave}
+              className="relative"
+            >
               <button
-                onClick={() => setIsCategoryDropdownOpen(!isCategoryDropdownOpen)}
-                onMouseEnter={() => setIsCategoryDropdownOpen(true)}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold transition-all ${
-                  currentView === 'category'
-                    ? 'bg-rose-50 dark:bg-purple-600/20 text-rose-700 dark:text-purple-300 border border-rose-200 dark:border-purple-500/40'
-                    : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5'
-                }`}
+                onClick={() => setIsCategoryDropdownOpen(prev => !prev)}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold transition-all ${currentView === 'category'
+                  ? 'bg-rose-50 dark:bg-purple-600/20 text-rose-700 dark:text-purple-300 border border-rose-200 dark:border-purple-500/40'
+                  : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5'
+                  }`}
+                aria-expanded={isCategoryDropdownOpen}
               >
                 <span>Fandom Hubs</span>
-                <ChevronDown className="w-4 h-4 text-rose-500 dark:text-purple-400" />
+                <ChevronDown className={`w-4 h-4 text-rose-500 dark:text-purple-400 transition-transform duration-200 ${isCategoryDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
 
               {isCategoryDropdownOpen && (
                 <div
-                  onMouseLeave={() => setIsCategoryDropdownOpen(false)}
-                  className="absolute top-full left-0 mt-1 w-80 rounded-2xl bg-white dark:bg-zinc-900 border border-slate-200/90 dark:border-zinc-800 shadow-2xl p-2.5 z-50 backdrop-blur-xl animate-in fade-in slide-in-from-top-2"
+                  className="absolute top-full left-0 pt-1.5 w-80 z-50 animate-in fade-in slide-in-from-top-2 duration-150"
                 >
-                  <div className="text-[10px] font-bold uppercase tracking-widest text-slate-400 px-3 py-1.5 border-b border-slate-100 dark:border-white/5 flex items-center justify-between">
-                    <span>Distinct Cultural Universes</span>
-                    <span className="text-[9px] font-mono text-purple-600 dark:text-purple-400">7 CULTURES</span>
-                  </div>
-                  <div className="grid grid-cols-1 gap-1 pt-1.5">
-                    {categories.map((cat) => {
-                      const IconComp = categoryIconMap[cat.id] || Sparkles;
-                      const isActive = currentView === 'category' && activeCategoryId === cat.id;
-                      return (
-                        <button
-                          key={cat.id}
-                          onClick={() => handleCategoryClick(cat.id)}
-                          className={`flex items-center gap-3 px-3 py-2 rounded-xl text-sm text-left transition-all ${
-                            isActive
+                  <div className="rounded-2xl bg-white dark:bg-zinc-900 border border-slate-200/90 dark:border-zinc-800 shadow-2xl p-2.5 backdrop-blur-xl">
+                    <div className="text-[10px] font-bold uppercase tracking-widest text-slate-400 px-3 py-1.5 border-b border-slate-100 dark:border-white/5 flex items-center justify-between">
+                      <span>Distinct Cultural Universes</span>
+                      <span className="text-[9px] font-mono text-purple-600 dark:text-purple-400">7 CULTURES</span>
+                    </div>
+                    <div className="grid grid-cols-1 gap-1 pt-1.5">
+                      {categories.map((cat) => {
+                        const IconComp = categoryIconMap[cat.id] || Sparkles;
+                        const isActive = currentView === 'category' && activeCategoryId === cat.id;
+                        return (
+                          <button
+                            key={cat.id}
+                            onClick={() => handleCategoryClick(cat.id)}
+                            className={`flex items-center gap-3 px-3 py-2 rounded-xl text-sm text-left transition-all ${isActive
                               ? 'bg-slate-100 dark:bg-purple-600/30 font-bold shadow-sm'
                               : 'hover:bg-slate-50 dark:hover:bg-white/5'
-                          }`}
-                        >
-                          <div
-                            className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-base shadow-sm"
-                            style={{ backgroundColor: `${cat.color}15`, color: cat.color }}
+                              }`}
                           >
-                            <span>{cat.cultureFlag || <IconComp className="w-4 h-4" />}</span>
-                          </div>
-                          <div className="flex flex-col min-w-0">
-                            <span className="leading-tight font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
-                              <span>{cat.name}</span>
-                              <span className="text-[10px] font-medium text-slate-400 truncate">({cat.culturalAura || cat.subTags[0]})</span>
-                            </span>
-                            <span className="text-[10px] text-slate-500 dark:text-slate-400 truncate">
-                              {cat.culture || cat.tagline}
-                            </span>
-                          </div>
-                        </button>
-                      );
-                    })}
+                            <div
+                              className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-base shadow-sm"
+                              style={{ backgroundColor: `${cat.color}15`, color: cat.color }}
+                            >
+                              <span>{cat.cultureFlag || <IconComp className="w-4 h-4" />}</span>
+                            </div>
+                            <div className="flex flex-col min-w-0">
+                              <span className="leading-tight font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
+                                <span>{cat.name}</span>
+                                <span className="text-[10px] font-medium text-slate-400 truncate">({cat.culturalAura || cat.subTags[0]})</span>
+                              </span>
+                              <span className="text-[10px] text-slate-500 dark:text-slate-400 truncate">
+                                {cat.culture || cat.tagline}
+                              </span>
+                            </div>
+                          </button>
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
               )}
@@ -206,44 +247,40 @@ export const Navbar = () => {
             {/* Cross-Category Features Nav */}
             <button
               onClick={() => navigateTo('trailers')}
-              className={`px-3 py-1.5 rounded-lg text-sm font-semibold transition-all ${
-                currentView === 'trailers'
-                  ? 'bg-rose-50 dark:bg-purple-600/20 text-rose-700 dark:text-purple-300 border border-rose-200 dark:border-purple-500/40'
-                  : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5'
-              }`}
+              className={`px-3 py-1.5 rounded-lg text-sm font-semibold transition-all ${currentView === 'trailers'
+                ? 'bg-rose-50 dark:bg-purple-600/20 text-rose-700 dark:text-purple-300 border border-rose-200 dark:border-purple-500/40'
+                : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5'
+                }`}
             >
               Trailers
             </button>
 
             <button
               onClick={() => navigateTo('characters')}
-              className={`px-3 py-1.5 rounded-lg text-sm font-semibold transition-all ${
-                currentView === 'characters'
-                  ? 'bg-rose-50 dark:bg-purple-600/20 text-rose-700 dark:text-purple-300 border border-rose-200 dark:border-purple-500/40'
-                  : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5'
-              }`}
+              className={`px-3 py-1.5 rounded-lg text-sm font-semibold transition-all ${currentView === 'characters'
+                ? 'bg-rose-50 dark:bg-purple-600/20 text-rose-700 dark:text-purple-300 border border-rose-200 dark:border-purple-500/40'
+                : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5'
+                }`}
             >
               Characters
             </button>
 
             <button
               onClick={() => navigateTo('events')}
-              className={`px-3 py-1.5 rounded-lg text-sm font-semibold transition-all ${
-                currentView === 'events'
-                  ? 'bg-rose-50 dark:bg-purple-600/20 text-rose-700 dark:text-purple-300 border border-rose-200 dark:border-purple-500/40'
-                  : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5'
-              }`}
+              className={`px-3 py-1.5 rounded-lg text-sm font-semibold transition-all ${currentView === 'events'
+                ? 'bg-rose-50 dark:bg-purple-600/20 text-rose-700 dark:text-purple-300 border border-rose-200 dark:border-purple-500/40'
+                : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5'
+                }`}
             >
               Events
             </button>
 
             <button
               onClick={() => navigateTo('merchandise')}
-              className={`px-3 py-1.5 rounded-lg text-sm font-semibold transition-all flex items-center gap-1.5 ${
-                currentView === 'merchandise'
-                  ? 'bg-amber-50 dark:bg-amber-600/20 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-500/40 shadow-sm'
-                  : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5'
-              }`}
+              className={`px-3 py-1.5 rounded-lg text-sm font-semibold transition-all flex items-center gap-1.5 ${currentView === 'merchandise'
+                ? 'bg-amber-50 dark:bg-amber-600/20 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-500/40 shadow-sm'
+                : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5'
+                }`}
             >
               <span>Marketplace</span>
             </button>
@@ -276,11 +313,10 @@ export const Navbar = () => {
             {/* Bookmarks Icon */}
             <button
               onClick={() => navigateTo('bookmarks')}
-              className={`relative p-2 sm:p-2.5 rounded-xl border transition-all ${
-                currentView === 'bookmarks'
-                  ? 'bg-rose-100 dark:bg-pink-600/20 border-rose-300 dark:border-pink-500/40 text-rose-600 dark:text-pink-300'
-                  : 'bg-slate-100 dark:bg-slate-900/80 border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-300 hover:text-rose-600 dark:hover:text-white'
-              }`}
+              className={`relative p-2 sm:p-2.5 rounded-xl border transition-all ${currentView === 'bookmarks'
+                ? 'bg-rose-100 dark:bg-pink-600/20 border-rose-300 dark:border-pink-500/40 text-rose-600 dark:text-pink-300'
+                : 'bg-slate-100 dark:bg-slate-900/80 border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-300 hover:text-rose-600 dark:hover:text-white'
+                }`}
               title="Saved Bookmarks & Notes"
             >
               <Bookmark className="w-4 h-4" />

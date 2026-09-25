@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useFandom } from '../context/FandomContext';
 import { X, ExternalLink } from 'lucide-react';
 
 export const MediaViewerModal = () => {
   const { activeVideo, setActiveVideo } = useFandom();
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' && activeVideo) {
+        setActiveVideo(null);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [activeVideo, setActiveVideo]);
 
   if (!activeVideo) return null;
 
@@ -16,8 +26,14 @@ export const MediaViewerModal = () => {
     : null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/90 backdrop-blur-md animate-in fade-in duration-200">
-      <div className="relative w-full max-w-4xl bg-zinc-900 rounded-2xl border border-zinc-800 shadow-2xl overflow-hidden">
+    <div
+      onClick={() => setActiveVideo(null)}
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/90 backdrop-blur-md animate-backdrop-fade cursor-pointer"
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="relative w-full max-w-4xl bg-zinc-900 rounded-2xl border border-zinc-800 shadow-2xl overflow-hidden cursor-default animate-modal-pop"
+      >
         {/* Header */}
         <div className="flex items-center justify-between px-5 py-3.5 border-b border-zinc-800 bg-zinc-950">
           <div className="flex items-center gap-2">

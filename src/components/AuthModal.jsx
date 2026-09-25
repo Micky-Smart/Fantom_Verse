@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useFandom } from '../context/FandomContext';
 import { X, Sparkles, User, Mail, Lock, ShieldCheck } from 'lucide-react';
 
@@ -8,6 +8,15 @@ export const AuthModal = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (!isAuthOpen) return;
+      if (e.key === 'Escape') setIsAuthOpen(false);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isAuthOpen, setIsAuthOpen]);
+
   if (!isAuthOpen) return null;
 
   const handleSubmit = (e) => {
@@ -16,8 +25,14 @@ export const AuthModal = () => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
-      <div className="relative w-full max-w-md bg-white dark:bg-zinc-900 rounded-2xl border border-slate-200/90 dark:border-zinc-800 shadow-2xl p-6 overflow-hidden">
+    <div
+      onClick={() => setIsAuthOpen(false)}
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-backdrop-fade cursor-pointer"
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="relative w-full max-w-md bg-white dark:bg-zinc-900 rounded-2xl border border-slate-200/90 dark:border-zinc-800 shadow-2xl p-6 overflow-hidden cursor-default animate-modal-pop"
+      >
         {/* Glow ambient background */}
         <div className="absolute -top-20 -right-20 w-48 h-48 bg-purple-600/10 dark:bg-purple-600/20 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute -bottom-20 -left-20 w-48 h-48 bg-pink-600/10 dark:bg-pink-600/20 rounded-full blur-3xl pointer-events-none" />
@@ -126,7 +141,7 @@ export const AuthModal = () => {
             type="submit"
             className="w-full mt-2 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-500 hover:from-purple-500 hover:to-pink-500 text-white font-bold text-xs shadow-lg shadow-purple-900/40 transition-all"
           >
-            {authMode === 'login' ? 'Simulate Sign In' : 'Simulate Create Account'}
+            {authMode === 'login' ? 'Login' : 'Create Account'}
           </button>
         </form>
       </div>

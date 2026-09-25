@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { useFandom } from '../context/FandomContext';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { MerchandiseCard } from '../components/MerchandiseCard';
-import { ShoppingBag, Filter, ShieldCheck, ArrowUpDown, Search } from 'lucide-react';
+import { ShoppingBag, Filter, ShieldCheck, ArrowUpDown, Search, X } from 'lucide-react';
 
 export const MerchandisePage = () => {
   const { merchandise, categories, setIsCartOpen, cartCount } = useFandom();
@@ -75,17 +75,6 @@ export const MerchandisePage = () => {
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-xl">
               Browse apparel, figures, plushies, lightsticks, and rare art replicas. Add items to your temporary shopping cart with live total calculations.
             </p>
-            <div className="relative mt-3 w-full max-w-2xl">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-amber-600 dark:text-amber-400" />
-              <input
-                type="search"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search merchandise, franchises, or item types..."
-                aria-label="Search marketplace"
-                className="w-full rounded-xl border border-slate-200 bg-white/90 py-2.5 pl-9 pr-4 text-sm text-slate-900 shadow-sm outline-none transition-colors placeholder:text-slate-400 focus:border-amber-400 dark:border-zinc-700 dark:bg-zinc-900/90 dark:text-white dark:placeholder:text-zinc-500 dark:focus:border-amber-500"
-              />
-            </div>
           </div>
 
           <div className="flex items-center gap-3">
@@ -108,7 +97,38 @@ export const MerchandisePage = () => {
         </div>
 
         {/* Filters Bar */}
-        <div className="p-4 rounded-2xl bg-white dark:bg-zinc-900 border border-slate-200/90 dark:border-zinc-800 shadow-md dark:shadow-lg space-y-3">
+        <div className="p-4 sm:p-5 rounded-3xl bg-white dark:bg-zinc-900 border border-slate-200/90 dark:border-zinc-800 shadow-sm dark:shadow-lg space-y-4">
+          {/* Search Bar: First element inside the box, styled a little wider with responsive layout */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3.5 border-b border-slate-100 dark:border-white/5">
+            <div className="relative w-full max-w-2xl">
+              <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-amber-600 dark:text-amber-400 pointer-events-none" />
+              <input
+                type="search"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search merchandise, franchises, or item types..."
+                aria-label="Search marketplace"
+                className="w-full rounded-2xl border border-slate-200 dark:border-zinc-700/80 bg-slate-50/90 dark:bg-zinc-950/80 py-2.5 pl-10 pr-10 text-xs sm:text-sm text-slate-900 dark:text-white shadow-inner focus:border-amber-500 dark:focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/20 dark:focus:ring-amber-500/20 transition-all placeholder:text-slate-400 dark:placeholder:text-zinc-500"
+              />
+              {searchQuery && (
+                <button
+                  type="button"
+                  onClick={() => setSearchQuery('')}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 rounded-full hover:bg-slate-200 dark:hover:bg-zinc-800 transition-colors"
+                  title="Clear search"
+                >
+                  <X className="w-3.5 h-3.5" />
+                </button>
+              )}
+            </div>
+
+            <div className="flex items-center gap-2 self-end sm:self-center flex-shrink-0">
+              <span className="text-xs font-mono text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-zinc-950 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-zinc-800 shadow-sm">
+                Showing {filteredMerchandise.length} of {merchandise.length} items
+              </span>
+            </div>
+          </div>
+
           {/* Category Tabs */}
           <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-1">
             <span className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mr-2 flex-shrink-0">
@@ -188,11 +208,28 @@ export const MerchandisePage = () => {
         </div>
 
         {/* Merchandise Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {filteredMerchandise.map(item => (
-            <MerchandiseCard key={item.id} item={item} />
-          ))}
-        </div>
+        {filteredMerchandise.length === 0 ? (
+          <div className="text-center py-16 bg-white dark:bg-zinc-900 rounded-2xl border border-slate-200/90 dark:border-zinc-800 p-8 text-slate-600 dark:text-zinc-400 shadow-sm">
+            <p className="text-base font-semibold">No merchandise matches your search or filter criteria.</p>
+            <button
+              onClick={() => {
+                setSearchQuery('');
+                setSelectedCategory('all');
+                setSelectedItemType('all');
+                setSortBy('featured');
+              }}
+              className="mt-3 px-4 py-2 rounded-xl bg-amber-600 text-white text-xs font-bold hover:bg-amber-500 shadow-md"
+            >
+              Reset Filters & Search
+            </button>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {filteredMerchandise.map(item => (
+              <MerchandiseCard key={item.id} item={item} />
+            ))}
+          </div>
+        )}
       </section>
     </div>
   );

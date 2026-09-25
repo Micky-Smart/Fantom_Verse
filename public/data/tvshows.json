@@ -88,5 +88,47 @@
     "audioUrl": "https://assets.mixkit.co/music/preview/mixkit-piano-reflections-22.mp3",
     "audioArtist": "Theodore Shapiro",
     "franchise": "Severance"
+  },
+  {
+    "id": "tvshows-6",
+    "categoryId": "tvshows",
+    "title": "Arcane: Zaun & Piltover Matte Painting Art Gallery",
+    "thumbnail": "/images/characters/char-17.jpg",
+    "description": "Fortiche Studios' signature brush strokes, neon underworld lighting, and steampunk Hextech invention design drafts.",
+    "contentType": "gallery",
+    "tags": [
+      "Animation",
+      "High Fantasy"
+    ],
+    "date": "2024-05-14",
+    "popularity": 99,
+    "featured": true,
+    "galleryImages": [
+      "/images/characters/char-17.jpg",
+      "/images/merch/arcane-jinx-lamp.png",
+      "/images/merch/arcane-ekko-hoodie.jpg"
+    ],
+    "franchise": "Arcane"
+  },
+  {
+    "id": "tvshows-7",
+    "categoryId": "tvshows",
+    "title": "Stranger Things: Upside Down & Vecna World Concept Archive",
+    "thumbnail": "/images/characters/char-16.jpg",
+    "description": "Atmospheric concept illustrations of the Creel House, mind lair red skies, and retro 80s Hawkins set photography.",
+    "contentType": "gallery",
+    "tags": [
+      "Supernatural",
+      "Mystery"
+    ],
+    "date": "2024-04-22",
+    "popularity": 96,
+    "featured": false,
+    "galleryImages": [
+      "/images/characters/char-16.jpg",
+      "/images/merch/hawkins-varsity.jpg",
+      "/images/merch/hellfire-tee.jpg"
+    ],
+    "franchise": "Stranger Things"
   }
 ]

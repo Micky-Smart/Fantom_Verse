@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useFandom } from '../context/FandomContext';
 import { Sparkles, X, Check, ArrowRight, RotateCcw, Trophy, Award } from 'lucide-react';
 import confetti from 'canvas-confetti';
@@ -96,6 +96,16 @@ export const FandomQuizModal = ({ isOpen, onClose }) => {
   const [answers, setAnswers] = useState([]);
   const [result, setResult] = useState(null);
 
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' && isOpen) {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   const handleSelectOption = (cat) => {
@@ -139,8 +149,14 @@ export const FandomQuizModal = ({ isOpen, onClose }) => {
   const currentQ = quizQuestions[currentQIndex];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200">
-      <div className="relative w-full max-w-lg bg-white dark:bg-zinc-900 rounded-3xl border border-slate-200/90 dark:border-zinc-800 shadow-2xl p-6 sm:p-8 overflow-hidden">
+    <div
+      onClick={onClose}
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md animate-backdrop-fade cursor-pointer overflow-y-auto"
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="relative w-full max-w-lg h-auto max-h-[90vh] my-auto bg-white dark:bg-zinc-900 rounded-3xl border border-slate-200/90 dark:border-zinc-800 shadow-2xl p-5 sm:p-8 overflow-y-auto cursor-default animate-modal-pop"
+      >
         {/* Glow ambient */}
         <div className="absolute -top-20 -right-20 w-48 h-48 bg-purple-600/10 dark:bg-purple-600/20 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute -bottom-20 -left-20 w-48 h-48 bg-pink-600/10 dark:bg-pink-600/20 rounded-full blur-3xl pointer-events-none" />

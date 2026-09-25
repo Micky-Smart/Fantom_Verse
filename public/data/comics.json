@@ -89,5 +89,49 @@
     "featured": true,
     "mediaUrl": "https://www.youtube.com/embed/yFhsfQx0k-U",
     "franchise": "Spider-Man"
+  },
+  {
+    "id": "comics-6",
+    "categoryId": "comics",
+    "title": "Spider-Man: Earth-6160 & Classic Comic Variant Covers",
+    "thumbnail": "/images/characters/char-26.png",
+    "description": "Collector variant covers by Marco Checchetto, Todd McFarlane homage splash pages, and dynamic web-slinging panels.",
+    "contentType": "gallery",
+    "tags": [
+      "Marvel",
+      "Multiverse",
+      "Graphic Novel"
+    ],
+    "date": "2024-04-08",
+    "popularity": 97,
+    "featured": true,
+    "galleryImages": [
+      "/images/characters/char-26.png",
+      "/images/merch/spiderman-comic-poster.png",
+      "/images/characters/char-27.jpg"
+    ],
+    "franchise": "Spider-Man"
+  },
+  {
+    "id": "comics-7",
+    "categoryId": "comics",
+    "title": "Batman: Greg Capullo & Jim Lee Detective Comics Masterplates",
+    "thumbnail": "/images/characters/char-13.jpg",
+    "description": "Iconic high-contrast inks, Court of Owls labyrinth spreads, and gargoyle silhouette splash art.",
+    "contentType": "gallery",
+    "tags": [
+      "DC",
+      "Dark Knight",
+      "Graphic Novel"
+    ],
+    "date": "2024-03-30",
+    "popularity": 96,
+    "featured": false,
+    "galleryImages": [
+      "/images/characters/char-13.jpg",
+      "/images/merch/batman-hoodie.jpg",
+      "/images/categories/comics-cover.jpg"
+    ],
+    "franchise": "Batman"
   }
 ]

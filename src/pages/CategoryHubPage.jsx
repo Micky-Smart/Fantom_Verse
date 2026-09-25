@@ -36,13 +36,36 @@ export const CategoryHubPage = () => {
   const categoryMerch = merchandise.filter(m => m.category === activeCategoryId);
 
   // Filter and Sort states
+  const [searchQuery, setSearchQuery] = useState('');
   const [selectedType, setSelectedType] = useState('all');
   const [selectedSubTag, setSelectedSubTag] = useState('all');
   const [sortBy, setSortBy] = useState('featured');
 
+  // Reset filters & search when switching category
+  React.useEffect(() => {
+    setSearchQuery('');
+    setSelectedType('all');
+    setSelectedSubTag('all');
+    setSortBy('featured');
+  }, [activeCategoryId]);
+
   // Filter content items
   const filteredAndSortedItems = useMemo(() => {
     let list = [...catalogItems];
+
+    // Filter by Search Query
+    if (searchQuery.trim()) {
+      const q = searchQuery.trim().toLowerCase();
+      list = list.filter(item => {
+        const titleMatch = item.title?.toLowerCase().includes(q);
+        const descMatch = item.description?.toLowerCase().includes(q);
+        const franchiseMatch = item.franchise?.toLowerCase().includes(q);
+        const tagsMatch = item.tags?.some(tag => tag.toLowerCase().includes(q));
+        const authorOrArtist = (item.audioArtist || item.author || '')?.toLowerCase().includes(q);
+        const typeMatch = item.contentType?.toLowerCase().includes(q);
+        return titleMatch || descMatch || franchiseMatch || tagsMatch || authorOrArtist || typeMatch;
+      });
+    }
 
     // Filter by Content Type
     if (selectedType !== 'all') {
@@ -75,7 +98,7 @@ export const CategoryHubPage = () => {
     });
 
     return list;
-  }, [catalogItems, selectedType, selectedSubTag, sortBy]);
+  }, [catalogItems, searchQuery, selectedType, selectedSubTag, sortBy]);
 
   // Gallery items for this category
   const galleryItems = catalogItems.filter(item => item.contentType === 'gallery' && item.galleryImages);
@@ -153,6 +176,9 @@ export const CategoryHubPage = () => {
       {/* Filter and Sort Toolbar */}
       <section className="px-4 sm:px-6 max-w-7xl mx-auto">
         <FilterSortBar
+          searchQuery={searchQuery}
+          onSearchChange={setSearchQuery}
+          categoryName={currentCategory?.name}
           types={filterTypes}
           selectedType={selectedType}
           onSelectType={setSelectedType}
@@ -167,15 +193,16 @@ export const CategoryHubPage = () => {
         {/* Content Catalog Grid */}
         {filteredAndSortedItems.length === 0 ? (
           <div className="text-center py-16 bg-white dark:bg-zinc-900 rounded-2xl border border-slate-200/90 dark:border-zinc-800 p-8 text-slate-600 dark:text-zinc-400 shadow-sm">
-            <p className="text-base font-semibold">No content matches the selected filter.</p>
+            <p className="text-base font-semibold">No content matches your search or filter criteria.</p>
             <button
               onClick={() => {
+                setSearchQuery('');
                 setSelectedType('all');
                 setSelectedSubTag('all');
               }}
               className="mt-3 px-4 py-2 rounded-xl bg-purple-600 text-white text-xs font-bold hover:bg-purple-500 shadow-md"
             >
-              Reset Filters
+              Reset Filters & Search
             </button>
           </div>
         ) : (

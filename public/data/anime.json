@@ -109,5 +109,49 @@
     "featured": true,
     "mediaUrl": "https://www.youtube.com/embed/v4yLeNt-kCU",
     "franchise": "Chainsaw Man"
+  },
+  {
+    "id": "anime-7",
+    "categoryId": "anime",
+    "title": "Demon Slayer: Swordsmith Village & Hashira Concept Art",
+    "thumbnail": "/images/categories/anime-cover.jpg",
+    "description": "Exclusive Ufotable key animation frames, breathing style atmospheric effects, and character design sheets.",
+    "contentType": "gallery",
+    "tags": [
+      "Shonen",
+      "Action",
+      "Dark Fantasy"
+    ],
+    "date": "2024-05-28",
+    "popularity": 97,
+    "featured": false,
+    "galleryImages": [
+      "/images/categories/anime-cover.jpg",
+      "/images/characters/char-1.jpg",
+      "/images/merch/tanjiro-hoodie.jpg"
+    ],
+    "franchise": "Demon Slayer"
+  },
+  {
+    "id": "anime-8",
+    "categoryId": "anime",
+    "title": "Jujutsu Kaisen: Cursed Techniques & Domain Expansion Visual Archive",
+    "thumbnail": "/images/characters/char-2.jpg",
+    "description": "High-res illustrations of Gojo Satoru's Infinite Void, Sukuna's Malevolent Shrine, and Shibuya key art.",
+    "contentType": "gallery",
+    "tags": [
+      "Supernatural",
+      "Action",
+      "Dark Fantasy"
+    ],
+    "date": "2024-06-10",
+    "popularity": 98,
+    "featured": true,
+    "galleryImages": [
+      "/images/characters/char-2.jpg",
+      "/images/merch/sukuna-hoodie.jpg",
+      "/images/merch/gojo-nendoroid.jpg"
+    ],
+    "franchise": "Jujutsu Kaisen"
   }
 ]

@@ -87,5 +87,48 @@
     "featured": true,
     "mediaUrl": "https://www.youtube.com/embed/ofXigq9aIpo",
     "franchise": "Spy x Family"
+  },
+  {
+    "id": "manga-6",
+    "categoryId": "manga",
+    "title": "One Piece: Eiichiro Oda Color Walk & Egghead Island Gallery",
+    "thumbnail": "/images/merch/one-piece-merch.jpg",
+    "description": "Vibrant double-page color spreads, Gear 5 Luffy dynamic action scenes, and grand line world maps.",
+    "contentType": "gallery",
+    "tags": [
+      "Dark Action",
+      "Supernatural"
+    ],
+    "date": "2024-05-22",
+    "popularity": 99,
+    "featured": true,
+    "galleryImages": [
+      "/images/merch/one-piece-merch.jpg",
+      "/images/characters/char-31.jpg",
+      "/images/categories/manga-cover.jpg"
+    ],
+    "franchise": "One Piece"
+  },
+  {
+    "id": "manga-7",
+    "categoryId": "manga",
+    "title": "Chainsaw Man: Tatsuki Fujimoto Cinematic Manga Paneling Gallery",
+    "thumbnail": "/images/characters/char-33.jpg",
+    "description": "Surreal devil designs, cinematic wide-angle manga panels, and iconic Pochita concept sketches.",
+    "contentType": "gallery",
+    "tags": [
+      "Psychological",
+      "Dark Action",
+      "Seinen"
+    ],
+    "date": "2024-04-25",
+    "popularity": 97,
+    "featured": false,
+    "galleryImages": [
+      "/images/characters/char-33.jpg",
+      "/images/merch/pochita-merch.jpg",
+      "/images/characters/char-34.jpg"
+    ],
+    "franchise": "Chainsaw Man"
   }
 ]

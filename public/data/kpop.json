@@ -89,5 +89,47 @@
     "featured": false,
     "mediaUrl": "https://www.youtube.com/embed/bNKXxwOQONs",
     "franchise": "LE SSERAFIM"
+  },
+  {
+    "id": "kpop-6",
+    "categoryId": "kpop",
+    "title": "BTS: 'Love Yourself' to 'Proof' Milestone Photo Collection",
+    "thumbnail": "/images/characters/char-21.jpg",
+    "description": "Iconic concept photo shoots, stadium lights, and behind-the-scenes world tour photography archive.",
+    "contentType": "gallery",
+    "tags": [
+      "Boy Group",
+      "World Tour"
+    ],
+    "date": "2024-05-20",
+    "popularity": 99,
+    "featured": true,
+    "galleryImages": [
+      "/images/characters/char-21.jpg",
+      "/images/merch/bts-hoodie.jpg",
+      "/images/merch/bts-lightstick.jpg"
+    ],
+    "franchise": "BTS"
+  },
+  {
+    "id": "kpop-7",
+    "categoryId": "kpop",
+    "title": "NewJeans: Y2K Nostalgia & 'Ditto' Concept Gallery",
+    "thumbnail": "/images/characters/char-23.jpg",
+    "description": "Retro film grain photography, 90s aesthetic styling, and signature BUNNIES visual identity archive.",
+    "contentType": "gallery",
+    "tags": [
+      "Girl Group",
+      "Comeback"
+    ],
+    "date": "2024-04-18",
+    "popularity": 98,
+    "featured": false,
+    "galleryImages": [
+      "/images/characters/char-23.jpg",
+      "/images/merch/newjeans-bunny-merch.jpg",
+      "/images/merch/newjeans-binky-bong.jpg"
+    ],
+    "franchise": "NewJeans"
   }
 ]

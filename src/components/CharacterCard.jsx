@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useFandom } from '../context/FandomContext';
 import { Bookmark, Sparkles, Quote, Info, X } from 'lucide-react';
 
@@ -7,11 +7,50 @@ export const CharacterCard = ({ character }) => {
   const [showModal, setShowModal] = useState(false);
   const bookmarked = isBookmarked(character.id);
 
+  // Make the area around it unscrollable when open
+  useEffect(() => {
+    if (showModal) {
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+
+      const handleKeyDown = (e) => {
+        if (e.key === 'Escape') setShowModal(false);
+      };
+      window.addEventListener('keydown', handleKeyDown);
+
+      return () => {
+        document.body.style.overflow = originalOverflow;
+        window.removeEventListener('keydown', handleKeyDown);
+      };
+    }
+  }, [showModal]);
+
   return (
     <>
-      <div className="group rounded-2xl bg-white dark:bg-zinc-900 hover:bg-pink-50/30 dark:hover:bg-zinc-850 border border-slate-200/90 dark:border-zinc-800 hover:border-pink-400 dark:hover:border-pink-500/40 overflow-hidden flex flex-col transition-all duration-300 transform hover:-translate-y-1 shadow-sm hover:shadow-xl dark:shadow-pink-900/10">
+      {/* Click-away backdrop overlay making the area around it unscrollable */}
+      {showModal && (
+        <div
+          onClick={(e) => {
+            e.stopPropagation();
+            setShowModal(false);
+          }}
+          onWheel={(e) => e.preventDefault()}
+          onTouchMove={(e) => e.preventDefault()}
+          className="fixed inset-0 z-40 bg-black/60 backdrop-blur-[2px] animate-backdrop-fade cursor-pointer"
+          aria-label="Close character details"
+        />
+      )}
+
+      {/* Main Character Card (opens where the character is, not fixed) */}
+      <div
+        className={`group rounded-2xl bg-white dark:bg-zinc-900 border border-slate-200/90 dark:border-zinc-800 transition-all duration-300 flex flex-col ${
+          showModal
+            ? 'relative z-50 shadow-2xl ring-2 ring-pink-500/80 shadow-pink-900/40'
+            : 'relative z-10 hover:border-pink-400 dark:hover:border-pink-500/40 hover:-translate-y-1 shadow-sm hover:shadow-xl dark:shadow-pink-900/10'
+        }`}
+      >
         {/* Character Image */}
-        <div className="relative aspect-[3/4] w-full overflow-hidden bg-slate-900 cursor-pointer" onClick={() => setShowModal(true)}>
+        <div className="relative aspect-[3/4] w-full overflow-hidden rounded-t-2xl bg-slate-900 cursor-pointer" onClick={() => setShowModal(true)}>
           <img
             src={character.image}
             alt={character.name}
@@ -47,7 +86,7 @@ export const CharacterCard = ({ character }) => {
         </div>
 
         {/* Info */}
-        <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
+        <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between rounded-b-2xl">
           <div>
             <span className="text-[11px] font-bold text-pink-600 dark:text-pink-400 uppercase tracking-wider">
               {character.series}
@@ -93,89 +132,111 @@ export const CharacterCard = ({ character }) => {
             <span>View Full Profile</span>
           </button>
         </div>
-      </div>
 
-      {/* Character Profile Modal */}
-      {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
-          <div className="relative w-full max-w-xl bg-white dark:bg-zinc-900 rounded-2xl border border-pink-400 dark:border-pink-500/40 shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[90vh]">
-            <button
-              onClick={() => setShowModal(false)}
-              className="absolute top-4 right-4 z-20 p-2 rounded-full bg-black/60 hover:bg-black/80 text-white"
-            >
-              <X className="w-5 h-5" />
-            </button>
+        {/* In-place Character Profile Popup (Opens where the character is, not fixed, scrollable in spot) */}
+        {showModal && (
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="absolute inset-0 z-50 bg-white dark:bg-zinc-900 rounded-2xl border-2 border-pink-400 dark:border-pink-500/60 shadow-2xl flex flex-col overflow-hidden animate-modal-pop cursor-default"
+          >
+            {/* Header: Compact image thumbnail + title + category + close */}
+            <div className="p-3.5 pb-2.5 border-b border-slate-100 dark:border-white/10 flex items-start gap-3 bg-slate-50/80 dark:bg-zinc-950/60 flex-shrink-0">
+              {/* Thumbnail */}
+              <div className="w-12 h-16 rounded-xl overflow-hidden bg-slate-900 flex-shrink-0 border border-slate-200 dark:border-white/10 shadow-sm">
+                <img
+                  src={character.image}
+                  alt={character.name}
+                  className="w-full h-full object-cover object-top"
+                  onError={(e) => {
+                    e.target.src = "/images/categories/anime-cover.jpg";
+                  }}
+                />
+              </div>
 
-            {/* Modal Image */}
-            <div className="md:w-1/2 relative bg-slate-900 aspect-[3/4] md:aspect-auto">
-              <img
-                src={character.image}
-                alt={character.name}
-                className="w-full h-full object-cover object-top"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent md:bg-gradient-to-r md:from-transparent md:to-black/60" />
-            </div>
-
-            {/* Modal Bio Details */}
-            <div className="md:w-1/2 p-6 flex flex-col justify-between overflow-y-auto">
-              <div>
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="px-2.5 py-0.5 rounded-full bg-pink-100 dark:bg-pink-950 text-pink-800 dark:text-pink-300 border border-pink-200 dark:border-pink-500/30 text-[10px] font-bold uppercase tracking-wider">
+              {/* Character Header Details */}
+              <div className="flex-1 min-w-0 pr-6">
+                <div className="flex items-center gap-1.5 mb-1 flex-wrap">
+                  <span className="px-2 py-0.5 rounded bg-pink-100 dark:bg-pink-950/80 text-pink-700 dark:text-pink-300 border border-pink-200 dark:border-pink-500/30 text-[9px] font-bold uppercase tracking-wider">
                     {character.category}
                   </span>
-                  <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                  <span className="text-[10px] font-semibold text-slate-500 dark:text-slate-400 truncate">
                     {character.series}
                   </span>
                 </div>
-                <h3 className="text-2xl font-black text-slate-900 dark:text-white font-display mb-2">
+
+                <h3 className="text-base sm:text-lg font-black text-slate-900 dark:text-white truncate font-display leading-tight">
                   {character.name}
                 </h3>
 
                 {character.quote && (
-                  <div className="p-3 rounded-xl bg-pink-50 dark:bg-pink-950/30 border border-pink-200 dark:border-pink-500/20 text-xs italic text-pink-900 dark:text-pink-200 mb-4">
-                    "{character.quote}"
-                  </div>
+                  <p className="text-[10px] italic text-pink-600 dark:text-pink-400 line-clamp-1 mt-0.5 flex items-center gap-1">
+                    <Quote className="w-2.5 h-2.5 text-pink-500 flex-shrink-0" />
+                    <span className="truncate">"{character.quote}"</span>
+                  </p>
                 )}
+              </div>
 
-                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-400 mb-1">
+              {/* Close Button */}
+              <button
+                onClick={() => setShowModal(false)}
+                className="absolute top-3 right-3 p-1.5 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-white/10 transition-colors"
+                title="Close (Esc)"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            {/* Scrollable Content (Scrolls in this spot without moving the page) */}
+            <div className="flex-1 p-3.5 overflow-y-auto space-y-3 text-xs scrollbar-thin">
+              <div>
+                <h4 className="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1">
                   Biography & Lore
                 </h4>
-                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                   {character.biography}
                 </p>
+              </div>
 
-                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-400 mb-1.5">
-                  Traits & Abilities
-                </h4>
-                <div className="flex flex-wrap gap-1.5 mb-6">
-                  {character.traits?.map((t, i) => (
-                    <span
-                      key={i}
-                      className="px-2.5 py-1 rounded-lg bg-purple-50 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 border border-purple-200 dark:border-purple-500/30 text-xs font-medium"
-                    >
-                      {t}
-                    </span>
-                  ))}
+              {character.traits?.length > 0 && (
+                <div>
+                  <h4 className="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1.5">
+                    Traits & Abilities
+                  </h4>
+                  <div className="flex flex-wrap gap-1">
+                    {character.traits.map((trait, idx) => (
+                      <span
+                        key={idx}
+                        className="text-[10px] px-2 py-0.5 rounded-md bg-purple-50 text-purple-700 border border-purple-200 dark:bg-purple-950/60 dark:text-purple-300 dark:border-purple-500/20 font-medium"
+                      >
+                        {trait}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
+            </div>
 
-              <div className="pt-4 border-t border-slate-200 dark:border-white/10 flex items-center justify-between">
-                <button
-                  onClick={() => toggleBookmark(character)}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all ${
-                    bookmarked
-                      ? 'bg-pink-600 text-white'
-                      : 'bg-slate-100 hover:bg-slate-200 text-slate-800 dark:bg-white/5 dark:hover:bg-white/10 dark:text-slate-200 border border-slate-200 dark:border-white/10'
-                  }`}
-                >
-                  <Bookmark className={`w-4 h-4 ${bookmarked ? 'fill-current' : ''}`} />
-                  <span>{bookmarked ? 'Bookmarked' : 'Add to Bookmarks'}</span>
-                </button>
-              </div>
+            {/* Footer with Bookmark Toggle Button */}
+            <div className="p-3 px-3.5 bg-slate-50/80 dark:bg-zinc-950/60 border-t border-slate-100 dark:border-white/10 flex items-center justify-between flex-shrink-0">
+              <button
+                onClick={() => toggleBookmark(character)}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
+                  bookmarked
+                    ? 'bg-pink-600 text-white shadow-sm shadow-pink-900/40'
+                    : 'bg-white dark:bg-white/5 hover:bg-slate-100 dark:hover:bg-white/10 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-white/10'
+                }`}
+              >
+                <Bookmark className={`w-3.5 h-3.5 ${bookmarked ? 'fill-current' : ''}`} />
+                <span>{bookmarked ? 'Bookmarked' : 'Add to Bookmarks'}</span>
+              </button>
+
+              <span className="text-[10px] font-mono text-slate-400 uppercase">
+                {character.category}
+              </span>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </>
   );
 };

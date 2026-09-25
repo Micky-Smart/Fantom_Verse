@@ -31,6 +31,17 @@ export const ChatbotWidget = () => {
     }
   }, [messages, isTyping, isOpen]);
 
+  // Handle Escape key to close chatbot
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' && isOpen) {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen]);
+
   const processQuery = (rawQuery) => {
     if (!rawQuery.trim() || !chatbotKB) return;
     const userText = rawQuery.trim();
@@ -124,7 +135,18 @@ export const ChatbotWidget = () => {
 
       {/* Chat Window Drawer / Modal */}
       {isOpen && (
-        <div className="fixed bottom-20 sm:bottom-24 right-4 sm:right-6 z-50 w-[92vw] sm:w-96 max-h-[560px] h-[75vh] bg-white dark:bg-zinc-900 rounded-2xl border border-slate-200/90 dark:border-zinc-800 shadow-2xl flex flex-col overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-200">
+        <>
+          {/* Click-outside backdrop overlay to exit chatbot */}
+          <div
+            onClick={() => setIsOpen(false)}
+            className="fixed inset-0 z-40 bg-black/40 sm:bg-black/20 backdrop-blur-[2px] animate-backdrop-fade cursor-pointer"
+            aria-label="Close Chatbot Assistant"
+          />
+
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="fixed bottom-20 sm:bottom-24 right-4 sm:right-6 z-50 w-[92vw] sm:w-96 max-h-[560px] h-[75vh] bg-white dark:bg-zinc-900 rounded-2xl border border-slate-200/90 dark:border-zinc-800 shadow-2xl flex flex-col overflow-hidden animate-drawer-bottom cursor-default"
+          >
           {/* Header */}
           <div className="p-3.5 bg-slate-50 dark:bg-zinc-950 border-b border-slate-200 dark:border-zinc-800 flex items-center justify-between">
             <div className="flex items-center gap-2.5">
@@ -237,6 +259,7 @@ export const ChatbotWidget = () => {
             </button>
           </form>
         </div>
+        </>
       )}
     </>
   );

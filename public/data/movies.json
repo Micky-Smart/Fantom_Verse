@@ -90,5 +90,48 @@
     "featured": true,
     "mediaUrl": "https://www.youtube.com/embed/73_1biulkYk",
     "franchise": "Deadpool"
+  },
+  {
+    "id": "movies-6",
+    "categoryId": "movies",
+    "title": "Spider-Man: Across the Spider-Verse Multiverse Style Guide Gallery",
+    "thumbnail": "/images/categories/movies-cover.jpg",
+    "description": "Groundbreaking production frames comparing Earth-65's watercolor mood shifts to Mumbattan's retro comic textures.",
+    "contentType": "gallery",
+    "tags": [
+      "Superhero",
+      "Blockbuster"
+    ],
+    "date": "2024-03-05",
+    "popularity": 98,
+    "featured": true,
+    "galleryImages": [
+      "/images/categories/movies-cover.jpg",
+      "/images/merch/spiderman-2099-hoodie.jpg",
+      "/images/characters/char-11.jpg"
+    ],
+    "franchise": "Spider-Man"
+  },
+  {
+    "id": "movies-7",
+    "categoryId": "movies",
+    "title": "Dune: Part Two - Arrakis Deserts & Fremen Sci-Fi Concept Gallery",
+    "thumbnail": "/images/characters/char-12.jpeg",
+    "description": "Breathtaking IMAX landscape captures, ornithopter blueprints, and high-contrast Giedi Prime black-and-white stills.",
+    "contentType": "gallery",
+    "tags": [
+      "Sci-Fi",
+      "Blockbuster",
+      "Epic Fantasy"
+    ],
+    "date": "2024-04-15",
+    "popularity": 97,
+    "featured": false,
+    "galleryImages": [
+      "/images/characters/char-12.jpeg",
+      "/images/merch/dune-crysknife.jpg",
+      "/images/merch/dune-poncho.jpg"
+    ],
+    "franchise": "Dune"
   }
 ]

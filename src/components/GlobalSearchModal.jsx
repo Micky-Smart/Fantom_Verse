@@ -180,8 +180,14 @@ export const GlobalSearchModal = () => {
   if (!isSearchOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center pt-12 sm:pt-20 px-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
-      <div className="w-full max-w-3xl rounded-2xl bg-white dark:bg-zinc-900 border border-slate-200/90 dark:border-zinc-800 shadow-2xl overflow-hidden flex flex-col max-h-[85vh]">
+    <div
+      onClick={() => setIsSearchOpen(false)}
+      className="fixed inset-0 z-50 flex items-start justify-center pt-12 sm:pt-20 px-4 bg-black/80 backdrop-blur-md animate-backdrop-fade cursor-pointer"
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="w-full max-w-3xl rounded-2xl bg-white dark:bg-zinc-900 border border-slate-200/90 dark:border-zinc-800 shadow-2xl overflow-hidden flex flex-col max-h-[85vh] cursor-default animate-modal-pop"
+      >
         {/* Search Input Bar */}
         <div className="relative flex items-center px-4 py-3.5 border-b border-slate-200 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-950">
           <Search className="w-5 h-5 text-rose-500 dark:text-purple-400 mr-3 flex-shrink-0" />

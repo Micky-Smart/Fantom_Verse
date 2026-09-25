@@ -85,7 +85,7 @@ const AppContent = () => {
       <Navbar />
 
       {/* Main Content Area */}
-      <main className="flex-1 w-full">
+      <main key={currentView} className="flex-1 w-full animate-page-enter">
         {renderActiveView()}
       </main>
 
