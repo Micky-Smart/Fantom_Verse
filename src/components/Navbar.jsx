@@ -96,17 +96,17 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 min-w-0">
             <button
               onClick={() => navigateTo('home')}
-              className="flex items-center gap-2.5 text-left group focus:outline-none"
+              className="flex items-center gap-2.5 text-left group focus:outline-none min-w-0"
             >
-              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-tr from-rose-500 via-purple-600 to-cyan-400 p-0.5 shadow-md group-hover:scale-105 transition-transform">
+              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-tr from-rose-500 via-purple-600 to-cyan-400 p-0.5 shadow-md group-hover:scale-105 transition-transform flex-shrink-0">
                 <div className="w-full h-full bg-white dark:bg-zinc-900 rounded-[10px] flex items-center justify-center transition-colors">
                   <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-rose-500 dark:text-purple-400 group-hover:rotate-12 transition-transform" />
                 </div>
               </div>
-              <div className="flex flex-col">
+              <div className="hidden sm:flex flex-col min-w-0">
                 <span className="font-black text-lg sm:text-xl tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-rose-600 via-purple-600 to-cyan-500 font-display">
                   FANDOM<span className="text-slate-900 dark:text-white">VERSE</span>
                 </span>
@@ -247,7 +247,7 @@ export const Navbar = () => {
           </nav>
 
           {/* Right Action Icons */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-1.5 sm:gap-3 flex-shrink-0">
             {/* Bright Light / Dark Neon Mode Toggle */}
             <button
               onClick={toggleTheme}
@@ -340,7 +340,7 @@ export const Navbar = () => {
                     setAuthMode('signup');
                     setIsAuthOpen(true);
                   }}
-                  className="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-gradient-to-r from-rose-500 via-purple-600 to-cyan-500 hover:opacity-95 text-white shadow-md shadow-rose-500/20 transition-all transform hover:scale-[1.02]"
+                  className="hidden sm:inline-flex px-3.5 py-1.5 rounded-xl text-xs font-bold bg-gradient-to-r from-rose-500 via-purple-600 to-cyan-500 hover:opacity-95 text-white shadow-md shadow-rose-500/20 transition-all transform hover:scale-[1.02]"
                 >
                   Sign Up
                 </button>

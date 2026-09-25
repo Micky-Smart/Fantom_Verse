@@ -4,12 +4,23 @@
 @tailwind components;
 @tailwind utilities;
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
   --bg-primary: #f8fafc;
   --bg-card: #ffffff;
   --text-primary: #0f172a;
   --text-muted: #64748b;
   --border-color: rgba(226, 232, 240, 0.9);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 .dark {
@@ -29,6 +40,46 @@ body {
   overflow-x: hidden;
   min-height: 100vh;
   transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  max-width: 100%;
+}
+
+@media (max-width: 639px) {
+  html {
+    overflow-x: hidden;
+  }
+
+  body {
+    min-width: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {

@@ -61,9 +61,9 @@ export const AudioPlayerBar = () => {
         onEnded={pauseAudio}
       />
 
-      <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 sm:gap-4 min-w-0">
         {/* Track Info */}
-        <div className="flex items-center gap-3 min-w-0 max-w-xs sm:max-w-sm">
+        <div className="flex items-center gap-2 sm:gap-3 min-w-0 max-w-[40%] sm:max-w-sm">
           <div className="w-10 h-10 rounded-lg overflow-hidden bg-purple-950/60 border border-purple-500/30 flex-shrink-0 relative">
             <img
               src={audioPlayer.cover}
@@ -91,7 +91,7 @@ export const AudioPlayerBar = () => {
         </div>
 
         {/* Player Controls & Scrubber */}
-        <div className="flex-1 max-w-xl flex flex-col items-center gap-1">
+        <div className="flex-1 min-w-0 max-w-xl flex flex-col items-center gap-1">
           <div className="flex items-center gap-3">
             <button
               onClick={audioPlayer.isPlaying ? pauseAudio : resumeAudio}
@@ -121,7 +121,7 @@ export const AudioPlayerBar = () => {
         </div>
 
         {/* Volume & Close */}
-        <div className="flex items-center gap-3 flex-shrink-0">
+        <div className="flex items-center gap-1 sm:gap-3 flex-shrink-0">
           <button
             onClick={toggleMute}
             className="p-1.5 rounded-lg text-slate-400 hover:text-white"

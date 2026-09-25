@@ -7,10 +7,10 @@ export const Footer = () => {
 
   return (
     <footer className="w-full bg-slate-900 dark:bg-zinc-950 border-t border-slate-800 dark:border-zinc-800/80 text-slate-400 dark:text-zinc-400 text-xs transition-colors">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-7 sm:gap-8">
           {/* Brand Info */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="lg:col-span-2 space-y-4 min-w-0">
             <div className="flex items-center gap-2.5">
               <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-purple-600 to-pink-500 flex items-center justify-center text-white shadow-md">
                 <Sparkles className="w-4 h-4" />
@@ -34,10 +34,10 @@ export const Footer = () => {
                 <li key={c.id}>
                   <button
                     onClick={() => navigateTo('category', { categoryId: c.id })}
-                    className="hover:text-purple-300 transition-colors flex items-center gap-2"
+                    className="hover:text-purple-300 transition-colors flex items-center gap-2 text-left min-w-0"
                   >
                     <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: c.color }} />
-                    <span>{c.name} Hub</span>
+                    <span className="min-w-0 break-words">{c.name} Hub</span>
                   </button>
                 </li>
               ))}
@@ -53,7 +53,7 @@ export const Footer = () => {
               <li>
                 <button
                   onClick={() => navigateTo('trailers')}
-                  className="hover:text-purple-300 transition-colors"
+                    className="hover:text-purple-300 transition-colors text-left"
                 >
                   Media & Trailers Hub
                 </button>
@@ -61,7 +61,7 @@ export const Footer = () => {
               <li>
                 <button
                   onClick={() => navigateTo('characters')}
-                  className="hover:text-purple-300 transition-colors"
+                    className="hover:text-purple-300 transition-colors text-left"
                 >
                   35+ Character Roster
                 </button>
@@ -69,7 +69,7 @@ export const Footer = () => {
               <li>
                 <button
                   onClick={() => navigateTo('events')}
-                  className="hover:text-purple-300 transition-colors"
+                    className="hover:text-purple-300 transition-colors text-left"
                 >
                   Events & Conventions
                 </button>
@@ -77,7 +77,7 @@ export const Footer = () => {
               <li>
                 <button
                   onClick={() => navigateTo('merchandise')}
-                  className="hover:text-purple-300 transition-colors"
+                    className="hover:text-purple-300 transition-colors text-left"
                 >
                   Merchandise Showcase
                 </button>
@@ -85,7 +85,7 @@ export const Footer = () => {
               <li>
                 <button
                   onClick={() => navigateTo('bookmarks')}
-                  className="hover:text-purple-300 transition-colors"
+                    className="hover:text-purple-300 transition-colors text-left"
                 >
                   Bookmarks & Session Notes
                 </button>
@@ -102,7 +102,7 @@ export const Footer = () => {
               <li>
                 <button
                   onClick={() => navigateTo('about')}
-                  className="hover:text-purple-300 transition-colors flex items-center gap-1.5"
+                    className="hover:text-purple-300 transition-colors flex items-center gap-1.5 text-left"
                 >
                   <HelpCircle className="w-3.5 h-3.5 text-purple-400" />
                   <span>About FandomVerse</span>
@@ -111,7 +111,7 @@ export const Footer = () => {
               <li>
                 <button
                   onClick={() => navigateTo('contact')}
-                  className="hover:text-purple-300 transition-colors flex items-center gap-1.5"
+                    className="hover:text-purple-300 transition-colors flex items-center gap-1.5 text-left"
                 >
                   <Mail className="w-3.5 h-3.5 text-cyan-400" />
                   <span>Contact & GPS Map</span>
@@ -128,8 +128,8 @@ export const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 mt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
-          <p>© 2026 FandomVerse. All rights reserved. Created for fans worldwide. All trademarks belong to respective copyright holders.</p>
+        <div className="pt-6 sm:pt-8 mt-8 border-t border-white/5 flex flex-col sm:flex-row items-center sm:items-start justify-between gap-3 sm:gap-4 text-[11px] text-slate-500">
+          <p className="text-center sm:text-left leading-relaxed max-w-2xl">© 2026 FandomVerse. All rights reserved. Created for fans worldwide. All trademarks belong to respective copyright holders.</p>
           <div className="flex items-center gap-2">
             <span>Powered by React & Tailwind CSS</span>
           </div>
