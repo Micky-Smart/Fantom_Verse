@@ -21,15 +21,9 @@
     "name": "Satoru Gojo",
     "series": "Jujutsu Kaisen",
     "category": "anime",
-    "image": "/images/characters/char-2.jpg",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeaD7sjagVycFLSQhNoa8DLszI6SsZiZKRl3Sz6obdTg&s",
     "biography": "The strongest Jujutsu Sorcerer of the modern era, wielding the Six Eyes and Limitless cursed technique with casual supremacy and deep devotion to his students.",
-    "traits": [
-      "Limitless",
-      "Six Eyes",
-      "Playful",
-      "Honored One",
-      "Teacher"
-    ],
+    "traits": ["Limitless", "Six Eyes", "Playful", "Honored One", "Teacher"],
     "quote": "Throughout Heaven and Earth, I alone am the honored one.",
     "popularity": 99
   },
@@ -38,7 +32,7 @@
     "name": "Levi Ackerman",
     "series": "Attack on Titan",
     "category": "anime",
-    "image": "/images/characters/char-3.jpg",
+    "image": "https://i.pinimg.com/736x/92/b8/32/92b832be1baa248ff4ae930ccc2cce53.jpg",
     "biography": "Captain of the Survey Corps' Special Operations Squad, widely revered as humanity's strongest soldier capable of slicing through hordes of Titans in seconds.",
     "traits": [
       "Humanity's Strongest",
@@ -89,7 +83,7 @@
     "name": "Raiden Shogun (Ei)",
     "series": "Genshin Impact",
     "category": "gaming",
-    "image": "/images/characters/char-6.png",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShCUIwCIcgALA9WWzkXF2V8CHtA1IdiI8KqFyM9oXhRQ&s=10",
     "biography": "The Electro Archon and ruler of Inazuma, Ei seeks Eternity through absolute stillness within the Plane of Euthymia, brandishing the devastating Musou no Hitotachi.",
     "traits": [
       "Electro Archon",
@@ -106,7 +100,7 @@
     "name": "Cloud Strife",
     "series": "Final Fantasy",
     "category": "gaming",
-    "image": "/images/characters/char-7.png",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRogexW7Xa15P1k8P2uRKHFFWeoyowYehqMZ_oBJ3qdyg&s=10",
     "biography": "An ex-SOLDIER 1st Class mercenary brandishing the Buster Sword, battling Shinra Electric Power Company and confronting the haunting phantom of Sephiroth.",
     "traits": [
       "Buster Sword",
@@ -123,7 +117,7 @@
     "name": "Malenia, Blade of Miquella",
     "series": "Elden Ring",
     "category": "gaming",
-    "image": "/images/characters/char-8.jpg",
+    "image": "/images/expo/img3.jpg",
     "biography": "An Empyrean demigod blessed with unalloyed gold prosthetic limbs and cursed by the Scarlet Rot, who has never known defeat in combat.",
     "traits": [
       "Waterfowl Dance",
@@ -140,7 +134,7 @@
     "name": "Acheron",
     "series": "Honkai: Star Rail",
     "category": "gaming",
-    "image": "/images/characters/char-9.png",
+    "image": "/images/expo/img2.jpg",
     "biography": "A Galaxy Ranger and Emanator of Nihility wandering the cosmos with a scabbard she only draws when severing destiny itself under the black hole's red gaze.",
     "traits": [
       "Emanator of Nihility",
@@ -497,7 +491,7 @@
     "name": "Dream of the Endless (Morpheus)",
     "series": "The Sandman",
     "category": "comics",
-    "image": "/images/characters/char-30.jpg",
+    "image": "https://cdn.mos.cms.futurecdn.net/xsTsW6cgxbUWTn4HK9x6Me-1920-80.jpg",
     "biography": "The Lord of Dreams and ruler of the Dreaming, an anthropomorphic personification of story, fantasy, and slumber spanning trillions of years.",
     "traits": [
       "Lord of Dreams",
@@ -514,7 +508,7 @@
     "name": "Monkey D. Luffy",
     "series": "One Piece",
     "category": "manga",
-    "image": "/images/characters/char-31.jpg",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFEdVwOg-rMkJtcypP6Ap4vH-WECIO-d_YIE2EenPjlg&s=10",
     "biography": "Captain of the Straw Hat Pirates and the reincarnation of Sun God Nika (Joy Boy), sailing across the Grand Line to discover the One Piece and attain absolute freedom.",
     "traits": [
       "Gear 5 (Sun God Nika)",
@@ -565,7 +559,7 @@
     "name": "Anya Forger",
     "series": "Spy x Family",
     "category": "manga",
-    "image": "/images/characters/char-34.jpg",
+    "image": "https://static.wikia.nocookie.net/digitousailorcure/images/0/09/Anya_forger.png/revision/latest?cb=20221019014231",
     "biography": "A telepathic orphan girl adopted by spy Twilight and assassin Thorn Princess who uses mind reading to secretly maintain world peace and gather Stella Stars.",
     "traits": [
       "Telepathy",

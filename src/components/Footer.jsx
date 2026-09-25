@@ -1,6 +1,6 @@
 import React from 'react';
 import { useFandom } from '../context/FandomContext';
-import { Sparkles, Heart, Shield, Code, Globe, HelpCircle, Mail } from 'lucide-react';
+import { Heart, Shield, Code, Globe, HelpCircle, Mail } from 'lucide-react';
 
 export const Footer = () => {
   const { categories, navigateTo } = useFandom();
@@ -11,12 +11,14 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-7 sm:gap-8">
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4 min-w-0">
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-purple-600 to-pink-500 flex items-center justify-center text-white shadow-md">
-                <Sparkles className="w-4 h-4" />
-              </div>
-              <span className="font-extrabold text-lg tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 font-display">
-                FANDOM<span className="text-white">VERSE</span>
+            <div className="flex items-center gap-2.5 group">
+              <img
+                src="/images/expo/img.jpg"
+                alt="Fandom Hub"
+                className="w-12 h-12 rounded-xl object-cover shadow-md"
+              />
+              <span className="font-black text-lg tracking-tight font-display whitespace-nowrap">
+                <span className="text-rose-400 group-hover:text-cyan-400 transition-colors">Fandom</span><span className="text-white">Hub</span>
               </span>
             </div>
             <p className="text-slate-400 leading-relaxed max-w-sm">

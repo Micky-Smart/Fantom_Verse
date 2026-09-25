@@ -25,7 +25,6 @@ import { AuthModal } from './components/AuthModal';
 import { ChatbotWidget } from './components/ChatbotWidget';
 import { ParticleBackground } from './components/ParticleBackground';
 import { FandomQuizModal } from './components/FandomQuizModal';
-import { Sparkles } from 'lucide-react';
 
 const AppContent = () => {
   const { currentView, loading, isQuizOpen, setIsQuizOpen } = useFandom();
@@ -33,14 +32,12 @@ const AppContent = () => {
   if (loading) {
     return (
       <div className="min-h-screen bg-slate-50 dark:bg-[#09090b] flex flex-col items-center justify-center space-y-4">
-        <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-rose-500 via-purple-600 to-cyan-500 p-0.5 shadow-2xl shadow-purple-900/30 animate-pulse">
-          <div className="w-full h-full bg-white dark:bg-[#141416] rounded-[14px] flex items-center justify-center">
-            <Sparkles className="w-8 h-8 text-rose-500 animate-spin" style={{ animationDuration: '4s' }} />
-          </div>
+        <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-2xl shadow-purple-900/30 animate-pulse">
+          <img src="/images/expo/img.jpg" alt="Fandom Hub" className="w-full h-full object-cover" />
         </div>
         <div className="text-center">
-          <h2 className="text-xl font-black text-slate-900 dark:text-white font-display tracking-wider">
-            FANDOM<span className="text-rose-500">VERSE</span>
+          <h2 className="text-xl font-black text-slate-900 dark:text-white font-display tracking-tight">
+            <span className="text-rose-500">Fandom</span><span>Hub</span>
           </h2>
           <p className="text-xs text-slate-500 dark:text-zinc-400 mt-1 font-mono">
             Loading JSON Universe Datasets...

@@ -101,16 +101,14 @@ export const Navbar = () => {
               onClick={() => navigateTo('home')}
               className="flex items-center gap-2.5 text-left group focus:outline-none min-w-0"
             >
-              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-tr from-rose-500 via-purple-600 to-cyan-400 p-0.5 shadow-md group-hover:scale-105 transition-transform flex-shrink-0">
-                <div className="w-full h-full bg-white dark:bg-zinc-900 rounded-[10px] flex items-center justify-center transition-colors">
-                  <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-rose-500 dark:text-purple-400 group-hover:rotate-12 transition-transform" />
-                </div>
-              </div>
-              <div className="hidden sm:flex flex-col min-w-0">
-                <span className="font-black text-lg sm:text-xl tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-rose-600 via-purple-600 to-cyan-500 font-display">
-                  FANDOM<span className="text-slate-900 dark:text-white">VERSE</span>
-                </span>
-              </div>
+              <img
+                src="/images/expo/img.jpg"
+                alt="Fandom Hub"
+                className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl object-cover shadow-md group-hover:scale-105 transition-transform flex-shrink-0"
+              />
+              <span className="hidden sm:inline font-black text-lg sm:text-xl tracking-tight font-display whitespace-nowrap">
+                <span className="text-rose-500 dark:text-purple-400 group-hover:text-cyan-500 dark:group-hover:text-cyan-300 transition-colors">Fandom</span><span className="text-slate-900 dark:text-white">Hub</span>
+              </span>
             </button>
           </div>
 
