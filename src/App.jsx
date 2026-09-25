@@ -32,8 +32,8 @@ const AppContent = () => {
   if (loading) {
     return (
       <div className="min-h-screen bg-slate-50 dark:bg-[#09090b] flex flex-col items-center justify-center space-y-4">
-        <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-2xl shadow-purple-900/30 animate-pulse">
-          <img src="/images/expo/img.jpg" alt="Fandom Hub" className="w-full h-full object-cover" />
+        <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-2xl shadow-purple-900/40 animate-pulse">
+          <img src="/images/logo.svg" alt="Fandom Hub" className="w-full h-full object-contain" />
         </div>
         <div className="text-center">
           <h2 className="text-xl font-black text-slate-900 dark:text-white font-display tracking-tight">

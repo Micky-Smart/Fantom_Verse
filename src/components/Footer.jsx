@@ -13,9 +13,9 @@ export const Footer = () => {
           <div className="lg:col-span-2 space-y-4 min-w-0">
             <div className="flex items-center gap-2.5 group">
               <img
-                src="/images/expo/img.jpg"
+                src="/images/logo.svg"
                 alt="Fandom Hub"
-                className="w-12 h-12 rounded-xl object-cover shadow-md"
+                className="w-11 h-11 rounded-xl shadow-md"
               />
               <span className="font-black text-lg tracking-tight font-display whitespace-nowrap">
                 <span className="text-rose-400 group-hover:text-cyan-400 transition-colors">Fandom</span><span className="text-white">Hub</span>

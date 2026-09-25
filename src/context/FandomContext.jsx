@@ -372,12 +372,75 @@ export const FandomProvider = ({ children }) => {
     });
   };
 
+  // History & Back Navigation Stack
+  const [historyStack, setHistoryStack] = useState([{ view: 'home', categoryId: 'anime', articleId: null }]);
+
+  // Listen to browser Back / Forward buttons (HTML5 popstate)
+  useEffect(() => {
+    try {
+      if (!window.history.state) {
+        window.history.replaceState({ view: 'home', categoryId: 'anime', articleId: null }, '');
+      }
+    } catch {
+      // ignore in restricted envs
+    }
+
+    const handlePopState = (event) => {
+      const state = event.state;
+      if (state && state.view) {
+        setCurrentView(state.view);
+        if (state.categoryId) setActiveCategoryId(state.categoryId);
+        if (state.articleId) setActiveArticleId(state.articleId);
+        setHistoryStack(prev => (prev.length > 1 ? prev.slice(0, -1) : prev));
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        setCurrentView('home');
+        setHistoryStack([{ view: 'home', categoryId: 'anime', articleId: null }]);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
   // Navigation Helpers
   const navigateTo = (view, extra = {}) => {
+    const newState = {
+      view,
+      categoryId: extra.categoryId || (view === 'category' ? activeCategoryId : null),
+      articleId: extra.articleId || null
+    };
+
+    setHistoryStack(prev => [...prev, newState]);
+    try {
+      window.history.pushState(newState, '');
+    } catch {
+      // ignore
+    }
+
     setCurrentView(view);
     if (extra.categoryId) setActiveCategoryId(extra.categoryId);
     if (extra.articleId) setActiveArticleId(extra.articleId);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const goBack = () => {
+    if (historyStack.length > 1) {
+      const previous = historyStack[historyStack.length - 2];
+      setHistoryStack(prev => prev.slice(0, -1));
+      setCurrentView(previous.view);
+      if (previous.categoryId) setActiveCategoryId(previous.categoryId);
+      if (previous.articleId) setActiveArticleId(previous.articleId);
+      try {
+        window.history.back();
+      } catch {
+        // ignore
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      navigateTo('home');
+    }
   };
 
   // Auth Operations
@@ -462,6 +525,8 @@ export const FandomProvider = ({ children }) => {
         resumeAudio,
         stopAudio,
         navigateTo,
+        goBack,
+        canGoBack: currentView !== 'home' || historyStack.length > 1,
         loginUser,
         logoutUser
       }}

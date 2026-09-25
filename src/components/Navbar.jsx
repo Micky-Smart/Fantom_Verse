@@ -23,7 +23,8 @@ import {
   Mail,
   ChevronDown,
   Sun,
-  Moon
+  Moon,
+  ArrowLeft
 } from 'lucide-react';
 
 const categoryIconMap = {
@@ -41,6 +42,7 @@ export const Navbar = () => {
     currentView,
     activeCategoryId,
     navigateTo,
+    goBack,
     categories,
     bookmarks,
     setIsAuthOpen,
@@ -122,44 +124,31 @@ export const Navbar = () => {
 
   return (
     <header className={`sticky top-0 z-40 w-full bg-white/95 dark:bg-[#090d16]/95 backdrop-blur-md border-b border-slate-200 dark:border-purple-900/30 text-slate-800 dark:text-slate-100 transition-all duration-300 shadow-sm transform ${isNavbarHidden ? '-translate-y-full' : 'translate-y-0'}`}>
-      {/* Top Utility Bar (Clock, Visitor Counter, Quick Notice) */}
-      <div className="hidden lg:flex items-center justify-between px-6 py-1.5 text-xs bg-slate-100/90 dark:bg-[#05080e] border-b border-slate-200/80 dark:border-white/5 transition-colors">
-        <div className="flex items-center gap-6">
-          <RealTimeClock compact={false} />
-          <VisitorCounter compact={false} />
-        </div>
-        <div className="flex items-center gap-4 text-slate-500 dark:text-slate-400">
-          <button
-            onClick={() => navigateTo('about')}
-            className="hover:text-rose-600 dark:hover:text-purple-300 transition-colors flex items-center gap-1 font-medium"
-          >
-            <HelpCircle className="w-3.5 h-3.5" />
-            <span>About Us</span>
-          </button>
-          <span className="text-slate-300 dark:text-slate-700">|</span>
-          <button
-            onClick={() => navigateTo('contact')}
-            className="hover:text-rose-600 dark:hover:text-purple-300 transition-colors flex items-center gap-1 font-medium"
-          >
-            <Mail className="w-3.5 h-3.5" />
-            <span>HQ & GPS Location</span>
-          </button>
-        </div>
-      </div>
-
       {/* Main Navbar */}
       <div className="max-w-7xl mx-auto px-3 sm:px-6">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <div className="flex items-center gap-3 min-w-0">
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+            {currentView !== 'home' && (
+              <button
+                type="button"
+                onClick={goBack}
+                className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-slate-100 dark:bg-white/5 hover:bg-slate-200 dark:hover:bg-white/10 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-white/10 text-xs font-bold transition-all transform hover:-translate-x-0.5 shadow-xs flex-shrink-0 cursor-pointer"
+                title="Go back to previous page"
+              >
+                <ArrowLeft className="w-3.5 h-3.5 text-rose-500 dark:text-purple-400" />
+                <span className="hidden sm:inline">Back</span>
+              </button>
+            )}
+
             <button
               onClick={() => navigateTo('home')}
               className="flex items-center gap-2.5 text-left group focus:outline-none min-w-0"
             >
               <img
-                src="/images/expo/img.jpg"
+                src="/images/logo.svg"
                 alt="Fandom Hub"
-                className="w-9 h-9 sm:w-12 sm:h-12 rounded-xl object-cover shadow-md group-hover:scale-105 transition-transform flex-shrink-0"
+                className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl shadow-md group-hover:scale-105 transition-transform flex-shrink-0"
               />
               <span className="inline font-black text-base sm:text-xl tracking-tight font-display whitespace-nowrap">
                 <span className="text-rose-500 dark:text-purple-400 group-hover:text-cyan-500 dark:group-hover:text-cyan-300 transition-colors">Fandom</span><span className="text-slate-900 dark:text-white">Hub</span>
@@ -376,6 +365,31 @@ export const Navbar = () => {
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
+        </div>
+      </div>
+
+      {/* Utility Bar (Clock, Visitor Counter, Quick Notice) */}
+      <div className="hidden lg:flex items-center justify-between px-6 py-1.5 text-xs bg-slate-100/90 dark:bg-[#05080e] border-t border-slate-200/80 dark:border-white/5 transition-colors">
+        <div className="flex items-center gap-6">
+          <RealTimeClock compact={false} />
+          <VisitorCounter compact={false} />
+        </div>
+        <div className="flex items-center gap-4 text-slate-500 dark:text-slate-400">
+          <button
+            onClick={() => navigateTo('about')}
+            className="hover:text-rose-600 dark:hover:text-purple-300 transition-colors flex items-center gap-1 font-medium"
+          >
+            <HelpCircle className="w-3.5 h-3.5" />
+            <span>About Us</span>
+          </button>
+          <span className="text-slate-300 dark:text-slate-700">|</span>
+          <button
+            onClick={() => navigateTo('contact')}
+            className="hover:text-rose-600 dark:hover:text-purple-300 transition-colors flex items-center gap-1 font-medium"
+          >
+            <Mail className="w-3.5 h-3.5" />
+            <span>HQ & GPS Location</span>
+          </button>
         </div>
       </div>
 

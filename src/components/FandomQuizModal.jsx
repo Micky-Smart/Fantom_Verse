@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useFandom } from '../context/FandomContext';
-import { Sparkles, X, Check, ArrowRight, RotateCcw, Trophy, Award } from 'lucide-react';
+import { Sparkles, X, ArrowRight, RotateCcw, Trophy } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 const quizQuestions = [
@@ -164,7 +164,8 @@ export const FandomQuizModal = ({ isOpen, onClose }) => {
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 rounded-full bg-slate-100 hover:bg-slate-200 dark:bg-white/5 dark:hover:bg-white/10 text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white"
+          className="absolute top-4 right-4 z-10 p-2 rounded-full bg-slate-100 hover:bg-slate-200 dark:bg-white/5 dark:hover:bg-white/10 text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white transition-colors"
+          title="Close (Escape)"
         >
           <X className="w-5 h-5" />
         </button>
@@ -172,12 +173,12 @@ export const FandomQuizModal = ({ isOpen, onClose }) => {
         {!result ? (
           <div className="space-y-6">
             <div>
-              <div className="flex items-center justify-between text-xs font-bold text-rose-600 dark:text-purple-400 mb-2">
-                <span className="uppercase tracking-widest flex items-center gap-1.5">
-                  <Sparkles className="w-4 h-4" />
-                  <span>Fandom Archetype Quiz</span>
+              <div className="flex items-center justify-between text-xs font-bold text-rose-600 dark:text-purple-400 mb-2.5 pr-11 sm:pr-12">
+                <span className="uppercase tracking-widest flex items-center gap-1.5 min-w-0 truncate">
+                  <Sparkles className="w-4 h-4 flex-shrink-0" />
+                  <span className="truncate">Fandom Archetype Quiz</span>
                 </span>
-                <span className="font-mono">
+                <span className="font-mono bg-rose-50 dark:bg-purple-950/60 text-rose-600 dark:text-purple-300 px-2.5 py-0.5 rounded-md border border-rose-200/80 dark:border-purple-800/50 flex-shrink-0">
                   {currentQIndex + 1} / {quizQuestions.length}
                 </span>
               </div>
@@ -189,7 +190,7 @@ export const FandomQuizModal = ({ isOpen, onClose }) => {
               </div>
             </div>
 
-            <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white font-display leading-snug">
+            <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white font-display leading-snug pr-8">
               {currentQ.question}
             </h3>
 
