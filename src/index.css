@@ -4,6 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Keep compact utility copy readable across the site. */
+.text-xs {
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
 *,
 *::before,
 *::after {

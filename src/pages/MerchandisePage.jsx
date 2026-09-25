@@ -2,13 +2,14 @@ import React, { useState, useMemo } from 'react';
 import { useFandom } from '../context/FandomContext';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { MerchandiseCard } from '../components/MerchandiseCard';
-import { ShoppingBag, Filter, ShieldCheck, ArrowUpDown } from 'lucide-react';
+import { ShoppingBag, Filter, ShieldCheck, ArrowUpDown, Search } from 'lucide-react';
 
 export const MerchandisePage = () => {
   const { merchandise, categories, setIsCartOpen, cartCount } = useFandom();
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedItemType, setSelectedItemType] = useState('all');
   const [sortBy, setSortBy] = useState('featured');
+  const [searchQuery, setSearchQuery] = useState('');
 
   const allItemTypes = useMemo(() => {
     return Array.from(new Set(merchandise.map(m => m.itemType))).filter(Boolean);
@@ -16,6 +17,10 @@ export const MerchandisePage = () => {
 
   const filteredMerchandise = useMemo(() => {
     let list = merchandise.filter(item => {
+      const query = searchQuery.trim().toLowerCase();
+      if (query && ![item.name, item.description, item.franchise, item.category, item.itemType, item.subType].some(value => value?.toLowerCase().includes(query))) {
+        return false;
+      }
       if (selectedCategory !== 'all' && item.category !== selectedCategory) {
         return false;
       }
@@ -46,7 +51,7 @@ export const MerchandisePage = () => {
     });
 
     return list;
-  }, [merchandise, selectedCategory, selectedItemType, sortBy]);
+  }, [merchandise, searchQuery, selectedCategory, selectedItemType, sortBy]);
 
   return (
     <div className="pb-20 space-y-8">
@@ -70,6 +75,17 @@ export const MerchandisePage = () => {
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-xl">
               Browse apparel, figures, plushies, lightsticks, and rare art replicas. Add items to your temporary shopping cart with live total calculations.
             </p>
+            <div className="relative mt-3 w-full max-w-2xl">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-amber-600 dark:text-amber-400" />
+              <input
+                type="search"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search merchandise, franchises, or item types..."
+                aria-label="Search marketplace"
+                className="w-full rounded-xl border border-slate-200 bg-white/90 py-2.5 pl-9 pr-4 text-sm text-slate-900 shadow-sm outline-none transition-colors placeholder:text-slate-400 focus:border-amber-400 dark:border-zinc-700 dark:bg-zinc-900/90 dark:text-white dark:placeholder:text-zinc-500 dark:focus:border-amber-500"
+              />
+            </div>
           </div>
 
           <div className="flex items-center gap-3">

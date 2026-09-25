@@ -2,15 +2,20 @@ import React, { useState, useMemo } from 'react';
 import { useFandom } from '../context/FandomContext';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { EventCard } from '../components/EventCard';
-import { Calendar, MapPin, Clock, Filter, Sparkles } from 'lucide-react';
+import { Calendar, MapPin, Clock, Filter, Sparkles, Search } from 'lucide-react';
 
 export const EventsPage = () => {
   const { events, categories } = useFandom();
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedStatus, setSelectedStatus] = useState('all'); // 'all' | 'upcoming' | 'past'
+  const [searchQuery, setSearchQuery] = useState('');
 
   const filteredEvents = useMemo(() => {
     return events.filter(evt => {
+      const query = searchQuery.trim().toLowerCase();
+      if (query && ![evt.title, evt.description, evt.venue, evt.location, evt.category].some(value => value?.toLowerCase().includes(query))) {
+        return false;
+      }
       if (selectedCategory !== 'all' && evt.category !== selectedCategory) {
         return false;
       }
@@ -19,7 +24,7 @@ export const EventsPage = () => {
       }
       return true;
     });
-  }, [events, selectedCategory, selectedStatus]);
+  }, [events, searchQuery, selectedCategory, selectedStatus]);
 
   return (
     <div className="pb-20 space-y-8">
@@ -43,6 +48,17 @@ export const EventsPage = () => {
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-xl">
               Discover comic-cons, anime expos, game releases, stadium concert tours, and local fan watch parties around the globe.
             </p>
+            <div className="relative mt-3 w-full max-w-2xl">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-cyan-600 dark:text-cyan-400" />
+              <input
+                type="search"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search events, locations, or fandoms..."
+                aria-label="Search events"
+                className="w-full rounded-xl border border-slate-200 bg-white/90 py-2.5 pl-9 pr-4 text-sm text-slate-900 shadow-sm outline-none transition-colors placeholder:text-slate-400 focus:border-cyan-400 dark:border-zinc-700 dark:bg-zinc-900/90 dark:text-white dark:placeholder:text-zinc-500 dark:focus:border-cyan-500"
+              />
+            </div>
           </div>
 
           <span className="text-xs font-mono text-slate-700 dark:text-slate-400 bg-slate-100 dark:bg-zinc-900 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-zinc-800">

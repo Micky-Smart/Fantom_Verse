@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useFandom } from '../context/FandomContext';
 import { RealTimeClock } from './RealTimeClock';
 import { VisitorCounter } from './VisitorCounter';
 import {
   Sparkles,
-  Search,
   Bookmark,
   ShoppingBag,
   User,
@@ -44,9 +43,6 @@ export const Navbar = () => {
     navigateTo,
     categories,
     bookmarks,
-    cartCount,
-    setIsSearchOpen,
-    setIsCartOpen,
     setIsAuthOpen,
     setAuthMode,
     user,
@@ -58,6 +54,27 @@ export const Navbar = () => {
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false);
+  const [isNavbarHidden, setIsNavbarHidden] = useState(false);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (isMobileMenuOpen) {
+        setIsNavbarHidden(false);
+      } else if (currentScrollY > lastScrollY.current && currentScrollY > 80) {
+        setIsNavbarHidden(true);
+      } else if (currentScrollY < lastScrollY.current) {
+        setIsNavbarHidden(false);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isMobileMenuOpen]);
 
   const handleCategoryClick = (catId) => {
     navigateTo('category', { categoryId: catId });
@@ -66,7 +83,7 @@ export const Navbar = () => {
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-white/95 dark:bg-[#090d16]/95 backdrop-blur-md border-b border-slate-200 dark:border-purple-900/30 text-slate-800 dark:text-slate-100 transition-colors duration-300 shadow-sm">
+    <header className={`sticky top-0 z-40 w-full bg-white/95 dark:bg-[#090d16]/95 backdrop-blur-md border-b border-slate-200 dark:border-purple-900/30 text-slate-800 dark:text-slate-100 transition-all duration-300 shadow-sm transform ${isNavbarHidden ? '-translate-y-full' : 'translate-y-0'}`}>
       {/* Top Utility Bar (Clock, Visitor Counter, Quick Notice) */}
       <div className="hidden lg:flex items-center justify-between px-6 py-1.5 text-xs bg-slate-100/90 dark:bg-[#05080e] border-b border-slate-200/80 dark:border-white/5 transition-colors">
         <div className="flex items-center gap-6">
@@ -93,7 +110,7 @@ export const Navbar = () => {
       </div>
 
       {/* Main Navbar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <div className="flex items-center gap-3 min-w-0">
@@ -104,9 +121,9 @@ export const Navbar = () => {
               <img
                 src="/images/expo/img.jpg"
                 alt="Fandom Hub"
-                className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl object-cover shadow-md group-hover:scale-105 transition-transform flex-shrink-0"
+                className="w-9 h-9 sm:w-12 sm:h-12 rounded-xl object-cover shadow-md group-hover:scale-105 transition-transform flex-shrink-0"
               />
-              <span className="hidden sm:inline font-black text-lg sm:text-xl tracking-tight font-display whitespace-nowrap">
+              <span className="inline font-black text-base sm:text-xl tracking-tight font-display whitespace-nowrap">
                 <span className="text-rose-500 dark:text-purple-400 group-hover:text-cyan-500 dark:group-hover:text-cyan-300 transition-colors">Fandom</span><span className="text-slate-900 dark:text-white">Hub</span>
               </span>
             </button>
@@ -136,7 +153,7 @@ export const Navbar = () => {
                     : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5'
                 }`}
               >
-                <span>7 Fandom Hubs</span>
+                <span>Fandom Hubs</span>
                 <ChevronDown className="w-4 h-4 text-rose-500 dark:text-purple-400" />
               </button>
 
@@ -228,10 +245,7 @@ export const Navbar = () => {
                   : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5'
               }`}
             >
-              <span>Hoodies & Merch</span>
-              <span className="text-[9px] px-1.5 py-0.2 rounded-full bg-amber-500 text-white font-black">
-                NEW
-              </span>
+              <span>Marketplace</span>
             </button>
 
             <button
@@ -249,7 +263,7 @@ export const Navbar = () => {
             {/* Bright Light / Dark Neon Mode Toggle */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-white/10 text-slate-700 dark:text-amber-300 hover:bg-slate-200 dark:hover:bg-white/10 transition-all shadow-sm"
+              className="hidden sm:block p-2 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-white/10 text-slate-700 dark:text-amber-300 hover:bg-slate-200 dark:hover:bg-white/10 transition-all shadow-sm"
               title={themeMode === 'light' ? 'Switch to Neon Dark Mode' : 'Switch to Radiant Cultural Light Mode'}
             >
               {themeMode === 'light' ? (
@@ -259,23 +273,10 @@ export const Navbar = () => {
               )}
             </button>
 
-            {/* Global Search Button */}
-            <button
-              onClick={() => setIsSearchOpen(true)}
-              className="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-900/80 border border-slate-200 dark:border-white/10 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:border-rose-400 dark:hover:border-purple-500/40 transition-all text-xs"
-              title="Search FandomVerse (Ctrl + K)"
-            >
-              <Search className="w-4 h-4 text-rose-500 dark:text-purple-400" />
-              <span className="hidden md:inline">Search...</span>
-              <kbd className="hidden md:inline-block px-1.5 py-0.5 rounded bg-white dark:bg-slate-800 text-[10px] text-slate-500 dark:text-slate-400 font-mono border border-slate-200 dark:border-transparent">
-                ⌘K
-              </kbd>
-            </button>
-
             {/* Bookmarks Icon */}
             <button
               onClick={() => navigateTo('bookmarks')}
-              className={`relative p-2.5 rounded-xl border transition-all ${
+              className={`relative p-2 sm:p-2.5 rounded-xl border transition-all ${
                 currentView === 'bookmarks'
                   ? 'bg-rose-100 dark:bg-pink-600/20 border-rose-300 dark:border-pink-500/40 text-rose-600 dark:text-pink-300'
                   : 'bg-slate-100 dark:bg-slate-900/80 border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-300 hover:text-rose-600 dark:hover:text-white'
@@ -286,20 +287,6 @@ export const Navbar = () => {
               {bookmarks.length > 0 && (
                 <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-rose-500 text-white text-[11px] font-bold flex items-center justify-center shadow-md">
                   {bookmarks.length}
-                </span>
-              )}
-            </button>
-
-            {/* Shopping Cart Drawer Trigger */}
-            <button
-              onClick={() => setIsCartOpen(true)}
-              className="relative p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900/80 border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-300 hover:text-purple-600 dark:hover:text-white transition-all"
-              title="Shopping Cart"
-            >
-              <ShoppingBag className="w-4 h-4 text-purple-600 dark:text-purple-400" />
-              {cartCount > 0 && (
-                <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-purple-600 text-white text-[11px] font-bold flex items-center justify-center shadow-md animate-bounce">
-                  {cartCount}
                 </span>
               )}
             </button>
@@ -429,7 +416,7 @@ export const Navbar = () => {
 
           <div className="pt-2 border-t border-slate-200 dark:border-white/5">
             <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-2">
-              Explore 7 Distinct Fandom Cultures
+              Explore Distinct Fandom Cultures
             </span>
             <div className="grid grid-cols-2 gap-2">
               {categories.map((cat) => {
