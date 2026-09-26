@@ -24,13 +24,24 @@ export const ContentCard = ({ item }) => {
   const bookmarked = isBookmarked(item.id);
 
   const handleCardClick = () => {
-    if (item.contentType === 'video' || item.contentType === 'releases') {
-      if (item.mediaUrl && item.mediaUrl.includes('embed/')) {
-        const parts = item.mediaUrl.split('embed/');
-        const ytId = parts[1]?.split('?')[0];
-        setActiveVideo({ youtubeId: ytId, title: item.title });
+    if (item.contentType === 'video' || item.contentType === 'releases' || item.mediaUrl || item.youtubeId) {
+      let ytId = item.youtubeId;
+      if (!ytId && item.mediaUrl) {
+        if (item.mediaUrl.includes('embed/')) {
+          ytId = item.mediaUrl.split('embed/')[1]?.split('?')[0];
+        } else if (item.mediaUrl.includes('v=')) {
+          ytId = item.mediaUrl.split('v=')[1]?.split('&')[0];
+        } else if (item.mediaUrl.includes('youtu.be/')) {
+          ytId = item.mediaUrl.split('youtu.be/')[1]?.split('?')[0];
+        }
       }
-    } else if (item.contentType === 'gallery' && item.galleryImages) {
+      if (ytId) {
+        setActiveVideo({ youtubeId: ytId, title: item.title });
+        return;
+      }
+    }
+    
+    if (item.contentType === 'gallery' && item.galleryImages) {
       openLightbox(item.galleryImages, 0, item.title);
     } else if (item.contentType === 'audio') {
       playAudio(item);

@@ -32,18 +32,21 @@ export const FandomProvider = ({ children }) => {
   const [authMode, setAuthMode] = useState('login'); // 'login' | 'signup'
   const [isQuizOpen, setIsQuizOpen] = useState(false);
 
-  // Bright Cultural Theme (Default) vs Neon Dark Mode
+  // Default to Sleek Dark/Black Theme vs Radiant Cultural Light Mode
   const [themeMode, setThemeMode] = useState(() => {
-    const saved = localStorage.getItem('fandomverse_theme');
-    return saved ? saved : 'light';
+    const saved = localStorage.getItem('fandomverse_theme_v2');
+    return saved === 'light' ? 'light' : 'dark';
   });
 
   useEffect(() => {
+    localStorage.setItem('fandomverse_theme_v2', themeMode);
     localStorage.setItem('fandomverse_theme', themeMode);
     if (themeMode === 'dark') {
       document.documentElement.classList.add('dark');
+      document.documentElement.classList.remove('light');
     } else {
       document.documentElement.classList.remove('dark');
+      document.documentElement.classList.add('light');
     }
   }, [themeMode]);
 

@@ -6,6 +6,6 @@ echo ===================================================
 echo.
 cd /d "%~dp0"
 echo Starting local web server...
-start http://localhost:5173/
-call npm.cmd run dev -- --port 5173 --open
+start http://localhost:5174/
+call npm.cmd run dev -- --port 5174 --open
 pause

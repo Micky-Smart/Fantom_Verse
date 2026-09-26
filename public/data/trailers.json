@@ -178,5 +178,29 @@
     "duration": "2:30",
     "description": "WIT Studio reimagines the East Blue Saga with cutting-edge animation, modern pacing, and Eiichiro Oda's direct supervision.",
     "franchise": "One Piece"
+  },
+  {
+    "id": "trl-16",
+    "title": "Stray Kids: 'LALALALA' Rock-Star Energy Official Music Video",
+    "category": "kpop",
+    "releaseStatus": "recently_released",
+    "releaseDate": "2023-11-10",
+    "youtubeId": "dBDkYofMUs4",
+    "thumbnail": "/images/characters/char-24.png",
+    "duration": "3:24",
+    "description": "3RACHA and Stray Kids deliver explosive choreography, thunderous phonk-infused brass drops, and cinematic rock-star grandeur.",
+    "franchise": "Stray Kids"
+  },
+  {
+    "id": "trl-17",
+    "title": "LE SSERAFIM: 'EASY' Official Music Video & Concept Premiere",
+    "category": "kpop",
+    "releaseStatus": "recently_released",
+    "releaseDate": "2024-02-19",
+    "youtubeId": "bNKXxwOQYB8",
+    "thumbnail": "/images/characters/char-25.png",
+    "duration": "3:05",
+    "description": "Fearless voguing, gothic cathedral visuals, and addictive 90s hip-hop beats redefine LE SSERAFIM's artistic rebirth.",
+    "franchise": "LE SSERAFIM"
   }
 ]

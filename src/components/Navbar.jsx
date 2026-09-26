@@ -93,18 +93,38 @@ export const Navbar = () => {
   }, []);
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = Math.max(0, window.pageYOffset || document.documentElement.scrollTop || window.scrollY || 0);
 
-      if (isMobileMenuOpen) {
-        setIsNavbarHidden(false);
-      } else if (currentScrollY > lastScrollY.current && currentScrollY > 80) {
-        setIsNavbarHidden(true);
-      } else if (currentScrollY < lastScrollY.current) {
-        setIsNavbarHidden(false);
+          // If mobile menu is open or near the very top, always show navbar
+          if (isMobileMenuOpen || currentScrollY <= 60) {
+            setIsNavbarHidden(false);
+            lastScrollY.current = currentScrollY;
+            ticking = false;
+            return;
+          }
+
+          const diff = currentScrollY - lastScrollY.current;
+
+          // When scrolling up by 6px or more: immediately reveal navbar
+          if (diff < -6) {
+            setIsNavbarHidden(false);
+            lastScrollY.current = currentScrollY;
+          }
+          // When scrolling down intentionally past the header: hide navbar
+          else if (diff > 12 && currentScrollY > 80) {
+            setIsNavbarHidden(true);
+            lastScrollY.current = currentScrollY;
+          }
+
+          ticking = false;
+        });
+        ticking = true;
       }
-
-      lastScrollY.current = currentScrollY;
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });

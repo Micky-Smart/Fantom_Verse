@@ -58,17 +58,21 @@
   {
     "id": "kpop-4",
     "categoryId": "kpop",
-    "title": "Stray Kids: 'LALALALA' Rock-Star Energy Audio Masterpiece",
+    "title": "Stray Kids: 'LALALALA' Rock-Star Energy Music Video",
     "thumbnail": "/images/characters/char-24.png",
     "description": "3RACHA (Bang Chan, Changbin, Han) deliver signature thunderous brass stabs and hyper-energetic phonk rhythms.",
-    "contentType": "audio",
+    "contentType": "video",
     "tags": [
       "Boy Group",
-      "Comeback"
+      "Comeback",
+      "Music Video"
     ],
     "date": "2024-02-12",
     "popularity": 95,
     "featured": true,
+    "mediaUrl": "https://www.youtube.com/embed/dBDkYofMUs4",
+    "youtubeUrl": "https://www.youtube.com/watch?v=dBDkYofMUs4",
+    "youtubeId": "dBDkYofMUs4",
     "audioUrl": "https://assets.mixkit.co/music/preview/mixkit-raising-me-higher-34.mp3",
     "audioArtist": "Stray Kids (3RACHA)",
     "franchise": "Stray Kids"
@@ -76,25 +80,28 @@
   {
     "id": "kpop-5",
     "categoryId": "kpop",
-    "title": "LE SSERAFIM: 'EASY' & 'CRAZY' Concept Visual Teaser",
+    "title": "LE SSERAFIM: 'EASY' Official Music Video & Concept Teaser",
     "thumbnail": "/images/characters/char-25.png",
     "description": "Fearless voguing, gothic cathedrals, and infectious UK garage house beats redefine the quintet's sonic identity.",
     "contentType": "releases",
     "tags": [
       "Girl Group",
-      "Comeback"
+      "Comeback",
+      "Music Video"
     ],
     "date": "2024-08-30",
     "popularity": 96,
     "featured": false,
-    "mediaUrl": "https://www.youtube.com/embed/bNKXxwOQONs",
+    "mediaUrl": "https://www.youtube.com/embed/bNKXxwOQYB8",
+    "youtubeUrl": "https://www.youtube.com/watch?v=bNKXxwOQYB8",
+    "youtubeId": "bNKXxwOQYB8",
     "franchise": "LE SSERAFIM"
   },
   {
     "id": "kpop-6",
     "categoryId": "kpop",
     "title": "BTS: 'Love Yourself' to 'Proof' Milestone Photo Collection",
-    "thumbnail": "/images/characters/char-21.jpg",
+    "thumbnail": "/images/kpop/bts-love-yourself.jpg",
     "description": "Iconic concept photo shoots, stadium lights, and behind-the-scenes world tour photography archive.",
     "contentType": "gallery",
     "tags": [
@@ -105,6 +112,7 @@
     "popularity": 99,
     "featured": true,
     "galleryImages": [
+      "/images/kpop/bts-love-yourself.jpg",
       "/images/characters/char-21.jpg",
       "/images/merch/bts-hoodie.jpg",
       "/images/merch/bts-lightstick.jpg"

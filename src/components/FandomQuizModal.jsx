@@ -151,15 +151,17 @@ export const FandomQuizModal = ({ isOpen, onClose }) => {
   return (
     <div
       onClick={onClose}
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md animate-backdrop-fade cursor-pointer overflow-y-auto"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md animate-backdrop-fade cursor-pointer overflow-y-auto overflow-x-hidden"
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-lg h-auto max-h-[90vh] my-auto bg-white dark:bg-zinc-900 rounded-3xl border border-slate-200/90 dark:border-zinc-800 shadow-2xl p-5 sm:p-8 overflow-y-auto cursor-default animate-modal-pop"
+        className="relative w-full max-w-lg h-auto max-h-[90vh] my-auto bg-white dark:bg-zinc-900 rounded-3xl border border-slate-200/90 dark:border-zinc-800 shadow-2xl p-5 sm:p-8 overflow-y-auto overflow-x-hidden cursor-default animate-modal-pop"
       >
-        {/* Glow ambient */}
-        <div className="absolute -top-20 -right-20 w-48 h-48 bg-purple-600/10 dark:bg-purple-600/20 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-20 -left-20 w-48 h-48 bg-pink-600/10 dark:bg-pink-600/20 rounded-full blur-3xl pointer-events-none" />
+        {/* Glow ambient contained within modal bounds to prevent extra width / horizontal scrolling */}
+        <div className="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none">
+          <div className="absolute -top-20 -right-20 w-48 h-48 bg-purple-600/10 dark:bg-purple-600/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-20 -left-20 w-48 h-48 bg-pink-600/10 dark:bg-pink-600/20 rounded-full blur-3xl pointer-events-none" />
+        </div>
 
         {/* Close Button */}
         <button
@@ -201,7 +203,7 @@ export const FandomQuizModal = ({ isOpen, onClose }) => {
                   onClick={() => handleSelectOption(opt.cat)}
                   className="w-full text-left p-3.5 rounded-2xl bg-slate-50 hover:bg-rose-50/50 dark:bg-zinc-800/80 dark:hover:bg-zinc-750 border border-slate-200 dark:border-zinc-700/80 hover:border-rose-400 dark:hover:border-purple-500/50 text-xs sm:text-sm text-slate-800 dark:text-slate-200 hover:text-rose-700 dark:hover:text-white transition-all transform hover:scale-[1.01] flex items-center justify-between group shadow-xs"
                 >
-                  <span className="pr-3 leading-relaxed">{opt.text}</span>
+                  <span className="pr-3 leading-relaxed flex-1 min-w-0">{opt.text}</span>
                   <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-rose-500 dark:group-hover:text-purple-400 group-hover:translate-x-1 transition-all flex-shrink-0" />
                 </button>
               ))}
@@ -249,10 +251,10 @@ export const FandomQuizModal = ({ isOpen, onClose }) => {
                   navigateTo('category', { categoryId: result.category });
                   onClose();
                 }}
-                className="flex-1 py-2.5 rounded-xl bg-gradient-to-r from-rose-500 via-purple-600 to-pink-600 text-white font-bold text-xs shadow-lg shadow-purple-900/30 hover:opacity-95 flex items-center justify-center gap-1.5"
+                className="flex-1 py-2.5 rounded-xl bg-gradient-to-r from-rose-500 via-purple-600 to-pink-600 text-white font-bold text-xs shadow-lg shadow-purple-900/30 hover:opacity-95 flex items-center justify-center gap-1.5 min-w-0"
               >
-                <span>Enter {result.category.toUpperCase()} Hub</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <span className="truncate">Enter {result.category.toUpperCase()} Hub</span>
+                <ArrowRight className="w-3.5 h-3.5 flex-shrink-0" />
               </button>
             </div>
           </div>
