@@ -21,43 +21,43 @@ export const AboutPage = () => {
       name: "Timileyin",
       role: "Creator",
       bio: "Core contributor and content curator.",
-      avatar:
-        "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%236366f1'/><text x='50' y='60' font-size='36' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>TI</text></svg>",
+      avatar: "/images/passport/timileyin.jpg",
+      position: "center 42%",
     },
     {
       name: "Michael",
       role: "Creator",
       bio: "Core contributor and content curator.",
-      avatar:
-        "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%233b82f6'/><text x='50' y='60' font-size='36' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>MI</text></svg>",
+      avatar: "/images/passport/micheal.jpg",
+      position: "center 38%",
     },
     {
       name: "Dabira",
       role: "Creator",
       bio: "Core contributor and content curator.",
-      avatar:
-        "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23ec4899'/><text x='50' y='60' font-size='36' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>DA</text></svg>",
+      avatar: "/images/passport/dabira.jpg",
+      position: "center 22%",
     },
     {
       name: "Joshua",
       role: "Creator",
       bio: "Core contributor and content curator.",
-      avatar:
-        "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%2310b981'/><text x='50' y='60' font-size='36' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>JO</text></svg>",
+      avatar: "/images/passport/joshua.jpg",
+      position: "center 25%",
     },
     {
       name: "Ayomide",
       role: "Creator",
       bio: "Core contributor and content curator.",
-      avatar:
-        "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23f59e0b'/><text x='50' y='60' font-size='36' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>AY</text></svg>",
+      avatar: "/images/passport/ayomide.jpg",
+      position: "center 35%",
     },
     {
       name: "Bolaji",
       role: "Creator",
       bio: "Core contributor and content curator.",
-      avatar:
-        "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%2306b6d4'/><text x='50' y='60' font-size='36' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>BO</text></svg>",
+      avatar: "/images/passport/bolaji.jpg",
+      position: "center 25%",
     },
   ];
 
@@ -206,11 +206,15 @@ export const AboutPage = () => {
                 key={idx}
                 className="rounded-2xl bg-white dark:bg-zinc-900 border border-slate-200/90 dark:border-zinc-800 p-5 text-center space-y-3 hover:border-purple-400 dark:hover:border-purple-500/40 transition-colors shadow-sm"
               >
-                <div className="w-20 h-20 mx-auto rounded-full overflow-hidden p-0.5 bg-gradient-to-tr from-purple-500 to-pink-500 shadow-md">
+                <div className="w-24 h-24 mx-auto rounded-full overflow-hidden p-0.5 bg-gradient-to-tr from-purple-500 to-pink-500 shadow-md">
                   <img
                     src={member.avatar}
                     alt={member.name}
-                    className="w-full h-full object-cover rounded-full"
+                    style={{ objectPosition: member.position || 'center' }}
+                    className="w-full h-full object-cover rounded-full bg-slate-100 dark:bg-zinc-800"
+                    onError={(e) => {
+                      e.target.src = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%236366f1'/><text x='50' y='60' font-size='36' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>${member.name.slice(0, 2).toUpperCase()}</text></svg>`;
+                    }}
                   />
                 </div>
                 <div>
