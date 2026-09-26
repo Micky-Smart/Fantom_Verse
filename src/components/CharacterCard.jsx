@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 import { useFandom } from '../context/FandomContext';
 import { Bookmark, Quote, Info, X } from 'lucide-react';
 
-export const CharacterCard = ({ character }) => {
+export const CharacterCard = ({ character, isHighlighted = false }) => {
   const { isBookmarked, toggleBookmark } = useFandom();
   const [showModal, setShowModal] = useState(false);
   const bookmarked = isBookmarked(character.id);
@@ -30,7 +30,14 @@ export const CharacterCard = ({ character }) => {
 
   return (
     <>
-      <div className="group rounded-2xl bg-white dark:bg-zinc-900 border border-slate-200/90 dark:border-zinc-800 transition-all duration-300 flex flex-col relative z-10 hover:border-pink-400 dark:hover:border-pink-500/40 hover:-translate-y-1 shadow-sm hover:shadow-xl dark:shadow-pink-900/10">
+      <div
+        id={`character-${character.id}`}
+        className={`group rounded-2xl bg-white dark:bg-zinc-900 border transition-all duration-500 flex flex-col relative z-10 shadow-sm hover:shadow-xl dark:shadow-pink-900/10 scroll-mt-24 sm:scroll-mt-28 ${
+          isHighlighted
+            ? 'border-pink-500 dark:border-pink-400 ring-4 ring-pink-500/60 dark:ring-pink-400/60 shadow-2xl shadow-pink-500/40 scale-[1.02] -translate-y-1.5'
+            : 'border-slate-200/90 dark:border-zinc-800 hover:border-pink-400 dark:hover:border-pink-500/40 hover:-translate-y-1'
+        }`}
+      >
         <div
           className="relative aspect-[3/4] w-full overflow-hidden rounded-t-2xl bg-slate-900 cursor-pointer"
           onClick={() => setShowModal(true)}

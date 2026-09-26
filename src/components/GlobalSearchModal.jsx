@@ -167,7 +167,7 @@ export const GlobalSearchModal = () => {
     } else if (item.type === 'article') {
       navigateTo('article', { articleId: item.id });
     } else if (item.type === 'character') {
-      navigateTo('characters', { categoryId: item.category });
+      navigateTo('characters', { targetCharacterId: item.id });
     } else if (item.type === 'event') {
       navigateTo('events', { categoryId: item.category });
     } else if (item.type === 'merchandise') {

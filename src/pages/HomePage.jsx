@@ -539,7 +539,7 @@ export const HomePage = () => {
           {popularChars.map((char) => (
             <div
               key={char.id}
-              onClick={() => navigateTo('characters', { categoryId: char.category })}
+              onClick={() => navigateTo('characters', { targetCharacterId: char.id })}
               className="group flex flex-col items-center text-center p-3.5 rounded-3xl bg-white dark:bg-zinc-900 border border-slate-200/80 dark:border-zinc-800 hover:border-pink-300 dark:hover:border-zinc-700 cursor-pointer transition-all transform hover:-translate-y-1 shadow-sm hover:shadow-md"
             >
               <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden p-0.5 bg-gradient-to-tr from-rose-500 to-pink-500 shadow-md group-hover:scale-105 transition-transform mb-2">

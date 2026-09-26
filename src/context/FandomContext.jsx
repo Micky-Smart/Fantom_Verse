@@ -23,6 +23,7 @@ export const FandomProvider = ({ children }) => {
   const [currentView, setCurrentView] = useState('home');
   const [activeCategoryId, setActiveCategoryId] = useState('anime');
   const [activeArticleId, setActiveArticleId] = useState(null);
+  const [targetCharacterId, setTargetCharacterId] = useState(null);
   const [activeCharacterModal, setActiveCharacterModal] = useState(null);
 
   // Modals & Drawers
@@ -409,10 +410,12 @@ export const FandomProvider = ({ children }) => {
 
   // Navigation Helpers
   const navigateTo = (view, extra = {}) => {
+    const charId = extra.targetCharacterId || extra.characterId || null;
     const newState = {
       view,
       categoryId: extra.categoryId || (view === 'category' ? activeCategoryId : null),
-      articleId: extra.articleId || null
+      articleId: extra.articleId || null,
+      targetCharacterId: charId
     };
 
     setHistoryStack(prev => [...prev, newState]);
@@ -425,7 +428,10 @@ export const FandomProvider = ({ children }) => {
     setCurrentView(view);
     if (extra.categoryId) setActiveCategoryId(extra.categoryId);
     if (extra.articleId) setActiveArticleId(extra.articleId);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTargetCharacterId(charId);
+    if (!charId) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   const goBack = () => {
@@ -435,6 +441,7 @@ export const FandomProvider = ({ children }) => {
       setCurrentView(previous.view);
       if (previous.categoryId) setActiveCategoryId(previous.categoryId);
       if (previous.articleId) setActiveArticleId(previous.articleId);
+      setTargetCharacterId(previous.targetCharacterId || null);
       try {
         window.history.back();
       } catch {
@@ -527,6 +534,8 @@ export const FandomProvider = ({ children }) => {
         pauseAudio,
         resumeAudio,
         stopAudio,
+        targetCharacterId,
+        setTargetCharacterId,
         navigateTo,
         goBack,
         canGoBack: currentView !== 'home' || historyStack.length > 1,

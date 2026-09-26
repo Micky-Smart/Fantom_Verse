@@ -35,7 +35,7 @@ export const BookmarksPage = () => {
     if (b.type === 'article') {
       navigateTo('article', { articleId: b.id });
     } else if (b.type === 'character') {
-      navigateTo('characters', { categoryId: b.category });
+      navigateTo('characters', { targetCharacterId: b.id });
     } else if (b.type === 'event') {
       navigateTo('events', { categoryId: b.category });
     } else if (b.type === 'merchandise') {

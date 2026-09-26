@@ -1,14 +1,42 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { useFandom } from '../context/FandomContext';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { CharacterCard } from '../components/CharacterCard';
 import { Users2, Search, Filter, X } from 'lucide-react';
 
 export const CharactersPage = () => {
-  const { characters, categories } = useFandom();
+  const { characters, categories, targetCharacterId, setTargetCharacterId } = useFandom();
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [franchiseFilter, setFranchiseFilter] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
+  const [highlightedCharId, setHighlightedCharId] = useState(null);
+
+  useEffect(() => {
+    if (targetCharacterId) {
+      // Keep all characters visible
+      setSelectedCategory('all');
+      setSearchQuery('');
+      setFranchiseFilter('');
+      setHighlightedCharId(targetCharacterId);
+
+      const scrollTimer = setTimeout(() => {
+        const el = document.getElementById(`character-${targetCharacterId}`);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 150);
+
+      const clearHighlightTimer = setTimeout(() => {
+        setHighlightedCharId(null);
+        if (setTargetCharacterId) setTargetCharacterId(null);
+      }, 3500);
+
+      return () => {
+        clearTimeout(scrollTimer);
+        clearTimeout(clearHighlightTimer);
+      };
+    }
+  }, [targetCharacterId, setTargetCharacterId]);
 
   // Extract all unique franchises
   const allFranchises = useMemo(() => {
@@ -169,7 +197,11 @@ export const CharactersPage = () => {
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
             {filteredCharacters.map((char) => (
-              <CharacterCard key={char.id} character={char} />
+              <CharacterCard
+                key={char.id}
+                character={char}
+                isHighlighted={highlightedCharId === char.id}
+              />
             ))}
           </div>
         )}
